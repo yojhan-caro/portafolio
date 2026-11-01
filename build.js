@@ -93,7 +93,7 @@ ${ogImage ? `<meta property="og:image" content="${ogImage}"><meta name="twitter:
 <link rel="icon" href="${R}assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap">
 <link rel="stylesheet" href="${R}assets/css/main.css?v=${VERSION}">
 <script>
 /* Antes de pintar: activa animaciones, recuerda la posición del cursor
@@ -119,13 +119,13 @@ ${jsonld ? `<script type="application/ld+json">${JSON.stringify(jsonld)}</script
 
 <input type="checkbox" id="menu-toggle" aria-hidden="true" tabindex="-1">
 <div class="mobile-topbar">
-  <a href="${R}" class="mobile-topbar-brand"><span class="brand-mark">Y</span> Yojhan Furuya</a>
+  <a href="${R}" class="mobile-topbar-brand"><span class="brand-mark">YF</span> Yojhan Furuya</a>
   <label for="menu-toggle" class="toggle-hamburguesa" role="button" tabindex="0" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="menu-lateral"><span></span><span></span><span></span></label>
 </div>
 <label for="menu-toggle" class="menu-overlay" aria-hidden="true"></label>
 <nav class="menu-lateral" id="menu-lateral" aria-label="Menú móvil" aria-hidden="true">
   <div class="menu-lateral-header">
-    <span class="menu-lateral-brand"><span class="brand-mark">Y</span> Yojhan Furuya</span>
+    <span class="menu-lateral-brand"><span class="brand-mark">YF</span> Yojhan Furuya</span>
     <label for="menu-toggle" class="menu-lateral-close" role="button" tabindex="0" aria-label="Cerrar menú">${I('x-lg')}</label>
   </div>
   <div class="menu-lateral-links">
@@ -138,7 +138,7 @@ ${jsonld ? `<script type="application/ld+json">${JSON.stringify(jsonld)}</script
 </nav>
 
 <header class="nav-container" id="nav">
-  <a href="${R}" class="nav-brand"><span class="brand-mark">Y</span> <span class="nav-brand-name">Yojhan Furuya</span></a>
+  <a href="${R}" class="nav-brand"><span class="brand-mark">YF</span> <span class="nav-brand-name">Yojhan Furuya</span></a>
   <nav class="nav-btns" aria-label="Navegación principal" data-page="${active}">
     <div class="blob" id="blob"></div>
     ${navBtn(0, '', 'Inicio')}
@@ -157,7 +157,7 @@ ${body}
   <div class="container-custom">
     <div class="footer-top">
       <div class="footer-col footer-col-brand">
-        <a href="${R}" class="footer-logo"><span class="brand-mark">Y</span> Yojhan Furuya</a>
+        <a href="${R}" class="footer-logo"><span class="brand-mark">YF</span> Yojhan Furuya</a>
         <p class="footer-tagline">Desarrollador Front-End enfocado en interfaces modernas, experiencias digitales cuidadas y detalles que marcan la diferencia.</p>
         <span class="footer-badge"><span class="footer-badge-dot" aria-hidden="true"></span> Disponible para proyectos</span>
       </div>

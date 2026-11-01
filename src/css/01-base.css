@@ -6,44 +6,49 @@
    ═══════════════════════════════════════════════════════ */
 
 :root {
+  /* Diseño v2 — línea KY Labs: oscuro plano, un solo acento,
+     etiquetas en mono y líneas finas. Los efectos no cambian. */
+
   /* Superficies */
-  --bg: #08090d;
-  --bg-2: #0d0f15;
-  --card: #101218;
-  --card-2: #14161e;
-  --surface: rgba(255,255,255,0.03);
-  --surface-2: rgba(255,255,255,0.055);
+  --bg: #09090b;
+  --bg-2: #0f0f12;
+  --card: #111114;
+  --card-2: #16161a;
+  --surface: rgba(255,255,255,0.025);
+  --surface-2: rgba(255,255,255,0.05);
 
   /* Texto */
-  --text: #f2f4f8;
-  --muted: #a3abb9;
-  --muted-2: #7c8596;
+  --text: #ededef;
+  --muted: #8b8b94;
+  --muted-2: #7a7a84;
 
-  /* Acentos: lima es el protagonista; cian y violeta acompañan */
-  --accent: #8b5cf6;
+  /* Un acento protagonista (lima ácido). Cian solo para el laboratorio. */
+  --accent: #c8f031;
   --accent-2: #22d3ee;
-  --accent-3: #d6ff4f;
-  --on-accent: #08090d;
-  --ok: #4ade80;
+  --accent-3: #c8f031;
+  --on-accent: #0b0b0c;
+  --ok: #c8f031;
 
   /* Líneas */
-  --line: rgba(255,255,255,0.09);
+  --line: rgba(255,255,255,0.08);
   --line-2: rgba(255,255,255,0.06);
-  --line-soft: rgba(255,255,255,0.065);
+  --line-soft: rgba(255,255,255,0.07);
+  --line-strong: rgba(255,255,255,0.14);
 
   /* Escala */
-  --radius-xl: 28px;
-  --radius-lg: 22px;
-  --radius-md: 16px;
-  --radius-sm: 12px;
-  --shadow: 0 24px 60px rgba(0,0,0,0.32);
-  --container: 1200px;
-  --gutter: clamp(16px, 4vw, 32px);
-  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --radius-xl: 18px;
+  --radius-lg: 14px;
+  --radius-md: 12px;
+  --radius-sm: 10px;
+  --shadow: 0 20px 50px rgba(0,0,0,0.35);
+  --container: 1180px;
+  --gutter: clamp(16px, 4vw, 40px);
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
   /* Tipografía */
   --f-display: "Space Grotesk", system-ui, sans-serif;
-  --f-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-body: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", monospace;
 
   color-scheme: dark;
 }
