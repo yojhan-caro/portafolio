@@ -54,7 +54,7 @@ También sirve la extensión Live Server de VS Code, abriendo `dist/index.html`.
 
 ## 4. Publicar gratis (Vercel, recomendado)
 
-1. Sube la carpeta `portafolio-v3` a un repo nuevo en github.com/yojhanfuruya (el `.gitignore` ya excluye `node_modules`).
+1. Sube la carpeta `portafolio-v3` a un repo nuevo en github.com/yojhan-caro (el `.gitignore` ya excluye `node_modules`).
 2. En vercel.com → Add New → Project → elige el repo.
    - Build Command: `npm run build`
    - Output Directory: `dist`

@@ -6,7 +6,7 @@ export const SITIO = {
   ubicacion: 'Viña del Mar, Chile',
   email: 'yojhancaro0@gmail.com',
   linkedin: 'https://www.linkedin.com/in/yojhanfuruya',
-  github: 'https://github.com/yojhanfuruya',
+  github: 'https://github.com/yojhan-caro',
   instagram: 'https://www.instagram.com/__yojhansin',
   instagramUser: '@__yojhansin',
 
