@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="es" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Drake Experience — Yojhan Furuya</title>
+<meta name="description" content="Sitio tipo fan page de Drake, desarrollado en WordPress con WooCommerce para la tienda de merchandising, como examen integrador de Lenguaje de Programación…">
+<meta name="theme-color" content="#08090d">
+<meta name="author" content="Yojhan Furuya">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CL">
+<meta property="og:title" content="Drake Experience — Yojhan Furuya">
+<meta property="og:description" content="Sitio tipo fan page de Drake, desarrollado en WordPress con WooCommerce para la tienda de merchandising, como examen integrador de Lenguaje de Programación…">
+
+
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="../../assets/css/main.css?v=mvy5h96l">
+<script>
+/* Antes de pintar: activa animaciones, recuerda la posición del cursor
+   entre páginas y, si falta una imagen local, la toma del sitio antiguo. */
+(function(d,w){
+  d.documentElement.classList.add('js');
+  try{ w.__pmCursorInit = w.__pmCursorLast = JSON.parse(sessionStorage.getItem('pmCursorPos')||'null'); }catch(e){}
+  w.addEventListener('mousemove',function(e){ w.__pmCursorLast={x:e.clientX,y:e.clientY}; try{sessionStorage.setItem('pmCursorPos',JSON.stringify(w.__pmCursorLast));}catch(_){} },{passive:true});
+  var REMOTO="https://yofuruya.laboratoriodiseno.cl/wp-content/";
+  if(REMOTO) w.addEventListener('error',function(e){
+    var t=e.target; if(!t||!/^(IMG|SOURCE|VIDEO)$/.test(t.tagName)) return;
+    var s=t.getAttribute('src')||''; var m=s.match(/assets\/(uploads\/.*)$/);
+    if(m){ t.setAttribute('src', REMOTO+m[1]); if(t.tagName==='SOURCE'&&t.parentNode.load) t.parentNode.load(); }
+  },true);
+})(document,window);
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"CreativeWork","name":"Drake Experience","description":"Sitio tipo fan page de Drake, desarrollado en WordPress con WooCommerce para la tienda de merchandising, como examen integrador de Lenguaje de Programación y Administración de Contenidos.","author":{"@type":"Person","name":"Yojhan Furuya"},"keywords":"WordPress, WooCommerce, PHP, MySQL, JavaScript, jQuery, Bootstrap","dateCreated":"2025"}</script>
+</head>
+<body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+<div id="cursor-blob" aria-hidden="true"><svg viewBox="0 0 100 100"><path class="blob-path" d="M50,20 C65,15 80,30 82,50 C84,70 70,85 50,83 C30,81 16,68 18,50 C20,32 35,25 50,20Z"/></svg></div>
+<script>(function(){var p=window.__pmCursorInit,el=document.getElementById('cursor-blob');if(p&&el){el.style.left=p.x+'px';el.style.top=p.y+'px';el.style.opacity='1';}})();</script>
+
+<input type="checkbox" id="menu-toggle" aria-hidden="true" tabindex="-1">
+<div class="mobile-topbar">
+  <a href="../../" class="mobile-topbar-brand"><span class="brand-mark">Y</span> Yojhan Furuya</a>
+  <label for="menu-toggle" class="toggle-hamburguesa" role="button" tabindex="0" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="menu-lateral"><span></span><span></span><span></span></label>
+</div>
+<label for="menu-toggle" class="menu-overlay" aria-hidden="true"></label>
+<nav class="menu-lateral" id="menu-lateral" aria-label="Menú móvil" aria-hidden="true">
+  <div class="menu-lateral-header">
+    <span class="menu-lateral-brand"><span class="brand-mark">Y</span> Yojhan Furuya</span>
+    <label for="menu-toggle" class="menu-lateral-close" role="button" tabindex="0" aria-label="Cerrar menú"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#x-lg"/></svg></i></label>
+  </div>
+  <div class="menu-lateral-links">
+    <a href="../../" class="menu-link-card"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#house-door-fill"/></svg></i> <span>Inicio</span></a>
+    <a href="../../sobre-mi/" class="menu-link-card"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#person-fill"/></svg></i> <span>Sobre mí</span></a>
+    <a href="../../proyectos/" class="menu-link-card active" aria-current="page"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#grid-1x2-fill"/></svg></i> <span>Proyectos</span></a>
+    <a href="../../#contacto" class="menu-link-card"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#chat-dots-fill"/></svg></i> <span>Contacto</span></a>
+  </div>
+  <div class="menu-lateral-footer"><a href="mailto:yojhancaro0@gmail.com" class="menu-lateral-mail"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#envelope-fill"/></svg></i> yojhancaro0@gmail.com</a></div>
+</nav>
+
+<header class="nav-container" id="nav">
+  <a href="../../" class="nav-brand"><span class="brand-mark">Y</span> <span class="nav-brand-name">Yojhan Furuya</span></a>
+  <nav class="nav-btns" aria-label="Navegación principal" data-page="proyectos">
+    <div class="blob" id="blob"></div>
+    <a href="../../" class="nav-btn">Inicio</a>
+    <a href="../../sobre-mi/" class="nav-btn">Sobre mí</a>
+    <a href="../../proyectos/" class="nav-btn active" aria-current="page">Proyectos</a>
+    <a href="../../#contacto" class="nav-btn">Contacto</a>
+  </nav>
+  <label for="contact-float-toggle" class="nav-disponible" role="button" tabindex="0" aria-expanded="false" aria-controls="contact-panel"><span class="nav-disponible-dot"></span> Hablemos</label>
+</header>
+
+<main id="contenido" class="single-proyecto">
+
+<button id="back-top-proyecto" class="back-top-proyecto" type="button" aria-label="Volver arriba"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#arrow-up"/></svg></i></button>
+
+<section class="project-hero">
+  <div class="container-custom">
+    
+    <div class="breadcrumb-holder" data-aos="fade-up"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio"},{"@type":"ListItem","position":2,"name":"Proyectos"},{"@type":"ListItem","position":3,"name":"Drake Experience"}]}</script><nav class="breadcrumb-row" aria-label="Migas de pan"><a href="../../"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#house-door-fill"/></svg></i> Inicio</a><span class="breadcrumb-sep" aria-hidden="true">/</span><a href="../../proyectos/">Proyectos</a><span class="breadcrumb-sep" aria-hidden="true">/</span><span class="breadcrumb-current" aria-current="page">Drake Experience</span></nav></div>
+    <div class="hero-grid">
+      <div data-aos="fade-up"><div class="gallery-wrap">
+  <div class="gallery-main">
+    <img src="../../assets/uploads/2026/06/drake1-1.png" alt="Drake Experience" width="1600" height="1000" decoding="async">
+    <span class="gallery-badge"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#mortarboard-fill"/></svg></i> Trabajo de la U</span>
+    <button class="gallery-expand" type="button" aria-label="Ver en pantalla completa"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#arrows-fullscreen"/></svg></i></button>
+    <span class="gallery-counter" aria-live="polite">1 / 3</span>
+    <button class="gallery-arrow prev" type="button" aria-label="Imagen anterior"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#chevron-left"/></svg></i></button>
+    <button class="gallery-arrow next" type="button" aria-label="Imagen siguiente"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#chevron-right"/></svg></i></button>
+  </div>
+  <div class="gallery-thumbs"><button type="button" class="active" data-src="../../assets/uploads/2026/06/drake1-1.png" aria-label="Ver imagen 1"><img src="../../assets/uploads/2026/06/drake1-1.png" alt="" loading="lazy" decoding="async"></button><button type="button" data-src="../../assets/uploads/2026/06/drake1-2.png" aria-label="Ver imagen 2"><img src="../../assets/uploads/2026/06/drake1-2.png" alt="" loading="lazy" decoding="async"></button><button type="button" data-src="../../assets/uploads/2026/06/drake1-3.png" aria-label="Ver imagen 3"><img src="../../assets/uploads/2026/06/drake1-3.png" alt="" loading="lazy" decoding="async"></button></div>
+</div></div>
+      <aside class="info-panel" data-aos="fade-left" data-aos-delay="100">
+        <div class="info-card">
+          <div class="project-kicker">WordPress · WooCommerce</div>
+          <h1 class="project-title">Drake Experience</h1>
+          <p class="project-desc">Sitio tipo fan page de Drake, desarrollado en WordPress con WooCommerce para la tienda de merchandising, como examen integrador de Lenguaje de Programación y Administración de Contenidos.</p>
+          <div class="tags"><span>WordPress</span><span>WooCommerce</span><span>PHP</span><span>MySQL</span><span>JavaScript</span><span>jQuery</span><span>Bootstrap</span></div>
+        </div>
+        <div class="meta-grid">
+          <div class="meta-item"><small>Categoría</small><span>Trabajo académico</span></div>
+          <div class="meta-item"><small>Año</small><span>2025</span></div>
+          <div class="meta-item"><small>Rol</small><span>Diseño &amp; Desarrollo</span></div>
+          <div class="meta-item"><small>Estado</small><span class="meta-status-dot">Archivado</span></div>
+        </div>
+        <div class="btn-row">
+          
+          
+          <button class="btn-ghost" id="copy-link-btn" type="button"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#link-45deg"/></svg></i> Copiar enlace del proyecto</button>
+          <a href="../../proyectos/" class="btn-ghost"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#arrow-left"/></svg></i> Volver a proyectos</a>
+        </div>
+      </aside>
+    </div>
+    <div class="stats-strip" data-aos="fade-up" data-aos-delay="120"><div class="stat-card"><strong data-count="2" data-suffix="">2</strong><span>ramos integrados en un solo examen</span></div><div class="stat-card"><strong data-count="6" data-suffix="">6</strong><span>secciones principales del sitio</span></div><div class="stat-card"><strong data-count="1" data-suffix="">1</strong><span>tienda funcional con WooCommerce</span></div></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container-custom">
+    <span class="eyebrow" data-aos="fade-up">Contexto del proyecto</span>
+    <h2 class="section-title section-title--space-lg" data-aos="fade-up">Problema, solución y resultado.</h2>
+    <div class="detail-grid">
+      <div class="detail-block purple" data-aos="fade-up"><div class="block-icon"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#exclamation-circle-fill"/></svg></i></div><h3>El problema</h3><p>El examen integraba dos ramos — Lenguaje de Programación y Administración de Contenidos — y pedía construir un sitio completo usando WordPress como CMS, con WooCommerce para una tienda funcional, personalización de plantillas y JavaScript para conectar la interfaz con el sitio.</p></div>
+      <div class="detail-block lime" data-aos="fade-up" data-aos-delay="60"><div class="block-icon"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#lightbulb-fill"/></svg></i></div><h3>La solución</h3><p>Un sitio de varias secciones sobre Drake (inicio, biografía, discografía, eventos, blog y tienda) construido sobre WordPress, con WooCommerce gestionando el catálogo y flujo de compra de la tienda de merchandising. Las plantillas se personalizaron a nivel visual para alejarse del diseño por defecto, y JavaScript se usó para conectar la interfaz con el contenido de WordPress y WooCommerce: peticiones fetch, carga dinámica de contenido y comportamiento interactivo en cada sección.</p></div>
+      <div class="detail-block" data-aos="fade-up"><div class="block-icon"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#graph-up-arrow"/></svg></i></div><h3>El resultado</h3><ul><li>Sitio funcional con tienda integrada en WooCommerce</li><li>Plantillas de WordPress personalizadas a nivel visual</li><li>Base de datos en MySQL gestionada a través de WordPress</li><li>Examen aprobado para ambos ramos</li></ul></div>
+      <div class="detail-block teal" data-aos="fade-up" data-aos-delay="60"><div class="block-icon"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#trophy-fill"/></svg></i></div><h3>Qué demuestra</h3><ul><li>Instalación, configuración y personalización de un sitio en WordPress</li><li>Integración de WooCommerce, incluyendo catálogo y pasarela de pago</li><li>Uso de JavaScript para conectar la interfaz con el CMS (fetch, llamados, render dinámico)</li><li>Manejo de bases de datos MySQL en el contexto de un CMS</li><li>Trabajo con plugins dentro del ecosistema de WordPress</li></ul></div>
+    </div>
+  </div>
+</section>
+<section class="section section--no-top">
+  <div class="container-custom">
+    <span class="eyebrow" data-aos="fade-up">Funcionalidades</span>
+    <h2 class="section-title section-title--space-lg" data-aos="fade-up">Qué hace cada módulo.</h2>
+    <div class="feature-list" data-aos="fade-up">
+      <div class="feature-item"><div class="feature-num">01</div><div class="feature-copy"><h4>Inicio</h4><p>Presentación tipo &quot;reproductor&quot; con canción destacada e imagen de fondo difuminada.</p></div></div>
+      <div class="feature-item"><div class="feature-num">02</div><div class="feature-copy"><h4>Acerca de</h4><p>Biografía con hitos por época, maquetada como plantilla personalizada de WordPress.</p></div></div>
+      <div class="feature-item"><div class="feature-num">03</div><div class="feature-copy"><h4>Discografía</h4><p>Sección con carruseles de canciones y álbumes, y playlists con tracklist desplegable.</p></div></div>
+      <div class="feature-item"><div class="feature-num">04</div><div class="feature-copy"><h4>Eventos</h4><p>Catálogo de tipos de entrada a conciertos, cada uno con su página de detalle.</p></div></div>
+      <div class="feature-item"><div class="feature-num">05</div><div class="feature-copy"><h4>Blog</h4><p>Noticias organizadas por categoría: lanzamientos, polémicas y moda.</p></div></div>
+      <div class="feature-item"><div class="feature-num">06</div><div class="feature-copy"><h4>Tienda</h4><p>Catálogo de merchandising gestionado con WooCommerce, incluyendo carrito y proceso de pago.</p></div></div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container-custom">
+    <div class="timeline-layout">
+      <div>
+        <span class="eyebrow" data-aos="fade-up">Metodología</span>
+        <h2 class="section-title section-title--space-lg" data-aos="fade-up">Cómo se construyó.</h2>
+        <div class="timeline timeline--blob" data-aos="fade-up">
+          <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-step">Fase 01</div><h4>Diseño de las secciones</h4><p>Se planificó el sitio en base a las distintas facetas del artista: biografía, discografía, eventos, blog y tienda, cada una como su propia plantilla.</p></div>
+          <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-step">Fase 02</div><h4>Instalación y configuración de WordPress</h4><p>Se instaló WordPress junto con WooCommerce, configurando la tienda, productos y proceso de compra para la sección de merchandising.</p></div>
+          <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-step">Fase 03</div><h4>Personalización de plantillas</h4><p>Se intervinieron las plantillas por defecto de WordPress y WooCommerce para lograr un diseño propio, alejado de la apariencia estándar del CMS.</p></div>
+          <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-step">Fase 04</div><h4>Integración con JavaScript</h4><p>Se conectó la interfaz con el contenido de WordPress usando JavaScript: peticiones fetch, llamados dinámicos y renderizado de contenido en cada sección.</p></div>
+        </div>
+      </div>
+      <div data-aos="fade-left" data-aos-delay="100">
+        <span class="eyebrow">Stack técnico</span>
+        <h2 class="section-title section-title--space-md">Tecnologías usadas.</h2>
+        <div class="tech-grid"><div class="tech-card"><span>WordPress</span><small>CMS base del sitio</small></div><div class="tech-card"><span>WooCommerce</span><small>tienda y proceso de compra</small></div><div class="tech-card"><span>PHP</span><small>lógica del lado del servidor vía WordPress</small></div><div class="tech-card"><span>MySQL</span><small>base de datos del CMS</small></div><div class="tech-card"><span>JavaScript</span><small>fetch y comportamiento dinámico de la interfaz</small></div><div class="tech-card"><span>jQuery</span><small>manipulación del DOM e interacciones</small></div><div class="tech-card"><span>Bootstrap</span><small>maquetado y estilos base</small></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section section--no-top">
+  <div class="container-custom">
+    <span class="eyebrow" data-aos="fade-up">Próximos pasos</span>
+    <h2 class="section-title section-title--space-md" data-aos="fade-up">Mejoras futuras planeadas.</h2>
+    <div class="future-grid">
+      <div class="future-card" data-aos="fade-up"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#cloud-arrow-up-fill"/></svg></i><h4>Recuperar el respaldo del sitio</h4><p>El código fuente de la instalación en WordPress se perdió; queda pendiente reconstruirlo o migrarlo a un respaldo más seguro.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--no-top">
+  <div class="container-custom">
+    <span class="eyebrow" data-aos="fade-up">Más proyectos</span>
+    <h2 class="section-title section-title--space-lg" data-aos="fade-up">También podría interesarte.</h2>
+    <div class="related-grid">
+      <a href="../../proyectos/ale-ink/" class="related-card" data-aos="fade-up">
+        <div class="related-img"><img src="../../assets/uploads/2026/06/ale.ink_.jpg" alt="" loading="lazy" decoding="async" width="800" height="500"><span class="related-open"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#arrow-up-right"/></svg></i></span></div>
+        <div class="related-body"><div class="related-kicker">Sitio web · Estudio de tatuajes</div><h3>Ale.ink Estudio de tatuajes</h3></div>
+      </a>
+      <a href="../../proyectos/fascia/" class="related-card" data-aos="fade-up" data-aos-delay="60">
+        <div class="related-img"><img src="../../assets/uploads/2026/07/portada-1024x683.png" alt="" loading="lazy" decoding="async" width="800" height="500"><span class="related-open"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#arrow-up-right"/></svg></i></span></div>
+        <div class="related-body"><div class="related-kicker">Sistema web · Gestión deportiva</div><h3>Proyecto Fascia</h3></div>
+      </a>
+      <a href="../../proyectos/gym-prime/" class="related-card" data-aos="fade-up" data-aos-delay="120">
+        <div class="related-img"><img src="../../assets/uploads/2026/06/portada-gymprime.png" alt="" loading="lazy" decoding="async" width="800" height="500"><span class="related-open"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#arrow-up-right"/></svg></i></span></div>
+        <div class="related-body"><div class="related-kicker">Sistema web · Gimnasio</div><h3>GymPrime</h3></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contacto">
+  <div class="container-custom">
+    <div class="contact-panel" data-aos="zoom-in">
+      <span class="eyebrow">Contacto</span>
+      <h2 class="section-title">¿Quieres ver más detalles de este proyecto?</h2>
+      <p class="section-text">Puedo ampliar el caso con documentación, capturas adicionales, repositorio, decisiones técnicas y mejoras futuras.</p>
+      <div class="contact-actions">
+        <a href="mailto:yojhancaro0@gmail.com" class="btn-main">Escribirme <i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#send-fill"/></svg></i></a>
+        <a href="../../proyectos/" class="btn-ghost"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#arrow-left"/></svg></i> Ver todos los proyectos</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container-custom">
+    <div class="footer-top">
+      <div class="footer-col footer-col-brand">
+        <a href="../../" class="footer-logo"><span class="brand-mark">Y</span> Yojhan Furuya</a>
+        <p class="footer-tagline">Desarrollador Front-End enfocado en interfaces modernas, experiencias digitales cuidadas y detalles que marcan la diferencia.</p>
+        <span class="footer-badge"><span class="footer-badge-dot" aria-hidden="true"></span> Disponible para proyectos</span>
+      </div>
+      <nav class="footer-col" aria-label="Navegación del pie de página">
+        <h2 class="footer-heading">Navegación</h2>
+        <ul class="footer-nav">
+          <li><a href="../../">Inicio</a></li>
+          <li><a href="../../sobre-mi/">Sobre mí</a></li>
+          <li><a href="../../proyectos/">Proyectos</a></li>
+          <li><a href="../../experimentos/">Experimentos</a></li>
+          <li><a href="../../#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="footer-col">
+        <h2 class="footer-heading">Contacto</h2>
+        <ul class="footer-nav footer-contact">
+          <li><a href="mailto:yojhancaro0@gmail.com"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#envelope-fill"/></svg></i> yojhancaro0@gmail.com</a></li>
+          <li><a href="https://www.linkedin.com/in/yojhanfuruya" target="_blank" rel="noopener"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#linkedin"/></svg></i> LinkedIn</a></li>
+          <li><a href="https://github.com/yojhanfuruya" target="_blank" rel="noopener"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#github"/></svg></i> GitHub</a></li>
+          <li><a href="https://www.instagram.com/__yojhansin" target="_blank" rel="noopener"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#instagram"/></svg></i> Instagram</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-col-cta">
+        <h2 class="footer-heading">¿Tienes un proyecto?</h2>
+        <p>Hablemos de cómo puedo ayudarte a construirlo.</p>
+        <a href="mailto:yojhancaro0@gmail.com" class="footer-cta-btn">Escribirme <i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#arrow-up-right"/></svg></i></a>
+        
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">&copy; 2026 Yojhan Furuya &middot; Todos los derechos reservados.</span>
+      <span class="footer-made">Diseñado y desarrollado por mí <i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#heart-fill"/></svg></i></span>
+      <button class="footer-top-btn" type="button" aria-label="Volver arriba">Arriba <i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#arrow-up"/></svg></i></button>
+    </div>
+  </div>
+</footer>
+
+<input type="checkbox" id="contact-float-toggle" aria-hidden="true" tabindex="-1">
+<label for="contact-float-toggle" class="contact-float-trigger" role="button" tabindex="0" aria-label="Abrir panel de contacto" aria-expanded="false" aria-controls="contact-panel"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#send-fill"/></svg></i></label>
+<div class="contact-float-curva"></div>
+<aside class="contact-float-panel" id="contact-panel" aria-label="Panel de contacto" aria-hidden="true">
+  <div class="contact-float-content">
+    <label for="contact-float-toggle" class="contact-float-close" role="button" tabindex="0" aria-label="Cerrar panel"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#x-lg"/></svg></i></label>
+    <span class="contact-float-badge"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#stars"/></svg></i> Disponible para proyectos</span>
+    <h2 class="contact-float-title">Yojhan Furuya</h2>
+    <p class="contact-float-role">Desarrollador &amp; Diseñador Web</p>
+    <p class="contact-float-text">Disponible para trabajo, proyectos, colaboraciones y freelance.</p>
+    <div class="contact-float-links">
+      <a href="mailto:yojhancaro0@gmail.com"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#envelope-fill"/></svg></i> yojhancaro0@gmail.com</a>
+      <a href="https://www.linkedin.com/in/yojhanfuruya" target="_blank" rel="noopener"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#linkedin"/></svg></i> LinkedIn</a>
+      <a href="https://github.com/yojhanfuruya" target="_blank" rel="noopener"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#github"/></svg></i> GitHub</a>
+    </div>
+    <div class="contact-float-actions">
+      <a href="mailto:yojhancaro0@gmail.com" class="contact-float-btn-primary">Escribirme <i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#arrow-up-right"/></svg></i></a>
+      
+    </div>
+  </div>
+</aside>
+
+<script src="../../assets/js/main.js?v=mvy5h96l" defer></script>
+</body>
+</html>

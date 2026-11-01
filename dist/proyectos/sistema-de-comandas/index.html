@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="es" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sistema de Comandas — Yojhan Furuya</title>
+<meta name="description" content="Sistema de comandas multirrol para restaurantes con tres paneles independientes: garzón, cocina y administrador. Gestiona pedidos en tiempo real, historial,…">
+<meta name="theme-color" content="#08090d">
+<meta name="author" content="Yojhan Furuya">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CL">
+<meta property="og:title" content="Sistema de Comandas — Yojhan Furuya">
+<meta property="og:description" content="Sistema de comandas multirrol para restaurantes con tres paneles independientes: garzón, cocina y administrador. Gestiona pedidos en tiempo real, historial,…">
+
+
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="../../assets/css/main.css?v=mvy5h96l">
+<script>
+/* Antes de pintar: activa animaciones, recuerda la posición del cursor
+   entre páginas y, si falta una imagen local, la toma del sitio antiguo. */
+(function(d,w){
+  d.documentElement.classList.add('js');
+  try{ w.__pmCursorInit = w.__pmCursorLast = JSON.parse(sessionStorage.getItem('pmCursorPos')||'null'); }catch(e){}
+  w.addEventListener('mousemove',function(e){ w.__pmCursorLast={x:e.clientX,y:e.clientY}; try{sessionStorage.setItem('pmCursorPos',JSON.stringify(w.__pmCursorLast));}catch(_){} },{passive:true});
+  var REMOTO="https://yofuruya.laboratoriodiseno.cl/wp-content/";
+  if(REMOTO) w.addEventListener('error',function(e){
+    var t=e.target; if(!t||!/^(IMG|SOURCE|VIDEO)$/.test(t.tagName)) return;
+    var s=t.getAttribute('src')||''; var m=s.match(/assets\/(uploads\/.*)$/);
+    if(m){ t.setAttribute('src', REMOTO+m[1]); if(t.tagName==='SOURCE'&&t.parentNode.load) t.parentNode.load(); }
+  },true);
+})(document,window);
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"CreativeWork","name":"Sistema de Comandas","description":"Sistema de comandas multirrol para restaurantes con tres paneles independientes: garzón, cocina y administrador. Gestiona pedidos en tiempo real, historial, stock, personal y reportes desde una sola plataforma con login unificado por roles.","author":{"@type":"Person","name":"Yojhan Furuya"},"keywords":"PHP, MySQL, JavaScript, HTML, CSS, REST API","dateCreated":"2025"}</script>
+</head>
+<body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+<div id="cursor-blob" aria-hidden="true"><svg viewBox="0 0 100 100"><path class="blob-path" d="M50,20 C65,15 80,30 82,50 C84,70 70,85 50,83 C30,81 16,68 18,50 C20,32 35,25 50,20Z"/></svg></div>
+<script>(function(){var p=window.__pmCursorInit,el=document.getElementById('cursor-blob');if(p&&el){el.style.left=p.x+'px';el.style.top=p.y+'px';el.style.opacity='1';}})();</script>
+
+<input type="checkbox" id="menu-toggle" aria-hidden="true" tabindex="-1">
+<div class="mobile-topbar">
+  <a href="../../" class="mobile-topbar-brand"><span class="brand-mark">Y</span> Yojhan Furuya</a>
+  <label for="menu-toggle" class="toggle-hamburguesa" role="button" tabindex="0" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="menu-lateral"><span></span><span></span><span></span></label>
+</div>
+<label for="menu-toggle" class="menu-overlay" aria-hidden="true"></label>
+<nav class="menu-lateral" id="menu-lateral" aria-label="Menú móvil" aria-hidden="true">
+  <div class="menu-lateral-header">
+    <span class="menu-lateral-brand"><span class="brand-mark">Y</span> Yojhan Furuya</span>
+    <label for="menu-toggle" class="menu-lateral-close" role="button" tabindex="0" aria-label="Cerrar menú"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#x-lg"/></svg></i></label>
+  </div>
+  <div class="menu-lateral-links">
+    <a href="../../" class="menu-link-card"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#house-door-fill"/></svg></i> <span>Inicio</span></a>
+    <a href="../../sobre-mi/" class="menu-link-card"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#person-fill"/></svg></i> <span>Sobre mí</span></a>
+    <a href="../../proyectos/" class="menu-link-card active" aria-current="page"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#grid-1x2-fill"/></svg></i> <span>Proyectos</span></a>
+    <a href="../../#contacto" class="menu-link-card"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#chat-dots-fill"/></svg></i> <span>Contacto</span></a>
+  </div>
+  <div class="menu-lateral-footer"><a href="mailto:yojhancaro0@gmail.com" class="menu-lateral-mail"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#envelope-fill"/></svg></i> yojhancaro0@gmail.com</a></div>
+</nav>
+
+<header class="nav-container" id="nav">
+  <a href="../../" class="nav-brand"><span class="brand-mark">Y</span> <span class="nav-brand-name">Yojhan Furuya</span></a>
+  <nav class="nav-btns" aria-label="Navegación principal" data-page="proyectos">
+    <div class="blob" id="blob"></div>
+    <a href="../../" class="nav-btn">Inicio</a>
+    <a href="../../sobre-mi/" class="nav-btn">Sobre mí</a>
+    <a href="../../proyectos/" class="nav-btn active" aria-current="page">Proyectos</a>
+    <a href="../../#contacto" class="nav-btn">Contacto</a>
+  </nav>
+  <label for="contact-float-toggle" class="nav-disponible" role="button" tabindex="0" aria-expanded="false" aria-controls="contact-panel"><span class="nav-disponible-dot"></span> Hablemos</label>
+</header>
+
+<main id="contenido" class="single-proyecto">
+
+<button id="back-top-proyecto" class="back-top-proyecto" type="button" aria-label="Volver arriba"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#arrow-up"/></svg></i></button>
+
+<section class="project-hero">
+  <div class="container-custom">
+    
+    <div class="breadcrumb-holder" data-aos="fade-up"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio"},{"@type":"ListItem","position":2,"name":"Proyectos"},{"@type":"ListItem","position":3,"name":"Sistema de Comandas"}]}</script><nav class="breadcrumb-row" aria-label="Migas de pan"><a href="../../"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#house-door-fill"/></svg></i> Inicio</a><span class="breadcrumb-sep" aria-hidden="true">/</span><a href="../../proyectos/">Proyectos</a><span class="breadcrumb-sep" aria-hidden="true">/</span><span class="breadcrumb-current" aria-current="page">Sistema de Comandas</span></nav></div>
+    <div class="hero-grid">
+      <div data-aos="fade-up"><div class="gallery-wrap">
+  <div class="gallery-main">
+    <img src="../../assets/uploads/2026/07/5b9e926b-052e-4389-a838-56a008209eb7.jpeg" alt="Sistema de Comandas" width="1600" height="1000" decoding="async">
+    <span class="gallery-badge"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#rocket-takeoff-fill"/></svg></i> Proyecto propio</span>
+    <button class="gallery-expand" type="button" aria-label="Ver en pantalla completa"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#arrows-fullscreen"/></svg></i></button>
+    <span class="gallery-counter" aria-live="polite">1 / 7</span>
+    <button class="gallery-arrow prev" type="button" aria-label="Imagen anterior"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#chevron-left"/></svg></i></button>
+    <button class="gallery-arrow next" type="button" aria-label="Imagen siguiente"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#chevron-right"/></svg></i></button>
+  </div>
+  <div class="gallery-thumbs"><button type="button" class="active" data-src="../../assets/uploads/2026/07/5b9e926b-052e-4389-a838-56a008209eb7.jpeg" aria-label="Ver imagen 1"><img src="../../assets/uploads/2026/07/5b9e926b-052e-4389-a838-56a008209eb7.jpeg" alt="" loading="lazy" decoding="async"></button><button type="button" data-src="../../assets/uploads/2026/07/Gemini_Generated_Image_olz0k8olz0k8olz0.png" aria-label="Ver imagen 2"><img src="../../assets/uploads/2026/07/Gemini_Generated_Image_olz0k8olz0k8olz0.png" alt="" loading="lazy" decoding="async"></button><button type="button" data-src="../../assets/uploads/2026/07/Captura-de-pantalla-2026-07-12-140209.png" aria-label="Ver imagen 3"><img src="../../assets/uploads/2026/07/Captura-de-pantalla-2026-07-12-140209.png" alt="" loading="lazy" decoding="async"></button><button type="button" data-src="../../assets/uploads/2026/07/Captura-de-pantalla-2026-07-12-140258.png" aria-label="Ver imagen 4"><img src="../../assets/uploads/2026/07/Captura-de-pantalla-2026-07-12-140258.png" alt="" loading="lazy" decoding="async"></button><button type="button" data-src="../../assets/uploads/2026/07/Captura-de-pantalla-2026-07-12-140316.png" aria-label="Ver imagen 5"><img src="../../assets/uploads/2026/07/Captura-de-pantalla-2026-07-12-140316.png" alt="" loading="lazy" decoding="async"></button><button type="button" data-src="../../assets/uploads/2026/07/Captura-de-pantalla-2026-07-12-140324.png" aria-label="Ver imagen 6"><img src="../../assets/uploads/2026/07/Captura-de-pantalla-2026-07-12-140324.png" alt="" loading="lazy" decoding="async"></button><button type="button" data-src="../../assets/uploads/2026/07/screencapture-localhost-pulso-saas-saas-v5-garzon-index-php-2026-07-12-14_08_36.png" aria-label="Ver imagen 7"><img src="../../assets/uploads/2026/07/screencapture-localhost-pulso-saas-saas-v5-garzon-index-php-2026-07-12-14_08_36.png" alt="" loading="lazy" decoding="async"></button></div>
+</div></div>
+      <aside class="info-panel" data-aos="fade-left" data-aos-delay="100">
+        <div class="info-card">
+          <div class="project-kicker">Sistema web · Restaurante</div>
+          <h1 class="project-title">Sistema de Comandas</h1>
+          <p class="project-desc">Sistema de comandas multirrol para restaurantes con tres paneles independientes: garzón, cocina y administrador. Gestiona pedidos en tiempo real, historial, stock, personal y reportes desde una sola plataforma con login unificado por roles.</p>
+          <div class="tags"><span>PHP</span><span>MySQL</span><span>JavaScript</span><span>HTML</span><span>CSS</span><span>REST API</span></div>
+        </div>
+        <div class="meta-grid">
+          <div class="meta-item"><small>Categoría</small><span>Proyecto personal</span></div>
+          <div class="meta-item"><small>Año</small><span>2025 – 2026</span></div>
+          <div class="meta-item"><small>Rol</small><span>Diseño &amp; Desarrollo</span></div>
+          <div class="meta-item"><small>Estado</small><span class="meta-status-dot">En implementación</span></div>
+        </div>
+        <div class="btn-row">
+          <a href="#demo" class="btn-main">Ver demo en video <i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#play-circle-fill"/></svg></i></a>
+          
+          <button class="btn-ghost" id="copy-link-btn" type="button"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#link-45deg"/></svg></i> Copiar enlace del proyecto</button>
+          <a href="../../proyectos/" class="btn-ghost"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#arrow-left"/></svg></i> Volver a proyectos</a>
+        </div>
+      </aside>
+    </div>
+    <div class="stats-strip" data-aos="fade-up" data-aos-delay="120"><div class="stat-card"><strong data-count="3" data-suffix="">3</strong><span>paneles independientes por rol</span></div><div class="stat-card"><strong data-count="35" data-suffix="+">35+</strong><span>endpoints REST en PHP</span></div><div class="stat-card"><strong data-count="4" data-suffix="">4</strong><span>segundos de actualización en tiempo real</span></div><div class="stat-card"><strong data-count="7" data-suffix="">7</strong><span>tablas relacionales en MySQL</span></div></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container-custom">
+    <span class="eyebrow" data-aos="fade-up">Contexto del proyecto</span>
+    <h2 class="section-title section-title--space-lg" data-aos="fade-up">Problema, solución y resultado.</h2>
+    <div class="detail-grid">
+      <div class="detail-block purple" data-aos="fade-up"><div class="block-icon"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#exclamation-circle-fill"/></svg></i></div><h3>El problema</h3><p>Los restaurantes gestionan sus pedidos de forma manual: comandas en papel, comunicación verbal entre garzón y cocina, y cierres de caja sin registro. Esto genera errores, pérdida de información y tiempos muertos que afectan directamente la operación y la experiencia del cliente.</p></div>
+      <div class="detail-block lime" data-aos="fade-up" data-aos-delay="60"><div class="block-icon"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#lightbulb-fill"/></svg></i></div><h3>La solución</h3><p>Un sistema web multirrol con login unificado que redirige a cada usuario a su panel según su rol. El garzón toma pedidos con detalle por producto, cantidad y nota; la cocina los recibe en tiempo real con timers de alerta; y el administrador accede a un panel completo con dashboard de KPIs, reportes, historial, gestión de menú, stock y personal.</p></div>
+      <div class="detail-block" data-aos="fade-up"><div class="block-icon"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#graph-up-arrow"/></svg></i></div><h3>El resultado</h3><ul><li>Sistema operativo con 3 paneles independientes para garzón, cocina y administrador</li><li>Login unificado con 4 roles: garzón, cocina, cajero y administrador</li><li>Dashboard con KPIs en tiempo real: pedidos del día, tiempo promedio de preparación, mesas activas y alertas de stock</li><li>Reportes filtrables por fecha con análisis de pedidos por día, horas pico, productos top y rendimiento por garzón</li><li>Gestión completa de menú con categorías, productos, disponibilidad y stock</li><li>Historial exportable en CSV con tiempos de apertura, cierre y preparación por mesa</li></ul></div>
+      <div class="detail-block teal" data-aos="fade-up" data-aos-delay="60"><div class="block-icon"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#trophy-fill"/></svg></i></div><h3>Qué demuestra</h3><ul><li>Arquitectura multirrol con autenticación PHP por sesión</li><li>Backend con más de 35 endpoints REST en PHP</li><li>Diseño de base de datos relacional con 7 tablas e índices de rendimiento</li><li>UX funcional adaptada a cada perfil de usuario: operativo, productivo y analítico</li><li>Pensamiento de producto end-to-end: desde el flujo de cocina hasta los reportes del dueño</li><li>Sistema preparado para crecer a múltiples sucursales</li></ul></div>
+    </div>
+  </div>
+</section>
+<section class="section section--no-top">
+  <div class="container-custom">
+    <span class="eyebrow" data-aos="fade-up">Funcionalidades</span>
+    <h2 class="section-title section-title--space-lg" data-aos="fade-up">Qué hace cada módulo.</h2>
+    <div class="feature-list" data-aos="fade-up">
+      <div class="feature-item"><div class="feature-num">01</div><div class="feature-copy"><h4>Login unificado</h4><p>Pantalla de acceso con selector de perfil (Admin, Garzón, Cocina). Autentica por PIN o contraseña y redirige al panel correspondiente según el rol de sesión.</p></div><span class="feature-badge badge-lime">index.php</span></div>
+      <div class="feature-item"><div class="feature-num">02</div><div class="feature-copy"><h4>Panel Garzón</h4><p>Mapa visual del salón con 20 mesas y estados en tiempo real. Permite abrir mesa, tomar pedido con detalle por producto, cantidad y nota, ver timer de mesa, marcar platos como sirviendo y liberar la mesa al finalizar.</p></div><span class="feature-badge badge-lime">garzon/index.php</span></div>
+      <div class="feature-item"><div class="feature-num">03</div><div class="feature-copy"><h4>Panel Cocina</h4><p>Tarjetas de comandas con actualización automática. Muestra estado (en espera / preparando), timer por tarjeta con alerta en ámbar a los 8 minutos y rojo a los 15, badge de nuevas órdenes con sonido, e historial del turno.</p></div><span class="feature-badge badge-lime">cocina/index.php</span></div>
+      <div class="feature-item"><div class="feature-num">04</div><div class="feature-copy"><h4>Dashboard Admin — KPIs en tiempo real</h4><p>Vista operativa con auto-actualización cada 8 segundos. Muestra pedidos del día, platos despachados, tiempo promedio de preparación, mesas activas, garzón más activo, alertas de stock bajo, pedidos de la semana y del mes, y gráfico de pedidos por hora.</p></div><span class="feature-badge badge-lime">admin/index.php</span></div>
+      <div class="feature-item"><div class="feature-num">05</div><div class="feature-copy"><h4>Mapa del salón — Admin</h4><p>Vista de administrador del salón con estado de cada mesa: libre, ocupada, preparando, lista y sirviendo. Incluye resumen de ocupación y pedidos activos en cocina.</p></div><span class="feature-badge badge-lime">admin/index.php</span></div>
+      <div class="feature-item"><div class="feature-num">06</div><div class="feature-copy"><h4>Monitor de Cocina — Admin</h4><p>Tabla en tiempo real con el estado de todos los pedidos activos: mesa, ítems, hora de entrada y estado actual.</p></div><span class="feature-badge badge-lime">admin/index.php</span></div>
+      <div class="feature-item"><div class="feature-num">07</div><div class="feature-copy"><h4>Reportes</h4><p>Análisis filtrable por rango de fechas. Incluye pedidos por día, horas pico, top productos de la semana y rendimiento por garzón con tiempo promedio.</p></div><span class="feature-badge badge-lime">admin/index.php</span></div>
+      <div class="feature-item"><div class="feature-num">08</div><div class="feature-copy"><h4>Historial</h4><p>Registro completo de pedidos completados con mesa, garzón, ítems, apertura, cierre, tiempo de preparación y método de pago. Exportable a CSV.</p></div><span class="feature-badge badge-lime">admin/index.php</span></div>
+      <div class="feature-item"><div class="feature-num">09</div><div class="feature-copy"><h4>Gestión de Menú — Categorías y Productos</h4><p>Alta, edición y eliminación de categorías con orden personalizable. Alta, baja y disponibilidad de productos con filtros por estado (disponible / agotado).</p></div><span class="feature-badge badge-lime">admin/index.php</span></div>
+      <div class="feature-item"><div class="feature-num">10</div><div class="feature-copy"><h4>Control de Stock</h4><p>Inventario de insumos con cantidad actual, mínimo, costo unitario y alertas de stock bajo. Alta, edición y eliminación de insumos por categoría y unidad.</p></div><span class="feature-badge badge-lime">admin/index.php</span></div>
+      <div class="feature-item"><div class="feature-num">11</div><div class="feature-copy"><h4>Gestión de Personal</h4><p>Alta y baja de colaboradores con nombre, rol, teléfono y email. Registro de mesas atendidas por día y mes.</p></div><span class="feature-badge badge-lime">admin/index.php</span></div>
+      <div class="feature-item"><div class="feature-num">12</div><div class="feature-copy"><h4>Configuración del sistema</h4><p>Nombre del restaurante, número de mesas, moneda, IVA, horario de apertura y cierre. URL del logo que se propaga automáticamente a los tres paneles.</p></div><span class="feature-badge badge-lime">admin/index.php</span></div>
+    </div>
+  </div>
+</section>
+<section class="section section--no-top" id="demo">
+  <div class="container-custom">
+    <span class="eyebrow" data-aos="fade-up">Demo en video</span>
+    <h2 class="section-title section-title--space-md" data-aos="fade-up">El sistema en acción.</h2>
+    <div class="video-wrap" data-aos="zoom-in">
+      <video class="project-video" controls controlslist="nodownload" playsinline preload="none" poster="../../assets/uploads/2026/07/5b9e926b-052e-4389-a838-56a008209eb7.jpeg"><source src="../../assets/uploads/2026/07/Sin-titulo-1918-x-910-px-1-1.mp4" type="video/mp4"></video>
+      <div class="video-overlay" role="button" tabindex="0" aria-label="Reproducir demo"><div class="play-btn"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#play-fill"/></svg></i></div><p>Ver demo del sistema</p></div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container-custom">
+    <div class="timeline-layout">
+      <div>
+        <span class="eyebrow" data-aos="fade-up">Metodología</span>
+        <h2 class="section-title section-title--space-lg" data-aos="fade-up">Cómo se construyó.</h2>
+        <div class="timeline timeline--blob" data-aos="fade-up">
+          <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-step">Fase 01</div><h4>Análisis del flujo operativo</h4><p>Se estudió el flujo real de un restaurante: qué necesita ver el garzón en sala, qué recibe la cocina y qué datos requiere el administrador para gestionar el negocio.</p></div>
+          <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-step">Fase 02</div><h4>Modelado de base de datos</h4><p>Se diseñó el esquema relacional con tablas para mesas, pedidos, detalle de pedidos, historial, productos, categorías, stock y personal. Se agregaron índices de rendimiento sobre campos de búsqueda frecuente.</p></div>
+          <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-step">Fase 03</div><h4>Backend y API REST</h4><p>Se construyeron más de 35 endpoints en PHP organizados por dominio: mesas, pedidos, cocina, menú, categorías, stock, personal, KPIs, reportes e historial.</p></div>
+          <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-step">Fase 04</div><h4>Sistema de autenticación por roles</h4><p>Login unificado con PHP sessions que redirige a cada usuario a su panel según el rol: admin, cajero, garzón o cocina. Protección de rutas con auth_guard.php.</p></div>
+          <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-step">Fase 05</div><h4>Desarrollo de paneles por rol</h4><p>Cada panel fue diseñado para su usuario específico con la UX adecuada: mapa de mesas para el garzón, tarjetas con timers para cocina, y dashboard analítico para el administrador.</p></div>
+          <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-step">Fase 06</div><h4>Diseño del sistema visual</h4><p>Paleta oceánica unificada en los tres paneles con tokens CSS (variables), tipografía Inter para la interfaz y diseño responsive en los tres paneles.</p></div>
+        </div>
+      </div>
+      <div data-aos="fade-left" data-aos-delay="100">
+        <span class="eyebrow">Stack técnico</span>
+        <h2 class="section-title section-title--space-md">Tecnologías usadas.</h2>
+        <div class="tech-grid"><div class="tech-card"><span>PHP</span><small>backend completo, autenticación por sesión y lógica de negocio</small></div><div class="tech-card"><span>MySQL</span><small>base de datos relacional con 7 tablas e índices de rendimiento</small></div><div class="tech-card"><span>REST API</span><small>más de 35 endpoints organizados por dominio</small></div><div class="tech-card"><span>HTML5</span><small>estructura de los tres paneles</small></div><div class="tech-card"><span>CSS custom properties</span><small>sistema de tokens con paleta oceánica unificada</small></div><div class="tech-card"><span>JavaScript</span><small>interacción, polling de datos y renderizado dinámico de UI</small></div><div class="tech-card"><span>Inter</span><small>tipografía de interfaz</small></div><div class="tech-card"><span>JetBrains Mono</span><small>tipografía para datos numéricos y KPIs</small></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section section--no-top">
+  <div class="container-custom">
+    <span class="eyebrow" data-aos="fade-up">Próximos pasos</span>
+    <h2 class="section-title section-title--space-md" data-aos="fade-up">Mejoras futuras planeadas.</h2>
+    <div class="future-grid">
+      <div class="future-card" data-aos="fade-up"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#printer-fill"/></svg></i><h4>Impresión de ticket térmica</h4><p>Integración con impresoras térmicas para emitir ticket automático al cobrar una mesa.</p></div>
+      <div class="future-card" data-aos="fade-up" data-aos-delay="60"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#bell-fill"/></svg></i><h4>Notificaciones push</h4><p>Alertas en tiempo real cuando llega una comanda nueva, sin necesidad de mantener la ventana activa.</p></div>
+      <div class="future-card" data-aos="fade-up" data-aos-delay="120"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#bar-chart-fill"/></svg></i><h4>Dashboard con gráficos visuales</h4><p>Reportes con charts interactivos de ventas por día, hora pico y productos más pedidos.</p></div>
+      <div class="future-card" data-aos="fade-up"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#phone-fill"/></svg></i><h4>PWA para cocina</h4><p>Versión instalable en tablet o smartphone para que cocina no dependa de un computador fijo.</p></div>
+      <div class="future-card" data-aos="fade-up" data-aos-delay="60"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#buildings"/></svg></i><h4>Multi-sucursal</h4><p>Soporte para gestionar múltiples locales desde un mismo panel administrativo con datos separados por sucursal.</p></div>
+      <div class="future-card" data-aos="fade-up" data-aos-delay="120"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#credit-card-fill"/></svg></i><h4>Integración de pagos</h4><p>Flujo de cobro con splits de cuenta, propina y registro automático de método de pago en el historial.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--no-top">
+  <div class="container-custom">
+    <span class="eyebrow" data-aos="fade-up">Más proyectos</span>
+    <h2 class="section-title section-title--space-lg" data-aos="fade-up">También podría interesarte.</h2>
+    <div class="related-grid">
+      <a href="../../proyectos/todopsn-chile/" class="related-card" data-aos="fade-up">
+        <div class="related-img"><img src="../../assets/uploads/2026/06/portada-todopsnchile.png" alt="" loading="lazy" decoding="async" width="800" height="500"><span class="related-open"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#arrow-up-right"/></svg></i></span></div>
+        <div class="related-body"><div class="related-kicker">Ecommerce · Streaming</div><h3>TodoPSN Chile</h3></div>
+      </a>
+      <a href="../../proyectos/auditoria-de-accesibilidad-web/" class="related-card" data-aos="fade-up" data-aos-delay="60">
+        <div class="related-img"><img src="../../assets/uploads/2026/07/ce0954e4-6659-4d73-aed0-6896bca7d120-1024x683.png" alt="" loading="lazy" decoding="async" width="800" height="500"><span class="related-open"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#arrow-up-right"/></svg></i></span></div>
+        <div class="related-body"><div class="related-kicker">Auditoría UX · Accesibilidad Web</div><h3>Auditoría de accesibilidad web</h3></div>
+      </a>
+      <a href="../../proyectos/drake-experience/" class="related-card" data-aos="fade-up" data-aos-delay="120">
+        <div class="related-img"><img src="../../assets/uploads/2026/06/portada-drake.png" alt="" loading="lazy" decoding="async" width="800" height="500"><span class="related-open"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#arrow-up-right"/></svg></i></span></div>
+        <div class="related-body"><div class="related-kicker">WordPress · WooCommerce</div><h3>Drake Experience</h3></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contacto">
+  <div class="container-custom">
+    <div class="contact-panel" data-aos="zoom-in">
+      <span class="eyebrow">Contacto</span>
+      <h2 class="section-title">¿Quieres ver más detalles de este proyecto?</h2>
+      <p class="section-text">Puedo ampliar el caso con documentación, capturas adicionales, repositorio, decisiones técnicas y mejoras futuras.</p>
+      <div class="contact-actions">
+        <a href="mailto:yojhancaro0@gmail.com" class="btn-main">Escribirme <i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#send-fill"/></svg></i></a>
+        <a href="../../proyectos/" class="btn-ghost"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#arrow-left"/></svg></i> Ver todos los proyectos</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container-custom">
+    <div class="footer-top">
+      <div class="footer-col footer-col-brand">
+        <a href="../../" class="footer-logo"><span class="brand-mark">Y</span> Yojhan Furuya</a>
+        <p class="footer-tagline">Desarrollador Front-End enfocado en interfaces modernas, experiencias digitales cuidadas y detalles que marcan la diferencia.</p>
+        <span class="footer-badge"><span class="footer-badge-dot" aria-hidden="true"></span> Disponible para proyectos</span>
+      </div>
+      <nav class="footer-col" aria-label="Navegación del pie de página">
+        <h2 class="footer-heading">Navegación</h2>
+        <ul class="footer-nav">
+          <li><a href="../../">Inicio</a></li>
+          <li><a href="../../sobre-mi/">Sobre mí</a></li>
+          <li><a href="../../proyectos/">Proyectos</a></li>
+          <li><a href="../../experimentos/">Experimentos</a></li>
+          <li><a href="../../#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="footer-col">
+        <h2 class="footer-heading">Contacto</h2>
+        <ul class="footer-nav footer-contact">
+          <li><a href="mailto:yojhancaro0@gmail.com"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#envelope-fill"/></svg></i> yojhancaro0@gmail.com</a></li>
+          <li><a href="https://www.linkedin.com/in/yojhanfuruya" target="_blank" rel="noopener"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#linkedin"/></svg></i> LinkedIn</a></li>
+          <li><a href="https://github.com/yojhanfuruya" target="_blank" rel="noopener"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#github"/></svg></i> GitHub</a></li>
+          <li><a href="https://www.instagram.com/__yojhansin" target="_blank" rel="noopener"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#instagram"/></svg></i> Instagram</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-col-cta">
+        <h2 class="footer-heading">¿Tienes un proyecto?</h2>
+        <p>Hablemos de cómo puedo ayudarte a construirlo.</p>
+        <a href="mailto:yojhancaro0@gmail.com" class="footer-cta-btn">Escribirme <i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#arrow-up-right"/></svg></i></a>
+        
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">&copy; 2026 Yojhan Furuya &middot; Todos los derechos reservados.</span>
+      <span class="footer-made">Diseñado y desarrollado por mí <i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#heart-fill"/></svg></i></span>
+      <button class="footer-top-btn" type="button" aria-label="Volver arriba">Arriba <i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#arrow-up"/></svg></i></button>
+    </div>
+  </div>
+</footer>
+
+<input type="checkbox" id="contact-float-toggle" aria-hidden="true" tabindex="-1">
+<label for="contact-float-toggle" class="contact-float-trigger" role="button" tabindex="0" aria-label="Abrir panel de contacto" aria-expanded="false" aria-controls="contact-panel"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#send-fill"/></svg></i></label>
+<div class="contact-float-curva"></div>
+<aside class="contact-float-panel" id="contact-panel" aria-label="Panel de contacto" aria-hidden="true">
+  <div class="contact-float-content">
+    <label for="contact-float-toggle" class="contact-float-close" role="button" tabindex="0" aria-label="Cerrar panel"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#x-lg"/></svg></i></label>
+    <span class="contact-float-badge"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#stars"/></svg></i> Disponible para proyectos</span>
+    <h2 class="contact-float-title">Yojhan Furuya</h2>
+    <p class="contact-float-role">Desarrollador &amp; Diseñador Web</p>
+    <p class="contact-float-text">Disponible para trabajo, proyectos, colaboraciones y freelance.</p>
+    <div class="contact-float-links">
+      <a href="mailto:yojhancaro0@gmail.com"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#envelope-fill"/></svg></i> yojhancaro0@gmail.com</a>
+      <a href="https://www.linkedin.com/in/yojhanfuruya" target="_blank" rel="noopener"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#linkedin"/></svg></i> LinkedIn</a>
+      <a href="https://github.com/yojhanfuruya" target="_blank" rel="noopener"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#github"/></svg></i> GitHub</a>
+    </div>
+    <div class="contact-float-actions">
+      <a href="mailto:yojhancaro0@gmail.com" class="contact-float-btn-primary">Escribirme <i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#arrow-up-right"/></svg></i></a>
+      
+    </div>
+  </div>
+</aside>
+
+<script src="../../assets/js/main.js?v=mvy5h96l" defer></script>
+</body>
+</html>

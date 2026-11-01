@@ -1,0 +1,17 @@
+{
+  "name": "portafolio-yojhan-furuya",
+  "version": "3.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Portafolio de Yojhan Furuya — sitio estático (sin WordPress)",
+  "scripts": {
+    "build": "node build.js",
+    "imagenes": "node scripts/descargar-imagenes.js",
+    "dev": "node build.js && npx --yes serve dist"
+  },
+  "devDependencies": {
+    "bootstrap-icons": "1.11.3",
+    "esbuild": "0.23.1",
+    "sharp": "0.33.5"
+  }
+}

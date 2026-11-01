@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="es" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Experimentos — Yojhan Furuya</title>
+<meta name="description" content="Laboratorio creativo: prototipos y sistemas en exploración como Ale.ink, Fascia y GymPrime.">
+<meta name="theme-color" content="#08090d">
+<meta name="author" content="Yojhan Furuya">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CL">
+<meta property="og:title" content="Experimentos — Yojhan Furuya">
+<meta property="og:description" content="Laboratorio creativo: prototipos y sistemas en exploración como Ale.ink, Fascia y GymPrime.">
+
+
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="../assets/css/main.css?v=mvy5h96l">
+<script>
+/* Antes de pintar: activa animaciones, recuerda la posición del cursor
+   entre páginas y, si falta una imagen local, la toma del sitio antiguo. */
+(function(d,w){
+  d.documentElement.classList.add('js');
+  try{ w.__pmCursorInit = w.__pmCursorLast = JSON.parse(sessionStorage.getItem('pmCursorPos')||'null'); }catch(e){}
+  w.addEventListener('mousemove',function(e){ w.__pmCursorLast={x:e.clientX,y:e.clientY}; try{sessionStorage.setItem('pmCursorPos',JSON.stringify(w.__pmCursorLast));}catch(_){} },{passive:true});
+  var REMOTO="https://yofuruya.laboratoriodiseno.cl/wp-content/";
+  if(REMOTO) w.addEventListener('error',function(e){
+    var t=e.target; if(!t||!/^(IMG|SOURCE|VIDEO)$/.test(t.tagName)) return;
+    var s=t.getAttribute('src')||''; var m=s.match(/assets\/(uploads\/.*)$/);
+    if(m){ t.setAttribute('src', REMOTO+m[1]); if(t.tagName==='SOURCE'&&t.parentNode.load) t.parentNode.load(); }
+  },true);
+})(document,window);
+</script>
+
+</head>
+<body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+<div id="cursor-blob" aria-hidden="true"><svg viewBox="0 0 100 100"><path class="blob-path" d="M50,20 C65,15 80,30 82,50 C84,70 70,85 50,83 C30,81 16,68 18,50 C20,32 35,25 50,20Z"/></svg></div>
+<script>(function(){var p=window.__pmCursorInit,el=document.getElementById('cursor-blob');if(p&&el){el.style.left=p.x+'px';el.style.top=p.y+'px';el.style.opacity='1';}})();</script>
+
+<input type="checkbox" id="menu-toggle" aria-hidden="true" tabindex="-1">
+<div class="mobile-topbar">
+  <a href="../" class="mobile-topbar-brand"><span class="brand-mark">Y</span> Yojhan Furuya</a>
+  <label for="menu-toggle" class="toggle-hamburguesa" role="button" tabindex="0" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="menu-lateral"><span></span><span></span><span></span></label>
+</div>
+<label for="menu-toggle" class="menu-overlay" aria-hidden="true"></label>
+<nav class="menu-lateral" id="menu-lateral" aria-label="Menú móvil" aria-hidden="true">
+  <div class="menu-lateral-header">
+    <span class="menu-lateral-brand"><span class="brand-mark">Y</span> Yojhan Furuya</span>
+    <label for="menu-toggle" class="menu-lateral-close" role="button" tabindex="0" aria-label="Cerrar menú"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#x-lg"/></svg></i></label>
+  </div>
+  <div class="menu-lateral-links">
+    <a href="../" class="menu-link-card"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#house-door-fill"/></svg></i> <span>Inicio</span></a>
+    <a href="../sobre-mi/" class="menu-link-card"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#person-fill"/></svg></i> <span>Sobre mí</span></a>
+    <a href="../proyectos/" class="menu-link-card active" aria-current="page"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#grid-1x2-fill"/></svg></i> <span>Proyectos</span></a>
+    <a href="../#contacto" class="menu-link-card"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#chat-dots-fill"/></svg></i> <span>Contacto</span></a>
+  </div>
+  <div class="menu-lateral-footer"><a href="mailto:yojhancaro0@gmail.com" class="menu-lateral-mail"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#envelope-fill"/></svg></i> yojhancaro0@gmail.com</a></div>
+</nav>
+
+<header class="nav-container" id="nav">
+  <a href="../" class="nav-brand"><span class="brand-mark">Y</span> <span class="nav-brand-name">Yojhan Furuya</span></a>
+  <nav class="nav-btns" aria-label="Navegación principal" data-page="proyectos">
+    <div class="blob" id="blob"></div>
+    <a href="../" class="nav-btn">Inicio</a>
+    <a href="../sobre-mi/" class="nav-btn">Sobre mí</a>
+    <a href="../proyectos/" class="nav-btn active" aria-current="page">Proyectos</a>
+    <a href="../#contacto" class="nav-btn">Contacto</a>
+  </nav>
+  <label for="contact-float-toggle" class="nav-disponible" role="button" tabindex="0" aria-expanded="false" aria-controls="contact-panel"><span class="nav-disponible-dot"></span> Hablemos</label>
+</header>
+
+<main id="contenido" class="page-experimentos">
+
+<section class="exp-hero" id="exp-hero" aria-roledescription="carrusel" aria-label="Experimentos">
+  <div class="exp-hero-bg-stack" aria-hidden="true">
+    <div class="exp-hero-bg is-active" data-index="0" style="background-image:url('../assets/uploads/2026/06/ale.ink_.jpg'), url('https://yofuruya.laboratoriodiseno.cl/wp-content/uploads/2026/06/ale.ink_.jpg')"></div>
+    <div class="exp-hero-bg" data-index="1" style="background-image:url('../assets/uploads/2026/07/portada.png'), url('https://yofuruya.laboratoriodiseno.cl/wp-content/uploads/2026/07/portada.png')"></div>
+    <div class="exp-hero-bg" data-index="2" style="background-image:url('../assets/uploads/2026/06/gymprime1.png'), url('https://yofuruya.laboratoriodiseno.cl/wp-content/uploads/2026/06/gymprime1.png')"></div>
+    <div class="exp-hero-overlay"></div>
+  </div>
+  <div class="exp-hero-content container-custom">
+    <div class="exp-hero-top">
+      <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio"},{"@type":"ListItem","position":2,"name":"Proyectos"},{"@type":"ListItem","position":3,"name":"Experimentos"}]}</script><nav class="breadcrumb-row exp-breadcrumb" aria-label="Migas de pan"><a href="../"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#house-door-fill"/></svg></i> Inicio</a><span class="breadcrumb-sep" aria-hidden="true">/</span><a href="../proyectos/">Proyectos</a><span class="breadcrumb-sep" aria-hidden="true">/</span><span class="breadcrumb-current" aria-current="page">Experimentos</span></nav>
+      <span class="exp-lab-tag"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#cpu-fill"/></svg></i> Laboratorio creativo</span>
+    </div>
+    <div class="exp-hero-grid">
+      <div class="exp-hero-info" aria-live="polite">
+        <div class="exp-info-block is-active" data-index="0">
+          <span class="exp-kicker">Sitio web · Estudio de tatuajes</span>
+          <h1 class="exp-title">Ale.ink Estudio de tatuajes</h1>
+          <p class="exp-desc">Sitio web de dos vistas para ALE.INK, un estudio de tatuajes en Viña del Mar. Incluye landing pública con portafolio, cotizador en 5 pasos y Flash Shop, más un panel de artista con gestión de cotizaciones, agenda y estadísticas.</p>
+          <button class="exp-ver-detalle" type="button" data-target="exp-detalle-ale-ink">Ver más detalles <i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#arrow-down-circle-fill"/></svg></i></button>
+        </div>
+        <div class="exp-info-block" data-index="1">
+          <span class="exp-kicker">Sistema web · Gestión deportiva</span>
+          <h2 class="exp-title">Proyecto Fascia</h2>
+          <p class="exp-desc">Sistema de gestión para entrenadores: plantel de atletas, constructor de rutinas con modelo de cuerpo interactivo, sesiones en vivo, rendimiento, calendario, nutrición, pagos y documentos. Es la evolución de GymPrime hacia un sistema completo.</p>
+          <button class="exp-ver-detalle" type="button" data-target="exp-detalle-fascia">Ver más detalles <i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#arrow-down-circle-fill"/></svg></i></button>
+        </div>
+        <div class="exp-info-block" data-index="2">
+          <span class="exp-kicker">Sistema web · Gimnasio</span>
+          <h2 class="exp-title">GymPrime</h2>
+          <p class="exp-desc">Landing y panel de administración para un gimnasio, con gestión de planes, alumnos y registro de ejercicios. Construido en HTML, CSS y JavaScript puro, usando localStorage como base de datos.</p>
+          <button class="exp-ver-detalle" type="button" data-target="exp-detalle-gym-prime">Ver más detalles <i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#arrow-down-circle-fill"/></svg></i></button>
+        </div>
+      </div>
+      <div class="exp-carousel">
+        <div class="exp-stack" id="exp-track">
+          <button class="exp-card is-active" type="button" data-index="0" style="background-image:url('../assets/uploads/2026/06/ale.ink_.jpg'), url('https://yofuruya.laboratoriodiseno.cl/wp-content/uploads/2026/06/ale.ink_.jpg')" aria-label="Ver Ale.ink Estudio de tatuajes"><span class="exp-card-overlay"></span><span class="exp-card-title">Ale.ink Estudio de tatuajes</span></button>
+          <button class="exp-card" type="button" data-index="1" style="background-image:url('../assets/uploads/2026/07/portada-1024x683.png'), url('https://yofuruya.laboratoriodiseno.cl/wp-content/uploads/2026/07/portada-1024x683.png')" aria-label="Ver Proyecto Fascia"><span class="exp-card-overlay"></span><span class="exp-card-title">Proyecto Fascia</span></button>
+          <button class="exp-card" type="button" data-index="2" style="background-image:url('../assets/uploads/2026/06/portada-gymprime.png'), url('https://yofuruya.laboratoriodiseno.cl/wp-content/uploads/2026/06/portada-gymprime.png')" aria-label="Ver GymPrime"><span class="exp-card-overlay"></span><span class="exp-card-title">GymPrime</span></button>
+        </div>
+        <div class="exp-carousel-controls">
+          <button class="exp-carousel-arrow prev" id="exp-prev" type="button" aria-label="Experimento anterior"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#chevron-left"/></svg></i></button>
+          <button class="exp-carousel-arrow next" id="exp-next" type="button" aria-label="Experimento siguiente"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#chevron-right"/></svg></i></button>
+          <div class="exp-carousel-progress"><span id="exp-progress-bar"></span></div>
+          <div class="exp-carousel-counter"><span id="exp-counter-current">01</span> / 03</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="exp-detalle" id="exp-detalle-ale-ink" data-index="0">
+  <section class="section exp-detalle-head">
+    <div class="container-custom">
+      <div class="exp-detalle-grid">
+        <div class="exp-detalle-intro" data-aos="fade-up">
+          <span class="exp-kicker">Sitio web · Estudio de tatuajes</span>
+          <h2 class="exp-detalle-title">Ale.ink Estudio de tatuajes</h2>
+          <p class="exp-detalle-desc">Sitio web de dos vistas para ALE.INK, un estudio de tatuajes en Viña del Mar. Incluye landing pública con portafolio, cotizador en 5 pasos y Flash Shop, más un panel de artista con gestión de cotizaciones, agenda y estadísticas.</p>
+          <div class="exp-detalle-meta">
+            <div class="meta-item"><small>Año</small><span>2026</span></div>
+            <div class="meta-item"><small>Estado</small><span class="meta-status-dot">Completado</span></div>
+          </div>
+          <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>localStorage</span></div>
+          <p style="margin-top:20px"><a class="btn-ghost" href="../proyectos/ale-ink/">Abrir ficha completa <i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#arrow-up-right"/></svg></i></a></p>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="100"><div class="gallery-wrap exp-detalle-gallery">
+  <div class="gallery-main">
+    <img src="../assets/uploads/2026/07/bad6f209-ecb8-4f01-8a39-d47ddf60b1fc.png" alt="Ale.ink Estudio de tatuajes" width="1600" height="1000" decoding="async">
+    
+    <button class="gallery-expand" type="button" aria-label="Ver en pantalla completa"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#arrows-fullscreen"/></svg></i></button>
+    <span class="gallery-counter" aria-live="polite">1 / 4</span>
+    <button class="gallery-arrow prev" type="button" aria-label="Imagen anterior"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#chevron-left"/></svg></i></button>
+    <button class="gallery-arrow next" type="button" aria-label="Imagen siguiente"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#chevron-right"/></svg></i></button>
+  </div>
+  <div class="gallery-thumbs"><button type="button" class="active" data-src="../assets/uploads/2026/07/bad6f209-ecb8-4f01-8a39-d47ddf60b1fc.png" aria-label="Ver imagen 1"><img src="../assets/uploads/2026/07/bad6f209-ecb8-4f01-8a39-d47ddf60b1fc.png" alt="" loading="lazy" decoding="async"></button><button type="button" data-src="../assets/uploads/2026/07/ad3c046a-e589-46a1-a8b3-0195fe2b6b81.png" aria-label="Ver imagen 2"><img src="../assets/uploads/2026/07/ad3c046a-e589-46a1-a8b3-0195fe2b6b81.png" alt="" loading="lazy" decoding="async"></button><button type="button" data-src="../assets/uploads/2026/07/14403bc5-7722-4bb1-a958-38ecfbe32819.png" aria-label="Ver imagen 3"><img src="../assets/uploads/2026/07/14403bc5-7722-4bb1-a958-38ecfbe32819.png" alt="" loading="lazy" decoding="async"></button><button type="button" data-src="../assets/uploads/2026/07/Gemini_Generated_Image_xxuacvxxuacvxxua.png" aria-label="Ver imagen 4"><img src="../assets/uploads/2026/07/Gemini_Generated_Image_xxuacvxxuacvxxua.png" alt="" loading="lazy" decoding="async"></button></div>
+</div></div>
+      </div>
+      <div class="stats-strip" data-aos="fade-up"><div class="stat-card"><strong data-count="2" data-suffix="">2</strong><span>vistas completas en un único archivo HTML</span></div><div class="stat-card"><strong data-count="12" data-suffix="">12</strong><span>diseños flash organizados en 6 estilos</span></div><div class="stat-card"><strong data-count="5" data-suffix="">5</strong><span>pasos en el cotizador</span></div><div class="stat-card"><strong data-count="4" data-suffix="">4</strong><span>módulos en el panel de artista</span></div><div class="stat-card"><strong data-count="6" data-suffix="">6</strong><span>estilos de tatuaje con filtros interactivos</span></div><div class="stat-card"><strong data-count="0" data-suffix="">0</strong><span>dependencias externas de JavaScript</span></div></div>
+    </div>
+  </section>
+  
+<section class="section">
+  <div class="container-custom">
+    <span class="eyebrow" data-aos="fade-up">Contexto del experimento</span>
+    <h2 class="section-title section-title--space-lg" data-aos="fade-up">Problema, solución y resultado.</h2>
+    <div class="detail-grid">
+      <div class="detail-block purple" data-aos="fade-up"><div class="block-icon"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#exclamation-circle-fill"/></svg></i></div><h3>El problema</h3><p>El cliente necesitaba una presencia digital que reflejara el nivel premium de su trabajo como tatuador, con una forma real de recibir cotizaciones sin depender de DMs en Instagram ni llamadas telefónicas.</p></div>
+      <div class="detail-block lime" data-aos="fade-up" data-aos-delay="60"><div class="block-icon"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#lightbulb-fill"/></svg></i></div><h3>La solución</h3><p>Se desarrolló un sitio de una sola página HTML con dos vistas: una landing pública con portafolio por estilos, Flash Shop interactivo y un cotizador en 5 pasos, y un panel de artista privado con PIN de acceso para gestionar cotizaciones entrantes, agenda semanal y estadísticas del estudio. La comunicación entre vistas se resuelve con localStorage como puente de datos.</p></div>
+      <div class="detail-block" data-aos="fade-up"><div class="block-icon"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#graph-up-arrow"/></svg></i></div><h3>El resultado</h3><ul><li>Landing pública completa con hero, portafolio, servicios, flash shop, testimonios, precios y cotizador</li><li>Panel de artista con 4 módulos: cotizaciones, agenda, estadísticas y configuración</li><li>Sistema de cotización en 5 pasos con estimación instantánea y resumen antes de enviar</li><li>Arquitectura sin backend: todo corre en el navegador con localStorage como base de datos (etapa de prototipo)</li></ul></div>
+      <div class="detail-block teal" data-aos="fade-up" data-aos-delay="60"><div class="block-icon"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#trophy-fill"/></svg></i></div><h3>Qué demuestra</h3><ul><li>Diseño orientado a la identidad de marca</li><li>Desarrollo de interfaces complejas en vanilla JS sin frameworks</li><li>Arquitectura de datos client-side con localStorage como puente entre vistas</li><li>UX/UI con cursor personalizado, animaciones reveal y mosaico responsive</li><li>Capacidad de construir un producto completo end-to-end para un cliente real</li></ul></div>
+    </div>
+  </div>
+</section>
+<section class="section section--no-top">
+  <div class="container-custom">
+    <span class="eyebrow" data-aos="fade-up">Funcionalidades</span>
+    <h2 class="section-title section-title--space-lg" data-aos="fade-up">Qué hace.</h2>
+    <div class="feature-list" data-aos="fade-up">
+      <div class="feature-item"><div class="feature-num">01</div><div class="feature-copy"><h4>Landing pública</h4><p>Hero con video de fondo, estadísticas animadas, call-to-action y navegación sticky.</p></div></div>
+      <div class="feature-item"><div class="feature-num">02</div><div class="feature-copy"><h4>Portafolio por estilos</h4><p>Mosaico CSS filtrable con 8 piezas organizadas en 6 categorías: Blackwork, Realismo, Fine Line, Geométrico, Traditional, Acuarela.</p></div></div>
+      <div class="feature-item"><div class="feature-num">03</div><div class="feature-copy"><h4>Flash Shop</h4><p>Mini e-commerce por estilos con 12 diseños, estados disponible/vendido, precio y sistema de reserva integrado al cotizador.</p></div></div>
+      <div class="feature-item"><div class="feature-num">04</div><div class="feature-copy"><h4>Cotizador (5 pasos)</h4><p>Flujo guiado: selección de estilo → medidas y zona del cuerpo → descripción del concepto → referencias visuales → datos de contacto. Genera resumen instantáneo.</p></div></div>
+      <div class="feature-item"><div class="feature-num">05</div><div class="feature-copy"><h4>Panel de artista</h4><p>Vista privada con acceso por PIN. Módulos de cotizaciones entrantes (con filtros y exportación CSV), agenda semanal, estadísticas del estudio y configuración.</p></div></div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container-custom">
+    <div class="timeline-layout">
+      <div>
+        <span class="eyebrow" data-aos="fade-up">Metodología</span>
+        <h2 class="section-title section-title--space-lg" data-aos="fade-up">Cómo se construyó.</h2>
+        <div class="timeline timeline--blob" data-aos="fade-up">
+          <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-step">Fase 01</div><h4>Definición de arquitectura</h4><p>Se planteó un sistema de dos vistas dentro de un único archivo HTML, usando localStorage como puente de datos entre la vista pública y el panel de artista. Sin backend ni framework.</p></div>
+          <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-step">Fase 02</div><h4>Diseño del sistema visual</h4><p>Se construyó un sistema de tokens CSS (variables) basado en la identidad del cliente: fondo #080808, acento rojo #ff003c, tipografía mixta display/cuerpo/mono. Cursor personalizado, animaciones con IntersectionObserver.</p></div>
+          <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-step">Fase 03</div><h4>Desarrollo de módulos</h4><p>Se implementaron los módulos de forma iterativa: primero la landing (hero, about, galería, servicios), luego el Flash Shop con tabs por estilo, después el wizard de cotización en 5 pasos, y finalmente el panel de artista.</p></div>
+          <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-step">Fase 04</div><h4>Iteración de contraste y UX</h4><p>Se realizaron múltiples revisiones de contraste para cumplir AA, correcciones de legibilidad en labels, fixes de navegación mobile y limpieza de datos de prueba.</p></div>
+        </div>
+      </div>
+      <div data-aos="fade-left" data-aos-delay="100">
+        <span class="eyebrow">Stack técnico</span>
+        <h2 class="section-title section-title--space-md">Tecnologías usadas.</h2>
+        <div class="tech-grid"><div class="tech-card"><span>HTML5</span><small>estructura semántica de ambas vistas en un único archivo</small></div><div class="tech-card"><span>CSS custom properties</span><small>sistema de tokens para colores, tipografía y espaciado</small></div><div class="tech-card"><span>JavaScript vanilla</span><small>toda la lógica de UI, cotizador, flash shop y admin panel</small></div><div class="tech-card"><span>localStorage</span><small>base de datos client-side para cotizaciones entre vistas</small></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section section--no-top">
+  <div class="container-custom">
+    <span class="eyebrow" data-aos="fade-up">Próximos pasos</span>
+    <h2 class="section-title section-title--space-md" data-aos="fade-up">Ideas para seguir probando.</h2>
+    <div class="future-grid">
+      <div class="future-card" data-aos="fade-up"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#cloud-arrow-up-fill"/></svg></i><h4>Backend real con Firebase o Supabase</h4><p>Reemplazar localStorage por una base de datos en la nube para sincronizar cotizaciones entre dispositivos y acceder al panel desde cualquier lugar.</p></div>
+      <div class="future-card" data-aos="fade-up" data-aos-delay="60"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#whatsapp"/></svg></i><h4>Notificaciones WhatsApp automáticas</h4><p>Integrar la API de WhatsApp Business para enviar confirmación al cliente y alerta al artista cuando llega una cotización nueva.</p></div>
+      <div class="future-card" data-aos="fade-up" data-aos-delay="120"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#shield-lock-fill"/></svg></i><h4>Autenticación segura del panel</h4><p>Reemplazar el PIN simple por un sistema de login con JWT para proteger el panel de artista de manera real.</p></div>
+      <div class="future-card" data-aos="fade-up"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#images"/></svg></i><h4>Galería dinámica desde CMS</h4><p>Conectar el portafolio a un CMS headless o panel propio para que el artista pueda agregar piezas sin tocar código.</p></div>
+    </div>
+  </div>
+</section>
+</div>
+<div class="exp-detalle is-hidden" id="exp-detalle-fascia" data-index="1">
+  <section class="section exp-detalle-head">
+    <div class="container-custom">
+      <div class="exp-detalle-grid">
+        <div class="exp-detalle-intro" data-aos="fade-up">
+          <span class="exp-kicker">Sistema web · Gestión deportiva</span>
+          <h2 class="exp-detalle-title">Proyecto Fascia</h2>
+          <p class="exp-detalle-desc">Sistema de gestión para entrenadores: plantel de atletas, constructor de rutinas con modelo de cuerpo interactivo, sesiones en vivo, rendimiento, calendario, nutrición, pagos y documentos. Es la evolución de GymPrime hacia un sistema completo.</p>
+          <div class="exp-detalle-meta">
+            <div class="meta-item"><small>Año</small><span>2026</span></div>
+            <div class="meta-item"><small>Estado</small><span class="meta-status-dot">En desarrollo</span></div>
+          </div>
+          <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>React</span><span>localStorage</span></div>
+          <p style="margin-top:20px"><a class="btn-ghost" href="../proyectos/fascia/">Abrir ficha completa <i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#arrow-up-right"/></svg></i></a></p>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="100"><div class="gallery-wrap exp-detalle-gallery">
+  <div class="gallery-main">
+    <img src="../assets/uploads/2026/07/a211faf33ee18a45dc103d99687b2bea_0.png" alt="Proyecto Fascia" width="1600" height="1000" decoding="async">
+    
+    <button class="gallery-expand" type="button" aria-label="Ver en pantalla completa"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#arrows-fullscreen"/></svg></i></button>
+    <span class="gallery-counter" aria-live="polite">1 / 7</span>
+    <button class="gallery-arrow prev" type="button" aria-label="Imagen anterior"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#chevron-left"/></svg></i></button>
+    <button class="gallery-arrow next" type="button" aria-label="Imagen siguiente"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#chevron-right"/></svg></i></button>
+  </div>
+  <div class="gallery-thumbs"><button type="button" class="active" data-src="../assets/uploads/2026/07/a211faf33ee18a45dc103d99687b2bea_0.png" aria-label="Ver imagen 1"><img src="../assets/uploads/2026/07/a211faf33ee18a45dc103d99687b2bea_0.png" alt="" loading="lazy" decoding="async"></button><button type="button" data-src="../assets/uploads/2026/07/portada.png" aria-label="Ver imagen 2"><img src="../assets/uploads/2026/07/portada.png" alt="" loading="lazy" decoding="async"></button><button type="button" data-src="../assets/uploads/2026/07/741670184_1346529904278142_5608520243856905468_n.jpg" aria-label="Ver imagen 3"><img src="../assets/uploads/2026/07/741670184_1346529904278142_5608520243856905468_n.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-src="../assets/uploads/2026/07/742648840_994260030268062_9161383721408349158_n.jpg" aria-label="Ver imagen 4"><img src="../assets/uploads/2026/07/742648840_994260030268062_9161383721408349158_n.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-src="../assets/uploads/2026/07/742185726_2017860485513272_5079963401177222864_n.jpg" aria-label="Ver imagen 5"><img src="../assets/uploads/2026/07/742185726_2017860485513272_5079963401177222864_n.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-src="../assets/uploads/2026/07/744314930_1324933139619625_5071325203197227118_n.jpg" aria-label="Ver imagen 6"><img src="../assets/uploads/2026/07/744314930_1324933139619625_5071325203197227118_n.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-src="../assets/uploads/2026/07/740686125_1614920560634454_8432972194180963196_n.jpg" aria-label="Ver imagen 7"><img src="../assets/uploads/2026/07/740686125_1614920560634454_8432972194180963196_n.jpg" alt="" loading="lazy" decoding="async"></button></div>
+</div></div>
+      </div>
+      <div class="stats-strip" data-aos="fade-up"><div class="stat-card"><strong data-count="9" data-suffix="">9</strong><span>módulos funcionales</span></div><div class="stat-card"><strong data-count="2" data-suffix="">2</strong><span>vistas del modelo de cuerpo (frontal y posterior)</span></div><div class="stat-card"><strong data-count="1" data-suffix="">1</strong><span>cronómetro en tiempo real para sesiones en vivo</span></div></div>
+    </div>
+  </section>
+  
+<section class="section">
+  <div class="container-custom">
+    <span class="eyebrow" data-aos="fade-up">Contexto del experimento</span>
+    <h2 class="section-title section-title--space-lg" data-aos="fade-up">Problema, solución y resultado.</h2>
+    <div class="detail-grid">
+      <div class="detail-block purple" data-aos="fade-up"><div class="block-icon"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#exclamation-circle-fill"/></svg></i></div><h3>El problema</h3><p>GymPrime resolvía lo básico de un gimnasio (planes, alumnos, cupos), pero un entrenador real necesita mucho más: armar rutinas personalizadas por grupo muscular, hacer seguimiento de sesiones en tiempo real, registrar rendimiento, manejar pagos y documentos de cada atleta.</p></div>
+      <div class="detail-block lime" data-aos="fade-up" data-aos-delay="60"><div class="block-icon"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#lightbulb-fill"/></svg></i></div><h3>La solución</h3><p>Un sistema con 9 módulos: Dashboard general, Plantel de atletas, Constructor de rutinas con un modelo de cuerpo humano interactivo (se toca cada músculo para asignarle ejercicios, día por día), Sesión en vivo con cronómetro para registrar series mientras se entrena, Rendimiento, Calendario, Nutrición, Pagos y Documentos. Por ahora corre completo en el navegador con localStorage, como continuación directa de GymPrime, con la meta de convertirlo en una app web o nativa real.</p></div>
+      <div class="detail-block" data-aos="fade-up"><div class="block-icon"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#graph-up-arrow"/></svg></i></div><h3>El resultado</h3><ul><li>9 módulos funcionales construidos sobre la base de GymPrime</li><li>Constructor de rutinas visual mediante modelo de cuerpo interactivo</li><li>Modo de sesión en vivo con cronómetro y registro en tiempo real</li><li>Aún en desarrollo, con prototipo activo en GitHub Pages</li></ul></div>
+      <div class="detail-block teal" data-aos="fade-up" data-aos-delay="60"><div class="block-icon"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#trophy-fill"/></svg></i></div><h3>Qué demuestra</h3><ul><li>Integración de una librería externa (React + react-muscle-highlighter) sin proceso de build</li><li>Diseño de un sistema multi-módulo con estado centralizado</li><li>Construcción de una interfaz interactiva basada en un modelo anatómico</li><li>Evolución iterativa de un proyecto propio (GymPrime → Fascia)</li></ul></div>
+    </div>
+  </div>
+</section>
+<section class="section section--no-top">
+  <div class="container-custom">
+    <span class="eyebrow" data-aos="fade-up">Funcionalidades</span>
+    <h2 class="section-title section-title--space-lg" data-aos="fade-up">Qué hace.</h2>
+    <div class="feature-list" data-aos="fade-up">
+      <div class="feature-item"><div class="feature-num">01</div><div class="feature-copy"><h4>Dashboard</h4><p>Resumen general con estadísticas, deportes activos, agenda y plantel.</p></div><span class="feature-badge badge-lime">index.html</span></div>
+      <div class="feature-item"><div class="feature-num">02</div><div class="feature-copy"><h4>Plantel de atletas</h4><p>Listado de atletas en vista grilla o lista, con búsqueda y filtro por deporte y estado.</p></div><span class="feature-badge badge-lime">index.html</span></div>
+      <div class="feature-item"><div class="feature-num">03</div><div class="feature-copy"><h4>Constructor de rutinas</h4><p>Modelo de cuerpo interactivo (frontal y posterior): se activa un día de la semana y se toca cada músculo para asignarle ejercicios.</p></div><span class="feature-badge badge-lime">index.html</span></div>
+      <div class="feature-item"><div class="feature-num">04</div><div class="feature-copy"><h4>Sesión en vivo</h4><p>Modo de entrenamiento en tiempo real con cronómetro, usando el mismo modelo de cuerpo para registrar series completadas.</p></div><span class="feature-badge badge-lime">index.html</span></div>
+      <div class="feature-item"><div class="feature-num">05</div><div class="feature-copy"><h4>Rendimiento</h4><p>Registro y seguimiento de métricas de cada atleta.</p></div><span class="feature-badge badge-lime">index.html</span></div>
+      <div class="feature-item"><div class="feature-num">06</div><div class="feature-copy"><h4>Calendario, nutrición, pagos y documentos</h4><p>Módulos de gestión general para cada atleta: eventos, planes alimenticios, cobros y documentos asociados.</p></div><span class="feature-badge badge-lime">index.html</span></div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container-custom">
+    <div class="timeline-layout">
+      <div>
+        <span class="eyebrow" data-aos="fade-up">Metodología</span>
+        <h2 class="section-title section-title--space-lg" data-aos="fade-up">Cómo se construyó.</h2>
+        <div class="timeline timeline--blob" data-aos="fade-up">
+          <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-step">Fase 01</div><h4>Punto de partida: GymPrime</h4><p>Se tomó como base la lógica de gestión de alumnos y planes ya validada en GymPrime, para no partir de cero.</p></div>
+          <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-step">Fase 02</div><h4>Diseño de los módulos</h4><p>Se definieron los 9 módulos necesarios para cubrir el trabajo real de un entrenador: plantel, rutinas, sesiones, rendimiento, calendario, nutrición, pagos y documentos.</p></div>
+          <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-step">Fase 03</div><h4>Constructor de rutinas con modelo de cuerpo</h4><p>Se integró la librería react-muscle-highlighter sobre React 18, cargada directamente desde CDN sin proceso de build, para representar el cuerpo humano de forma clickeable.</p></div>
+          <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-step">Fase 04</div><h4>Modo sesión en vivo</h4><p>Se reutilizó el mismo modelo de cuerpo del constructor, pero conectado a un cronómetro y al registro de series completadas en tiempo real durante el entrenamiento.</p></div>
+        </div>
+      </div>
+      <div data-aos="fade-left" data-aos-delay="100">
+        <span class="eyebrow">Stack técnico</span>
+        <h2 class="section-title section-title--space-md">Tecnologías usadas.</h2>
+        <div class="tech-grid"><div class="tech-card"><span>HTML5</span><small>estructura de la aplicación</small></div><div class="tech-card"><span>CSS3</span><small>estilos e interfaz</small></div><div class="tech-card"><span>JavaScript</span><small>toda la lógica del sistema</small></div><div class="tech-card"><span>React 18</span><small>motor del modelo de cuerpo interactivo</small></div><div class="tech-card"><span>react-muscle-highlighter</span><small>librería del modelo anatómico clickeable</small></div><div class="tech-card"><span>localStorage</span><small>persistencia de datos en el navegador</small></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section section--no-top">
+  <div class="container-custom">
+    <span class="eyebrow" data-aos="fade-up">Próximos pasos</span>
+    <h2 class="section-title section-title--space-md" data-aos="fade-up">Ideas para seguir probando.</h2>
+    <div class="future-grid">
+      <div class="future-card" data-aos="fade-up"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#server"/></svg></i><h4>Backend real con base de datos</h4><p>Migrar de localStorage a un servidor con base de datos, para que los datos no dependan de un solo navegador.</p></div>
+      <div class="future-card" data-aos="fade-up" data-aos-delay="60"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#phone-fill"/></svg></i><h4>App web o nativa</h4><p>Convertir el sistema en una aplicación instalable, ya sea web (PWA) o nativa para celular.</p></div>
+      <div class="future-card" data-aos="fade-up" data-aos-delay="120"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#rocket-takeoff-fill"/></svg></i><h4>Publicación para uso real</h4><p>Llevar el sistema a un estado estable para que un entrenador lo use en el día a día, como ya ocurre con GymPrime.</p></div>
+      <div class="future-card" data-aos="fade-up"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#people-fill"/></svg></i><h4>Multi-usuario y roles</h4><p>Permitir que distintos entrenadores gestionen sus propios atletas dentro del mismo sistema.</p></div>
+    </div>
+  </div>
+</section>
+</div>
+<div class="exp-detalle is-hidden" id="exp-detalle-gym-prime" data-index="2">
+  <section class="section exp-detalle-head">
+    <div class="container-custom">
+      <div class="exp-detalle-grid">
+        <div class="exp-detalle-intro" data-aos="fade-up">
+          <span class="exp-kicker">Sistema web · Gimnasio</span>
+          <h2 class="exp-detalle-title">GymPrime</h2>
+          <p class="exp-detalle-desc">Landing y panel de administración para un gimnasio, con gestión de planes, alumnos y registro de ejercicios. Construido en HTML, CSS y JavaScript puro, usando localStorage como base de datos.</p>
+          <div class="exp-detalle-meta">
+            <div class="meta-item"><small>Año</small><span>2025</span></div>
+            <div class="meta-item"><small>Estado</small><span class="meta-status-dot">En uso</span></div>
+          </div>
+          <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>localStorage</span></div>
+          <p style="margin-top:20px"><a class="btn-ghost" href="../proyectos/gym-prime/">Abrir ficha completa <i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#arrow-up-right"/></svg></i></a></p>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="100"><div class="gallery-wrap exp-detalle-gallery">
+  <div class="gallery-main">
+    <img src="../assets/uploads/2026/06/gymprime1.png" alt="GymPrime" width="1600" height="1000" decoding="async">
+    
+    <button class="gallery-expand" type="button" aria-label="Ver en pantalla completa"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#arrows-fullscreen"/></svg></i></button>
+    <span class="gallery-counter" aria-live="polite">1 / 4</span>
+    <button class="gallery-arrow prev" type="button" aria-label="Imagen anterior"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#chevron-left"/></svg></i></button>
+    <button class="gallery-arrow next" type="button" aria-label="Imagen siguiente"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#chevron-right"/></svg></i></button>
+  </div>
+  <div class="gallery-thumbs"><button type="button" class="active" data-src="../assets/uploads/2026/06/gymprime1.png" aria-label="Ver imagen 1"><img src="../assets/uploads/2026/06/gymprime1.png" alt="" loading="lazy" decoding="async"></button><button type="button" data-src="../assets/uploads/2026/06/gymprime-screenshot-3.png" aria-label="Ver imagen 2"><img src="../assets/uploads/2026/06/gymprime-screenshot-3.png" alt="" loading="lazy" decoding="async"></button><button type="button" data-src="../assets/uploads/2026/06/gymprime-screenshot-1.png" aria-label="Ver imagen 3"><img src="../assets/uploads/2026/06/gymprime-screenshot-1.png" alt="" loading="lazy" decoding="async"></button><button type="button" data-src="../assets/uploads/2026/06/gymprime-screenshot-2.png" aria-label="Ver imagen 4"><img src="../assets/uploads/2026/06/gymprime-screenshot-2.png" alt="" loading="lazy" decoding="async"></button></div>
+</div></div>
+      </div>
+      <div class="stats-strip" data-aos="fade-up"><div class="stat-card"><strong data-count="3" data-suffix="">3</strong><span>planes disponibles (Mensual, 3 Meses, Anual)</span></div><div class="stat-card"><strong data-count="2" data-suffix="">2</strong><span>paneles independientes: landing y dashboard</span></div><div class="stat-card"><strong data-count="100" data-suffix="%">100%</strong><span>en uso activo por el entrenador</span></div></div>
+    </div>
+  </section>
+  
+<section class="section">
+  <div class="container-custom">
+    <span class="eyebrow" data-aos="fade-up">Contexto del experimento</span>
+    <h2 class="section-title section-title--space-lg" data-aos="fade-up">Problema, solución y resultado.</h2>
+    <div class="detail-grid">
+      <div class="detail-block purple" data-aos="fade-up"><div class="block-icon"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#exclamation-circle-fill"/></svg></i></div><h3>El problema</h3><p>Un gimnasio necesitaba una forma simple de llevar el control de sus planes, alumnos inscritos y cupos disponibles, sin depender de planillas sueltas o anotaciones manuales.</p></div>
+      <div class="detail-block lime" data-aos="fade-up" data-aos-delay="60"><div class="block-icon"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#lightbulb-fill"/></svg></i></div><h3>La solución</h3><p>Un sitio con landing pública y un panel de administración aparte: la landing muestra los planes disponibles y permite inscribir alumnos directamente, mientras que el dashboard centraliza la gestión completa — planes, alumnos y un sistema de ejercicios con registro de peso por alumno. Los datos se guardan en el navegador con localStorage, sin necesidad de un servidor o base de datos externa.</p></div>
+      <div class="detail-block" data-aos="fade-up"><div class="block-icon"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#graph-up-arrow"/></svg></i></div><h3>El resultado</h3><ul><li>En uso activo por el entrenador del gimnasio desde su implementación</li><li>Reemplazo de planillas y anotaciones manuales por un sistema centralizado</li><li>Visibilidad inmediata de cupos disponibles por plan</li><li>Registro histórico de peso por alumno en cada ejercicio</li></ul></div>
+      <div class="detail-block teal" data-aos="fade-up" data-aos-delay="60"><div class="block-icon"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#trophy-fill"/></svg></i></div><h3>Qué demuestra</h3><ul><li>Manejo de localStorage como base de datos del lado del cliente</li><li>Cálculo dinámico de cupos restantes por plan</li><li>Construcción de modales y formularios propios sin librerías externas</li><li>Organización de una landing pública separada de un panel administrativo</li></ul></div>
+    </div>
+  </div>
+</section>
+<section class="section section--no-top">
+  <div class="container-custom">
+    <span class="eyebrow" data-aos="fade-up">Funcionalidades</span>
+    <h2 class="section-title section-title--space-lg" data-aos="fade-up">Qué hace.</h2>
+    <div class="feature-list" data-aos="fade-up">
+      <div class="feature-item"><div class="feature-num">01</div><div class="feature-copy"><h4>Landing pública</h4><p>Muestra métricas generales y la lista de planes disponibles, con la opción de inscribir un alumno directamente desde ahí.</p></div><span class="feature-badge badge-lime">index.html</span></div>
+      <div class="feature-item"><div class="feature-num">02</div><div class="feature-copy"><h4>Gestión de planes</h4><p>Crear, editar y eliminar planes del gimnasio, cada uno con precio, cupos totales y descripción.</p></div><span class="feature-badge badge-lime">dashboard.html</span></div>
+      <div class="feature-item"><div class="feature-num">03</div><div class="feature-copy"><h4>Gestión de alumnos</h4><p>Listado de alumnos inscritos con ver detalle, editar datos (fecha de ingreso, fecha de pago, estado) y eliminar.</p></div><span class="feature-badge badge-lime">dashboard.html</span></div>
+      <div class="feature-item"><div class="feature-num">04</div><div class="feature-copy"><h4>Registro de ejercicios</h4><p>Creación de ejercicios y registro del peso levantado por cada alumno en cada uno, con historial editable.</p></div><span class="feature-badge badge-lime">dashboard.html</span></div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container-custom">
+    <div class="timeline-layout">
+      <div>
+        <span class="eyebrow" data-aos="fade-up">Metodología</span>
+        <h2 class="section-title section-title--space-lg" data-aos="fade-up">Cómo se construyó.</h2>
+        <div class="timeline timeline--blob" data-aos="fade-up">
+          <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-step">Fase 01</div><h4>Diseño de la landing pública</h4><p>Se construyó la página principal con las métricas generales y el listado de planes, pensada para que cualquier visitante vea la oferta del gimnasio de forma clara.</p></div>
+          <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-step">Fase 02</div><h4>Sistema de planes y alumnos</h4><p>Se implementó la lógica de inscripción: cada plan con cupos limitados, y el cálculo automático de cupos restantes según los alumnos ya inscritos.</p></div>
+          <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-step">Fase 03</div><h4>Panel de administración</h4><p>Se separó la gestión en un dashboard aparte, con vistas dedicadas para planes, alumnos inscritos y sus datos de ingreso y pago.</p></div>
+          <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-step">Fase 04</div><h4>Sistema de ejercicios</h4><p>Se agregó un módulo adicional para registrar ejercicios y llevar el historial de peso levantado por cada alumno, ampliando el sistema más allá de la gestión administrativa básica.</p></div>
+        </div>
+      </div>
+      <div data-aos="fade-left" data-aos-delay="100">
+        <span class="eyebrow">Stack técnico</span>
+        <h2 class="section-title section-title--space-md">Tecnologías usadas.</h2>
+        <div class="tech-grid"><div class="tech-card"><span>HTML5</span><small>estructura de landing y dashboard</small></div><div class="tech-card"><span>CSS3</span><small>estilos y diseño visual</small></div><div class="tech-card"><span>JavaScript</span><small>toda la lógica e interactividad</small></div><div class="tech-card"><span>localStorage</span><small>persistencia de datos en el navegador</small></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section section--no-top">
+  <div class="container-custom">
+    <span class="eyebrow" data-aos="fade-up">Próximos pasos</span>
+    <h2 class="section-title section-title--space-md" data-aos="fade-up">Ideas para seguir probando.</h2>
+    <div class="future-grid">
+      <div class="future-card" data-aos="fade-up"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#server"/></svg></i><h4>Backend real con base de datos</h4><p>Migrar de localStorage a una base de datos en servidor, para que los datos no dependan de un solo navegador y se puedan respaldar.</p></div>
+      <div class="future-card" data-aos="fade-up" data-aos-delay="60"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#shield-lock-fill"/></svg></i><h4>Login con roles</h4><p>Acceso diferenciado para el entrenador y posibles administradores adicionales.</p></div>
+      <div class="future-card" data-aos="fade-up" data-aos-delay="120"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#bell-fill"/></svg></i><h4>Notificaciones de vencimiento</h4><p>Aviso automático cuando se acerca la fecha de pago o vencimiento del plan de un alumno.</p></div>
+      <div class="future-card" data-aos="fade-up"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#bar-chart-fill"/></svg></i><h4>Reportes y estadísticas</h4><p>Gráficos de ingresos, alumnos activos por plan y evolución de peso por ejercicio.</p></div>
+    </div>
+  </div>
+</section>
+</div>
+
+<section class="section" id="contacto">
+  <div class="container-custom">
+    <div class="contact-panel" data-aos="zoom-in">
+      <span class="eyebrow">Contacto</span>
+      <h2 class="section-title">¿Quieres ver más detalles de algún experimento?</h2>
+      <p class="section-text">Puedo ampliar cualquiera de estos con código, decisiones técnicas o una demo en vivo.</p>
+      <div class="contact-actions">
+        <a href="mailto:yojhancaro0@gmail.com" class="btn-main">Escribirme <i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#send-fill"/></svg></i></a>
+        <a href="../proyectos/" class="btn-ghost"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#arrow-left"/></svg></i> Volver a proyectos</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container-custom">
+    <div class="footer-top">
+      <div class="footer-col footer-col-brand">
+        <a href="../" class="footer-logo"><span class="brand-mark">Y</span> Yojhan Furuya</a>
+        <p class="footer-tagline">Desarrollador Front-End enfocado en interfaces modernas, experiencias digitales cuidadas y detalles que marcan la diferencia.</p>
+        <span class="footer-badge"><span class="footer-badge-dot" aria-hidden="true"></span> Disponible para proyectos</span>
+      </div>
+      <nav class="footer-col" aria-label="Navegación del pie de página">
+        <h2 class="footer-heading">Navegación</h2>
+        <ul class="footer-nav">
+          <li><a href="../">Inicio</a></li>
+          <li><a href="../sobre-mi/">Sobre mí</a></li>
+          <li><a href="../proyectos/">Proyectos</a></li>
+          <li><a href="../experimentos/">Experimentos</a></li>
+          <li><a href="../#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="footer-col">
+        <h2 class="footer-heading">Contacto</h2>
+        <ul class="footer-nav footer-contact">
+          <li><a href="mailto:yojhancaro0@gmail.com"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#envelope-fill"/></svg></i> yojhancaro0@gmail.com</a></li>
+          <li><a href="https://www.linkedin.com/in/yojhanfuruya" target="_blank" rel="noopener"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#linkedin"/></svg></i> LinkedIn</a></li>
+          <li><a href="https://github.com/yojhanfuruya" target="_blank" rel="noopener"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#github"/></svg></i> GitHub</a></li>
+          <li><a href="https://www.instagram.com/__yojhansin" target="_blank" rel="noopener"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#instagram"/></svg></i> Instagram</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-col-cta">
+        <h2 class="footer-heading">¿Tienes un proyecto?</h2>
+        <p>Hablemos de cómo puedo ayudarte a construirlo.</p>
+        <a href="mailto:yojhancaro0@gmail.com" class="footer-cta-btn">Escribirme <i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#arrow-up-right"/></svg></i></a>
+        
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">&copy; 2026 Yojhan Furuya &middot; Todos los derechos reservados.</span>
+      <span class="footer-made">Diseñado y desarrollado por mí <i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#heart-fill"/></svg></i></span>
+      <button class="footer-top-btn" type="button" aria-label="Volver arriba">Arriba <i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#arrow-up"/></svg></i></button>
+    </div>
+  </div>
+</footer>
+
+<input type="checkbox" id="contact-float-toggle" aria-hidden="true" tabindex="-1">
+<label for="contact-float-toggle" class="contact-float-trigger" role="button" tabindex="0" aria-label="Abrir panel de contacto" aria-expanded="false" aria-controls="contact-panel"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#send-fill"/></svg></i></label>
+<div class="contact-float-curva"></div>
+<aside class="contact-float-panel" id="contact-panel" aria-label="Panel de contacto" aria-hidden="true">
+  <div class="contact-float-content">
+    <label for="contact-float-toggle" class="contact-float-close" role="button" tabindex="0" aria-label="Cerrar panel"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#x-lg"/></svg></i></label>
+    <span class="contact-float-badge"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#stars"/></svg></i> Disponible para proyectos</span>
+    <h2 class="contact-float-title">Yojhan Furuya</h2>
+    <p class="contact-float-role">Desarrollador &amp; Diseñador Web</p>
+    <p class="contact-float-text">Disponible para trabajo, proyectos, colaboraciones y freelance.</p>
+    <div class="contact-float-links">
+      <a href="mailto:yojhancaro0@gmail.com"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#envelope-fill"/></svg></i> yojhancaro0@gmail.com</a>
+      <a href="https://www.linkedin.com/in/yojhanfuruya" target="_blank" rel="noopener"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#linkedin"/></svg></i> LinkedIn</a>
+      <a href="https://github.com/yojhanfuruya" target="_blank" rel="noopener"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#github"/></svg></i> GitHub</a>
+    </div>
+    <div class="contact-float-actions">
+      <a href="mailto:yojhancaro0@gmail.com" class="contact-float-btn-primary">Escribirme <i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#arrow-up-right"/></svg></i></a>
+      
+    </div>
+  </div>
+</aside>
+
+<script src="../assets/js/main.js?v=mvy5h96l" defer></script>
+</body>
+</html>

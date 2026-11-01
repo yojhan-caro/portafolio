@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="es" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sobre mí — Yojhan Furuya</title>
+<meta name="description" content="Mi camino en el desarrollo web: formación en Duoc UC, proyectos para clientes reales, habilidades y forma de trabajar.">
+<meta name="theme-color" content="#08090d">
+<meta name="author" content="Yojhan Furuya">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CL">
+<meta property="og:title" content="Sobre mí — Yojhan Furuya">
+<meta property="og:description" content="Mi camino en el desarrollo web: formación en Duoc UC, proyectos para clientes reales, habilidades y forma de trabajar.">
+
+
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="../assets/css/main.css?v=mvy5h96l">
+<script>
+/* Antes de pintar: activa animaciones, recuerda la posición del cursor
+   entre páginas y, si falta una imagen local, la toma del sitio antiguo. */
+(function(d,w){
+  d.documentElement.classList.add('js');
+  try{ w.__pmCursorInit = w.__pmCursorLast = JSON.parse(sessionStorage.getItem('pmCursorPos')||'null'); }catch(e){}
+  w.addEventListener('mousemove',function(e){ w.__pmCursorLast={x:e.clientX,y:e.clientY}; try{sessionStorage.setItem('pmCursorPos',JSON.stringify(w.__pmCursorLast));}catch(_){} },{passive:true});
+  var REMOTO="https://yofuruya.laboratoriodiseno.cl/wp-content/";
+  if(REMOTO) w.addEventListener('error',function(e){
+    var t=e.target; if(!t||!/^(IMG|SOURCE|VIDEO)$/.test(t.tagName)) return;
+    var s=t.getAttribute('src')||''; var m=s.match(/assets\/(uploads\/.*)$/);
+    if(m){ t.setAttribute('src', REMOTO+m[1]); if(t.tagName==='SOURCE'&&t.parentNode.load) t.parentNode.load(); }
+  },true);
+})(document,window);
+</script>
+
+</head>
+<body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+<div id="cursor-blob" aria-hidden="true"><svg viewBox="0 0 100 100"><path class="blob-path" d="M50,20 C65,15 80,30 82,50 C84,70 70,85 50,83 C30,81 16,68 18,50 C20,32 35,25 50,20Z"/></svg></div>
+<script>(function(){var p=window.__pmCursorInit,el=document.getElementById('cursor-blob');if(p&&el){el.style.left=p.x+'px';el.style.top=p.y+'px';el.style.opacity='1';}})();</script>
+
+<input type="checkbox" id="menu-toggle" aria-hidden="true" tabindex="-1">
+<div class="mobile-topbar">
+  <a href="../" class="mobile-topbar-brand"><span class="brand-mark">Y</span> Yojhan Furuya</a>
+  <label for="menu-toggle" class="toggle-hamburguesa" role="button" tabindex="0" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="menu-lateral"><span></span><span></span><span></span></label>
+</div>
+<label for="menu-toggle" class="menu-overlay" aria-hidden="true"></label>
+<nav class="menu-lateral" id="menu-lateral" aria-label="Menú móvil" aria-hidden="true">
+  <div class="menu-lateral-header">
+    <span class="menu-lateral-brand"><span class="brand-mark">Y</span> Yojhan Furuya</span>
+    <label for="menu-toggle" class="menu-lateral-close" role="button" tabindex="0" aria-label="Cerrar menú"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#x-lg"/></svg></i></label>
+  </div>
+  <div class="menu-lateral-links">
+    <a href="../" class="menu-link-card"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#house-door-fill"/></svg></i> <span>Inicio</span></a>
+    <a href="../sobre-mi/" class="menu-link-card active" aria-current="page"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#person-fill"/></svg></i> <span>Sobre mí</span></a>
+    <a href="../proyectos/" class="menu-link-card"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#grid-1x2-fill"/></svg></i> <span>Proyectos</span></a>
+    <a href="../#contacto" class="menu-link-card"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#chat-dots-fill"/></svg></i> <span>Contacto</span></a>
+  </div>
+  <div class="menu-lateral-footer"><a href="mailto:yojhancaro0@gmail.com" class="menu-lateral-mail"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#envelope-fill"/></svg></i> yojhancaro0@gmail.com</a></div>
+</nav>
+
+<header class="nav-container" id="nav">
+  <a href="../" class="nav-brand"><span class="brand-mark">Y</span> <span class="nav-brand-name">Yojhan Furuya</span></a>
+  <nav class="nav-btns" aria-label="Navegación principal" data-page="sobre-mi">
+    <div class="blob" id="blob"></div>
+    <a href="../" class="nav-btn">Inicio</a>
+    <a href="../sobre-mi/" class="nav-btn active" aria-current="page">Sobre mí</a>
+    <a href="../proyectos/" class="nav-btn">Proyectos</a>
+    <a href="../#contacto" class="nav-btn">Contacto</a>
+  </nav>
+  <label for="contact-float-toggle" class="nav-disponible" role="button" tabindex="0" aria-expanded="false" aria-controls="contact-panel"><span class="nav-disponible-dot"></span> Hablemos</label>
+</header>
+
+<main id="contenido" class="">
+
+<section class="am-hero" aria-labelledby="titulo-sobre-mi">
+  <div class="breadcrumb-overlay container-custom"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio"},{"@type":"ListItem","position":2,"name":"Sobre mí"}]}</script><nav class="breadcrumb-row" aria-label="Migas de pan"><a href="../"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#house-door-fill"/></svg></i> Inicio</a><span class="breadcrumb-sep" aria-hidden="true">/</span><span class="breadcrumb-current" aria-current="page">Sobre mí</span></nav></div>
+  <div class="hero-stage">
+    <h1 class="visually-hidden" id="titulo-sobre-mi">Yojhan Furuya — Desarrollador Front-End y diseñador web</h1>
+    <div class="hero-bg-text" aria-hidden="true"><span class="bg-word">YOJHAN</span><span class="bg-word bg-word-2">FURUYA</span></div>
+    <div class="hero-photo-glow"></div>
+    
+    <div class="hero-col-left">
+      <div class="hero-name-block">
+        <div class="hero-alias">Yojhan Furuya</div>
+        <p class="hero-name-title">Frontend <span>Developer</span></p>
+      </div>
+      <div class="hero-socials">
+        <a href="mailto:yojhancaro0@gmail.com"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#envelope-fill"/></svg></i> Email</a>
+        <a href="https://www.linkedin.com/in/yojhanfuruya" target="_blank" rel="noopener"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#linkedin"/></svg></i> LinkedIn</a>
+        <a href="https://github.com/yojhanfuruya" target="_blank" rel="noopener"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#github"/></svg></i> GitHub</a>
+      </div>
+      <div class="hero-flag">Viña del Mar · Chile</div>
+    </div>
+    <div class="hero-col-right">
+      <div class="hero-role-lines"><div class="hero-role-line">Frontend Dev</div><div class="hero-role-line">UI Designer</div><div class="hero-role-line">Web Creator</div></div>
+      <p class="hero-desc">Creo interfaces con identidad visual marcada. Diseño y desarrollo en un solo lugar.</p>
+      <div class="hero-ctas">
+        <a href="../proyectos/" class="magnetic-btn">Ver proyectos <i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#arrow-up-right"/></svg></i></a>
+        <a href="#contacto" class="ghost-btn">Hablemos <i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#chat-dots"/></svg></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-mobile-info">
+    <p class="hero-mobile-title" aria-hidden="true">Yojhan <span>Furuya</span></p>
+    <div class="m-role">Frontend Developer · UI Designer</div>
+    <p class="hero-mobile-desc">Creo interfaces con identidad visual fuerte y código limpio.</p>
+    <div class="hero-mobile-ctas">
+      <a href="../proyectos/" class="magnetic-btn">Ver proyectos <i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#arrow-up-right"/></svg></i></a>
+      <a href="#contacto" class="ghost-btn">Hablemos</a>
+    </div>
+  </div>
+  <div class="hero-stats-bar">
+    <div class="hero-stat"><div class="hero-stat-label">Años aprendiendo</div><div class="hero-stat-value">2+</div><div class="hero-stat-sub">Desde 2024</div></div>
+    <div class="hero-stat"><div class="hero-stat-label">Proyectos</div><div class="hero-stat-value">7</div><div class="hero-stat-sub">Académicos, propios y clientes</div></div>
+    <div class="hero-stat"><div class="hero-stat-label">Práctica</div><div class="hero-stat-value">360 h</div><div class="hero-stat-sub">Diseño web UX/UI</div></div>
+    <div class="hero-stat hero-stat-stack">
+      <div class="hero-stat-stack-row"><span class="hero-stat-label">Stack</span><span class="stat-tag stat-tag--accent">HTML5</span><span class="stat-tag">CSS3</span><span class="stat-tag">JS</span><span class="stat-tag">PHP</span></div>
+      <div class="hero-stat-stack-row"><span class="hero-stat-label">Más</span><span class="stat-tag">WordPress</span><span class="stat-tag">Shopify</span><span class="stat-tag stat-tag--muted">MySQL</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container-custom">
+    <div class="about-narrative">
+      <div class="narrative-sticky" data-aos="fade-up">
+        <span class="eyebrow">Sobre mí</span>
+        <h2 class="narrative-big-title">Mi camino<br>en el <span class="stroke">desarrollo web</span></h2>
+        <p class="narrative-bio">Antes de programar trabajé años en logística y bodega. Ahí vi de cerca cuánto tiempo se pierde con procesos mal resueltos, y eso es lo que hoy me mueve: construir sistemas que se usan todos los días.</p>
+        <p class="narrative-bio">Estudio Desarrollo y Diseño Web en Duoc UC y aplico lo que aprendo en proyectos reales, desde sitios para clientes hasta sistemas construidos desde cero. Me interesa especialmente conectar el desarrollo con el marketing digital y la conversión.</p>
+      </div>
+      <div class="timeline timeline--about" data-aos="fade-up" data-aos-delay="120">
+        <div class="timeline-item"><div class="tl-dot"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#mortarboard-fill"/></svg></i></div><div class="tl-content"><div class="tl-date">2024 — Presente</div><div class="tl-title">Desarrollo y Diseño Web · Duoc UC</div><p class="tl-desc">Formación técnica combinada con proyectos reales, desde sistemas web funcionales hasta landing pages orientadas a la conversión. Aprobé el optativo de JavaScript avanzado.</p></div></div>
+        <div class="timeline-item"><div class="tl-dot"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#code-slash"/></svg></i></div><div class="tl-content"><div class="tl-date">2025</div><div class="tl-title">Primeros proyectos propios</div><p class="tl-desc">Construí mis primeros sitios desde cero, académicos y personales, y llegué a desarrollar soluciones para clientes.</p><div class="tl-tags"><span>HTML/CSS</span><span>Bootstrap</span><span>JavaScript</span></div></div></div>
+        <div class="timeline-item"><div class="tl-dot"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#cart3"/></svg></i></div><div class="tl-content"><div class="tl-date">2025</div><div class="tl-title">Drake Experience — Ecommerce editorial</div><p class="tl-desc">Sitio ecommerce temático completo con WordPress y WooCommerce. Responsable de la arquitectura, la identidad visual y las funcionalidades de compra.</p><div class="tl-tags"><span>WordPress</span><span>WooCommerce</span><span>PHP</span></div></div></div>
+        <div class="timeline-item"><div class="tl-dot"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#lightning-charge-fill"/></svg></i></div><div class="tl-content"><div class="tl-date">2025 — 2026</div><div class="tl-title">Sistemas web para clientes · Clickeao</div><p class="tl-desc">Sistemas que resuelven problemas reales de operación: comandas para un restaurante, gestión para un estudio de tatuajes, un gimnasio y una tienda de suscripciones.</p><div class="tl-tags"><span>Sistema de comandas</span><span>Ale.ink</span><span>GymPrime</span><span>TodoPSN</span></div></div></div>
+        <div class="timeline-item"><div class="tl-dot"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#graph-up-arrow"/></svg></i></div><div class="tl-content"><div class="tl-date">Jun — Sep 2026</div><div class="tl-title">Práctica profesional · Natural Telchi</div><p class="tl-desc">Diseño de landing pages de conversión para productos de lanzamiento de una importadora y envasadora de suplementos, pensadas para campañas en Meta Ads y Google Ads.</p><div class="tl-tags"><span>UX/UI</span><span>Landing pages</span><span>Marketing digital</span></div></div></div>
+        <div class="timeline-item"><div class="tl-dot tl-dot--accent"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#stars"/></svg></i></div><div class="tl-content"><div class="tl-date tl-date--accent">Hoy</div><div class="tl-title">Buscando mi próximo equipo</div><p class="tl-desc">Disponible para sumarme a un equipo de desarrollo web, en Chile o remoto, mientras sigo construyendo productos propios.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--no-top">
+  <div class="container-custom">
+    <span class="eyebrow">Habilidades</span>
+    <h2 class="section-title section-title--skills" data-aos="fade-up">Lo que tengo para ofrecer.</h2>
+    <div class="skills-bento">
+      <div class="bento-card b-1" data-aos="fade-up"><div class="bento-glow glow-yellow"></div><div class="bento-icon icon-yellow"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#braces"/></svg></i></div><h3>Stack de trabajo</h3><p>Tecnologías que uso en proyectos reales, desde la maqueta hasta el despliegue.</p><div class="bento-tech-list"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>PHP</span><span>MySQL</span><span>APIs REST</span><span>WordPress</span><span>WooCommerce</span><span>Shopify</span><span>Git</span></div></div>
+      <div class="bento-card b-2" data-aos="fade-up" data-aos-delay="60"><div class="bento-glow glow-cyan"></div><div class="bento-icon icon-cyan"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#palette2"/></svg></i></div><h3>Diseño UI</h3><p>Combino identidad visual, experiencia de usuario y funcionalidad para crear soluciones que se sienten bien de usar.</p></div>
+      <div class="bento-card b-3 bento-card--centered" data-aos="fade-up" data-aos-delay="120"><div class="bento-glow glow-purple"></div><div class="bento-big-num">7</div><h3>Proyectos</h3><p>Académicos, propios y para clientes, documentados con su problema, solución y resultado.</p></div>
+      <div class="bento-card b-4" data-aos="fade-up" data-aos-delay="60"><div class="bento-icon icon-yellow"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#bar-chart-line-fill"/></svg></i></div><h3>Nivel técnico</h3>
+        <div class="skill-bars">
+          <div class="skill-bar-item"><div class="skill-bar-head"><span>HTML / CSS</span><span>90%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div></div>
+          <div class="skill-bar-item"><div class="skill-bar-head"><span>JavaScript</span><span>80%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-width="80"></div></div></div>
+          <div class="skill-bar-item"><div class="skill-bar-head"><span>PHP / MySQL</span><span>70%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-width="70"></div></div></div>
+          <div class="skill-bar-item"><div class="skill-bar-head"><span>WordPress / Shopify</span><span>78%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-width="78"></div></div></div>
+        </div>
+      </div>
+      <div class="bento-card b-5" data-aos="fade-up" data-aos-delay="120"><div class="bento-glow glow-cyan"></div><div class="bento-icon icon-cyan"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#megaphone-fill"/></svg></i></div><h3>Marketing y conversión</h3><p>Landing pages para campañas en Meta Ads, captación de clientes y modelos de negocio digital conectados con el desarrollo.</p></div>
+      <div class="bento-card b-6 bento-card--available" data-aos="fade-up" data-aos-delay="180"><div class="bento-icon icon-yellow"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#robot"/></svg></i></div><h3>IA en el flujo de trabajo</h3><p>Uso IA para programar más rápido y automatizar procesos, siempre entendiendo y revisando el código que entrego.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--no-top">
+  <div class="container-custom">
+    <span class="eyebrow">Mi enfoque</span>
+    <h2 class="section-title section-title--approach" data-aos="fade-up">Así trabajo.</h2>
+    <p class="section-lead" data-aos="fade-up" data-aos-delay="60">No sigo plantillas. Cada proyecto tiene su lógica.</p>
+    <div class="scroll-hint" data-aos="fade-up" data-aos-delay="80"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#arrow-left-right"/></svg></i> Desliza horizontalmente</div>
+    <div class="approach-scroll-wrap" data-aos="fade-up" data-aos-delay="100" tabindex="0" aria-label="Pasos de mi forma de trabajar">
+      <div class="approach-track" id="approachTrack">
+        <div class="approach-card"><div class="approach-card-accent"></div><div class="approach-num">01</div><h3>Entender primero</h3><p>Antes de escribir una línea de código, entiendo el objetivo real: ¿qué necesita comunicar? ¿A quién? ¿Qué acción debe provocar?</p></div>
+        <div class="approach-card"><div class="approach-card-accent"></div><div class="approach-num">02</div><h3>Diseñar con intención</h3><p>Cada decisión visual tiene un propósito. Trabajo junto al cliente para entender su visión y aportar criterio propio.</p></div>
+        <div class="approach-card"><div class="approach-card-accent"></div><div class="approach-num">03</div><h3>Código pensado a futuro</h3><p>Escribo código limpio y bien estructurado, pensando en quien lo intervenga después, ya sea otra persona o yo mismo en seis meses.</p></div>
+        <div class="approach-card"><div class="approach-card-accent"></div><div class="approach-num">04</div><h3>Detalles que suman</h3><p>Las microinteracciones y las transiciones transforman un sitio común en uno que marca presencia y refuerza la identidad de la marca.</p></div>
+        <div class="approach-card"><div class="approach-card-accent"></div><div class="approach-num">05</div><h3>Iterar sin miedo</h3><p>El primer resultado nunca es el final. Reviso, ajusto y mejoro hasta que el proyecto cumple lo que promete.</p></div>
+        <div class="approach-card approach-card--accent"><div class="approach-card-accent"></div><div class="approach-num approach-num--faded">06</div><h3>Presente en cada etapa</h3><p>Mantengo comunicación constante durante todo el desarrollo. Cuando hay compromiso de ambas partes, el proyecto avanza mejor.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--no-top">
+  <div class="container-custom">
+    <span class="eyebrow">La propuesta</span>
+    <h2 class="section-title section-title--why" data-aos="fade-up">¿Por qué trabajar conmigo?</h2>
+    <div class="why-grid">
+      <div class="why-big-panel" data-aos="fade-up">
+        <h3 class="why-subtitle">Diseño, desarrollo y aprendizaje constante.</h3>
+        <p>Me interesa crear soluciones digitales útiles, fáciles de usar y visualmente cuidadas. Disfruto tanto el diseño como el desarrollo, así que puedo participar desde la idea hasta la implementación.</p>
+        <p>Sigo formándome y aplicando lo aprendido en proyectos académicos, personales y para clientes. Cada proyecto es una oportunidad para mejorar y sumar experiencia real.</p>
+        <div class="why-checkmarks">
+          <div class="why-check"><div class="why-check-icon"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#check2"/></svg></i></div><div class="why-check-text"><strong>Diseño y desarrollo</strong><span>Participo tanto en la construcción visual como en el desarrollo de cada proyecto.</span></div></div>
+          <div class="why-check"><div class="why-check-icon"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#check2"/></svg></i></div><div class="why-check-text"><strong>Experiencia práctica</strong><span>Sistemas en uso para clientes reales y una práctica profesional en diseño web.</span></div></div>
+          <div class="why-check"><div class="why-check-icon"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#check2"/></svg></i></div><div class="why-check-text"><strong>Comunicación cercana</strong><span>Mantengo contacto constante y procuro que cada etapa del proyecto sea clara para todos.</span></div></div>
+          <div class="why-check"><div class="why-check-icon"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#check2"/></svg></i></div><div class="why-check-text"><strong>Compromiso con el crecimiento</strong><span>Veo cada proyecto como una oportunidad para construir soluciones cada vez más completas.</span></div></div>
+        </div>
+      </div>
+      <div class="why-side" data-aos="fade-up" data-aos-delay="120">
+        <div class="why-mini"><div class="why-mini-head"><div class="why-mini-icon icon-yellow"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#eye"/></svg></i></div><h4>Atención al detalle</h4></div><p>Cuido la presentación visual, la organización y la experiencia de uso en cada proyecto.</p></div>
+        <div class="why-mini"><div class="why-mini-head"><div class="why-mini-icon icon-cyan"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#puzzle"/></svg></i></div><h4>Soluciones adaptadas</h4></div><p>Cada proyecto tiene necesidades distintas. Construyo soluciones acordes a cada situación y objetivo.</p></div>
+        <div class="why-mini"><div class="why-mini-head"><div class="why-mini-icon icon-purple"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#graph-up-arrow"/></svg></i></div><h4>Aprendizaje continuo</h4></div><p>Dedico tiempo a aprender nuevas tecnologías, tendencias y buenas prácticas.</p></div>
+        <div class="why-mini why-mini--highlight"><div class="why-mini-head"><div class="why-mini-icon icon-yellow"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#chat-heart"/></svg></i></div><h4>Compromiso y comunicación</h4></div><p>Me involucro activamente y valoro trabajar con personas que también se comprometen con sus objetivos.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contacto" class="section">
+  <div class="container-custom">
+    <div class="am-contact-panel" data-aos="zoom-in">
+      <span class="eyebrow">Contacto</span>
+      <h2 class="section-title">¿Quieres conversar sobre una <span class="accent">idea, proyecto o puesto?</span></h2>
+      <p class="section-copy">Si crees que puedo aportar a tu equipo o proyecto, o simplemente quieres intercambiar ideas, escríbeme.</p>
+      <div class="contact-actions">
+        <a href="mailto:yojhancaro0@gmail.com" class="magnetic-btn">Escribirme <i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#send-fill"/></svg></i></a>
+        
+      </div>
+      <div class="social-row">
+        <a href="https://www.linkedin.com/in/yojhanfuruya" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#linkedin"/></svg></i></a>
+        <a href="https://github.com/yojhanfuruya" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#github"/></svg></i></a>
+        <a href="https://www.instagram.com/__yojhansin" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#instagram"/></svg></i></a>
+        <a href="mailto:yojhancaro0@gmail.com" aria-label="Email"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#envelope"/></svg></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container-custom">
+    <div class="footer-top">
+      <div class="footer-col footer-col-brand">
+        <a href="../" class="footer-logo"><span class="brand-mark">Y</span> Yojhan Furuya</a>
+        <p class="footer-tagline">Desarrollador Front-End enfocado en interfaces modernas, experiencias digitales cuidadas y detalles que marcan la diferencia.</p>
+        <span class="footer-badge"><span class="footer-badge-dot" aria-hidden="true"></span> Disponible para proyectos</span>
+      </div>
+      <nav class="footer-col" aria-label="Navegación del pie de página">
+        <h2 class="footer-heading">Navegación</h2>
+        <ul class="footer-nav">
+          <li><a href="../">Inicio</a></li>
+          <li><a href="../sobre-mi/">Sobre mí</a></li>
+          <li><a href="../proyectos/">Proyectos</a></li>
+          <li><a href="../experimentos/">Experimentos</a></li>
+          <li><a href="../#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="footer-col">
+        <h2 class="footer-heading">Contacto</h2>
+        <ul class="footer-nav footer-contact">
+          <li><a href="mailto:yojhancaro0@gmail.com"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#envelope-fill"/></svg></i> yojhancaro0@gmail.com</a></li>
+          <li><a href="https://www.linkedin.com/in/yojhanfuruya" target="_blank" rel="noopener"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#linkedin"/></svg></i> LinkedIn</a></li>
+          <li><a href="https://github.com/yojhanfuruya" target="_blank" rel="noopener"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#github"/></svg></i> GitHub</a></li>
+          <li><a href="https://www.instagram.com/__yojhansin" target="_blank" rel="noopener"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#instagram"/></svg></i> Instagram</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-col-cta">
+        <h2 class="footer-heading">¿Tienes un proyecto?</h2>
+        <p>Hablemos de cómo puedo ayudarte a construirlo.</p>
+        <a href="mailto:yojhancaro0@gmail.com" class="footer-cta-btn">Escribirme <i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#arrow-up-right"/></svg></i></a>
+        
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">&copy; 2026 Yojhan Furuya &middot; Todos los derechos reservados.</span>
+      <span class="footer-made">Diseñado y desarrollado por mí <i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#heart-fill"/></svg></i></span>
+      <button class="footer-top-btn" type="button" aria-label="Volver arriba">Arriba <i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#arrow-up"/></svg></i></button>
+    </div>
+  </div>
+</footer>
+
+<input type="checkbox" id="contact-float-toggle" aria-hidden="true" tabindex="-1">
+<label for="contact-float-toggle" class="contact-float-trigger" role="button" tabindex="0" aria-label="Abrir panel de contacto" aria-expanded="false" aria-controls="contact-panel"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#send-fill"/></svg></i></label>
+<div class="contact-float-curva"></div>
+<aside class="contact-float-panel" id="contact-panel" aria-label="Panel de contacto" aria-hidden="true">
+  <div class="contact-float-content">
+    <label for="contact-float-toggle" class="contact-float-close" role="button" tabindex="0" aria-label="Cerrar panel"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#x-lg"/></svg></i></label>
+    <span class="contact-float-badge"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#stars"/></svg></i> Disponible para proyectos</span>
+    <h2 class="contact-float-title">Yojhan Furuya</h2>
+    <p class="contact-float-role">Desarrollador &amp; Diseñador Web</p>
+    <p class="contact-float-text">Disponible para trabajo, proyectos, colaboraciones y freelance.</p>
+    <div class="contact-float-links">
+      <a href="mailto:yojhancaro0@gmail.com"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#envelope-fill"/></svg></i> yojhancaro0@gmail.com</a>
+      <a href="https://www.linkedin.com/in/yojhanfuruya" target="_blank" rel="noopener"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#linkedin"/></svg></i> LinkedIn</a>
+      <a href="https://github.com/yojhanfuruya" target="_blank" rel="noopener"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#github"/></svg></i> GitHub</a>
+    </div>
+    <div class="contact-float-actions">
+      <a href="mailto:yojhancaro0@gmail.com" class="contact-float-btn-primary">Escribirme <i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#arrow-up-right"/></svg></i></a>
+      
+    </div>
+  </div>
+</aside>
+
+<script src="../assets/js/main.js?v=mvy5h96l" defer></script>
+</body>
+</html>

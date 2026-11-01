@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="es" data-root="">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Yojhan Furuya — Desarrollador Front-End y diseñador web</title>
+<meta name="description" content="Desarrollador web front-end en Chile. Diseño y construyo sitios, ecommerce y sistemas web para negocios reales: comandas para restaurantes, paneles de gestión y landing pages de conversión.">
+<meta name="theme-color" content="#08090d">
+<meta name="author" content="Yojhan Furuya">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CL">
+<meta property="og:title" content="Yojhan Furuya — Desarrollador Front-End y diseñador web">
+<meta property="og:description" content="Desarrollador web front-end en Chile. Diseño y construyo sitios, ecommerce y sistemas web para negocios reales: comandas para restaurantes, paneles de gestión y landing pages de conversión.">
+
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="assets/css/main.css?v=mvy5h96l">
+<script>
+/* Antes de pintar: activa animaciones, recuerda la posición del cursor
+   entre páginas y, si falta una imagen local, la toma del sitio antiguo. */
+(function(d,w){
+  d.documentElement.classList.add('js');
+  try{ w.__pmCursorInit = w.__pmCursorLast = JSON.parse(sessionStorage.getItem('pmCursorPos')||'null'); }catch(e){}
+  w.addEventListener('mousemove',function(e){ w.__pmCursorLast={x:e.clientX,y:e.clientY}; try{sessionStorage.setItem('pmCursorPos',JSON.stringify(w.__pmCursorLast));}catch(_){} },{passive:true});
+  var REMOTO="https://yofuruya.laboratoriodiseno.cl/wp-content/";
+  if(REMOTO) w.addEventListener('error',function(e){
+    var t=e.target; if(!t||!/^(IMG|SOURCE|VIDEO)$/.test(t.tagName)) return;
+    var s=t.getAttribute('src')||''; var m=s.match(/assets\/(uploads\/.*)$/);
+    if(m){ t.setAttribute('src', REMOTO+m[1]); if(t.tagName==='SOURCE'&&t.parentNode.load) t.parentNode.load(); }
+  },true);
+})(document,window);
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Yojhan Furuya","jobTitle":"Desarrollador Front-End y diseñador web","email":"mailto:yojhancaro0@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Viña del Mar","addressCountry":"CL"},"alumniOf":"Duoc UC","sameAs":["https://www.linkedin.com/in/yojhanfuruya","https://github.com/yojhanfuruya","https://www.instagram.com/__yojhansin"]}</script>
+</head>
+<body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+<div id="cursor-blob" aria-hidden="true"><svg viewBox="0 0 100 100"><path class="blob-path" d="M50,20 C65,15 80,30 82,50 C84,70 70,85 50,83 C30,81 16,68 18,50 C20,32 35,25 50,20Z"/></svg></div>
+<script>(function(){var p=window.__pmCursorInit,el=document.getElementById('cursor-blob');if(p&&el){el.style.left=p.x+'px';el.style.top=p.y+'px';el.style.opacity='1';}})();</script>
+
+<input type="checkbox" id="menu-toggle" aria-hidden="true" tabindex="-1">
+<div class="mobile-topbar">
+  <a href="" class="mobile-topbar-brand"><span class="brand-mark">Y</span> Yojhan Furuya</a>
+  <label for="menu-toggle" class="toggle-hamburguesa" role="button" tabindex="0" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="menu-lateral"><span></span><span></span><span></span></label>
+</div>
+<label for="menu-toggle" class="menu-overlay" aria-hidden="true"></label>
+<nav class="menu-lateral" id="menu-lateral" aria-label="Menú móvil" aria-hidden="true">
+  <div class="menu-lateral-header">
+    <span class="menu-lateral-brand"><span class="brand-mark">Y</span> Yojhan Furuya</span>
+    <label for="menu-toggle" class="menu-lateral-close" role="button" tabindex="0" aria-label="Cerrar menú"><i class="bi" aria-hidden="true"><svg><use href="assets/icons.svg#x-lg"/></svg></i></label>
+  </div>
+  <div class="menu-lateral-links">
+    <a href="" class="menu-link-card active" aria-current="page"><i class="bi" aria-hidden="true"><svg><use href="assets/icons.svg#house-door-fill"/></svg></i> <span>Inicio</span></a>
+    <a href="sobre-mi/" class="menu-link-card"><i class="bi" aria-hidden="true"><svg><use href="assets/icons.svg#person-fill"/></svg></i> <span>Sobre mí</span></a>
+    <a href="proyectos/" class="menu-link-card"><i class="bi" aria-hidden="true"><svg><use href="assets/icons.svg#grid-1x2-fill"/></svg></i> <span>Proyectos</span></a>
+    <a href="#contacto" class="menu-link-card"><i class="bi" aria-hidden="true"><svg><use href="assets/icons.svg#chat-dots-fill"/></svg></i> <span>Contacto</span></a>
+  </div>
+  <div class="menu-lateral-footer"><a href="mailto:yojhancaro0@gmail.com" class="menu-lateral-mail"><i class="bi" aria-hidden="true"><svg><use href="assets/icons.svg#envelope-fill"/></svg></i> yojhancaro0@gmail.com</a></div>
+</nav>
+
+<header class="nav-container" id="nav">
+  <a href="" class="nav-brand"><span class="brand-mark">Y</span> <span class="nav-brand-name">Yojhan Furuya</span></a>
+  <nav class="nav-btns" aria-label="Navegación principal" data-page="inicio">
+    <div class="blob" id="blob"></div>
+    <a href="" class="nav-btn active" aria-current="page">Inicio</a>
+    <a href="sobre-mi/" class="nav-btn">Sobre mí</a>
+    <a href="proyectos/" class="nav-btn">Proyectos</a>
+    <a href="#contacto" class="nav-btn">Contacto</a>
+  </nav>
+  <label for="contact-float-toggle" class="nav-disponible" role="button" tabindex="0" aria-expanded="false" aria-controls="contact-panel"><span class="nav-disponible-dot"></span> Hablemos</label>
+</header>
+
+<main id="contenido" class="">
+
+<header id="inicio" class="hero">
+  <div class="container-custom">
+    <div class="hero-shell">
+      <section class="hero-main" data-aos="fade-up">
+        <div class="hero-inner">
+          <div>
+            <div class="hero-label"><i class="bi" aria-hidden="true"><svg><use href="assets/icons.svg#stars"/></svg></i> Diseño &amp; Desarrollo Front-End</div>
+            <h1 class="hero-title">Diseño y desarrollo para una mejor <span class="outline">experiencia</span> digital.</h1>
+            <p class="hero-description">Soy desarrollador web front-end en Viña del Mar. Diseño interfaces centradas en el usuario y las llevo a código: sitios, ecommerce y sistemas que negocios reales usan todos los días.</p>
+            <div class="hero-actions">
+              <a href="#explora" class="magnetic-btn">Explorar proyectos <i class="bi" aria-hidden="true"><svg><use href="assets/icons.svg#arrow-up-right"/></svg></i></a>
+              <a href="#sobre-mi" class="ghost-btn">Enfoque <i class="bi" aria-hidden="true"><svg><use href="assets/icons.svg#chevron-down"/></svg></i></a>
+            </div>
+          </div>
+          <div class="hero-bottom">
+            <div class="metric-card"><strong>UI / UX</strong><span>Interfaces modernas con jerarquía visual clara.</span></div>
+            <div class="metric-card"><strong>Desarrollo</strong><span>HTML, CSS, JS, PHP, MySQL y WordPress.</span></div>
+            <div class="metric-card"><strong>Laboratorio</strong><span>Experimentos de interacción y nuevas ideas.</span></div>
+          </div>
+        </div>
+      </section>
+      <aside class="hero-side">
+        <article class="moodboard-card" data-aos="fade-left" data-aos-delay="120">
+          <div class="moodboard-placeholder">
+            <img class="moodboard-photo" src="assets/img/moodboard.webp" alt="Moodboard visual: identidad y estilo del portafolio" width="1200" height="900" fetchpriority="high"><div class="moodboard-shade" aria-hidden="true"></div>
+            <div class="moodboard-label"><i class="bi" aria-hidden="true"><svg><use href="assets/icons.svg#grid-3x3-gap-fill"/></svg></i> Identidad visual · Estilo</div>
+          </div>
+        </article>
+        <div class="hero-connect" data-aos="fade-left" data-aos-delay="220">
+          <span class="hero-connect-title"><i class="bi" aria-hidden="true"><svg><use href="assets/icons.svg#link-45deg"/></svg></i> Conecta conmigo</span>
+          <div class="hero-social">
+            <a href="mailto:yojhancaro0@gmail.com" class="social-pill" style="--c:#ea4335"><i class="bi" aria-hidden="true"><svg><use href="assets/icons.svg#envelope-fill"/></svg></i><span class="social-pill-label">yojhancaro0@gmail.com</span></a>
+            <a href="https://www.linkedin.com/in/yojhanfuruya" target="_blank" rel="noopener" class="social-pill" style="--c:#2f8be6"><i class="bi" aria-hidden="true"><svg><use href="assets/icons.svg#linkedin"/></svg></i><span class="social-pill-label">LinkedIn</span></a>
+            <a href="https://github.com/yojhanfuruya" target="_blank" rel="noopener" class="social-pill" style="--c:#f0f6fc"><i class="bi" aria-hidden="true"><svg><use href="assets/icons.svg#github"/></svg></i><span class="social-pill-label">GitHub</span></a>
+            <a href="https://www.instagram.com/__yojhansin" target="_blank" rel="noopener" class="social-pill" style="--c:#e1306c"><i class="bi" aria-hidden="true"><svg><use href="assets/icons.svg#instagram"/></svg></i><span class="social-pill-label">@__yojhansin</span></a>
+          </div>
+          <div class="tech-tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>PHP</span><span>MySQL</span><span>WordPress</span><span>Shopify</span><span>Git</span></div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</header>
+
+<section id="sobre-mi" class="section">
+  <div class="container-custom">
+    <a href="sobre-mi/" class="sobre-mi-card" data-aos="fade-up">
+      <div class="sobre-mi-blob blob-1"></div><div class="sobre-mi-blob blob-2"></div><div class="sobre-mi-blob blob-3"></div>
+      <div class="sobre-mi-content">
+        <span class="eyebrow">Sobre mí</span>
+        <h2>Frontend visual<br>para marcas y <span class="accent">experiencias.</span></h2>
+        <p>Desarrollador y diseñador web enfocado en UX, sistemas y experiencias digitales que se sienten bien de usar. Conoce mi historia, mi enfoque y cómo trabajo.</p>
+        <span class="sobre-mi-btn">Ver más sobre mí <i class="bi" aria-hidden="true"><svg><use href="assets/icons.svg#arrow-up-right"/></svg></i></span>
+      </div>
+      <div class="sobre-mi-stats">
+        <div class="sobre-mi-stat"><strong>7</strong><span>Proyectos documentados</span></div>
+        <div class="sobre-mi-stat"><strong>2+</strong><span>Años desarrollando</span></div>
+        <div class="sobre-mi-stat"><strong>360 h</strong><span>Práctica profesional</span></div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section id="explora" class="section">
+  <div class="container-custom">
+    <div class="projects-head">
+      <div><span class="eyebrow">Explora mi trabajo</span><h2 class="section-title" data-aos="fade-up">Todo está acá, ordenado.</h2></div>
+      <p class="section-copy" data-aos="fade-up" data-aos-delay="100">Trabajos de la universidad, proyectos propios y experimentos del laboratorio creativo. Cada uno con su propia historia.</p>
+    </div>
+    <div class="explora-grid">
+      <a href="proyectos/#formacion" class="explora-card" data-aos="fade-up">
+        <div class="explora-icon"><i class="bi" aria-hidden="true"><svg><use href="assets/icons.svg#mortarboard-fill"/></svg></i></div>
+        <div class="explora-num">01 · Formación académica</div>
+        <h3>Proyectos académicos con problemas reales.</h3>
+        <p>Sistemas, sitios y entregas donde se aplican metodologías, documentación y solución de necesidades concretas.</p>
+        <span class="explora-cta">Ver proyectos académicos <i class="bi" aria-hidden="true"><svg><use href="assets/icons.svg#arrow-up-right"/></svg></i></span>
+      </a>
+      <a href="proyectos/#propios" class="explora-card" data-aos="fade-up" data-aos-delay="80">
+        <div class="explora-icon"><i class="bi" aria-hidden="true"><svg><use href="assets/icons.svg#rocket-takeoff-fill"/></svg></i></div>
+        <div class="explora-num">02 · Proyectos propios</div>
+        <h3>Ideas personales llevadas a producto.</h3>
+        <p>Sitios comerciales, sistemas en uso activo y propuestas visuales que exploran una oportunidad concreta.</p>
+        <span class="explora-cta">Ver proyectos propios <i class="bi" aria-hidden="true"><svg><use href="assets/icons.svg#arrow-up-right"/></svg></i></span>
+      </a>
+      <a href="experimentos/" class="explora-card" data-aos="fade-up" data-aos-delay="160">
+        <div class="explora-icon"><i class="bi" aria-hidden="true"><svg><use href="assets/icons.svg#cpu-fill"/></svg></i></div>
+        <div class="explora-num">03 · Laboratorio creativo</div>
+        <h3>Experimentos con código, IA e interacción.</h3>
+        <p>Pruebas que no siempre son proyectos terminados, pero demuestran curiosidad y exploración técnica real.</p>
+        <span class="explora-cta">Ver experimentos <i class="bi" aria-hidden="true"><svg><use href="assets/icons.svg#arrow-up-right"/></svg></i></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="proyectos-destacados" class="section">
+  <div class="container-custom">
+    <div class="projects-head">
+      <div><span class="eyebrow">Selección destacada</span><h2 class="section-title" data-aos="fade-up">Proyectos con impacto real.</h2></div>
+      <p class="section-copy" data-aos="fade-up" data-aos-delay="100">Sistemas y sitios que hoy usa gente real, construidos con criterio visual y técnico.</p>
+    </div>
+    <div class="projects-board">
+      <article class="project-card position-relative" data-aos="fade-up" data-aos-delay="80">
+  <div class="project-image">
+    <img src="assets/uploads/2026/07/5b9e926b-052e-4389-a838-56a008209eb7.jpeg" alt="Portada del proyecto Sistema de Comandas" loading="lazy" decoding="async" width="1200" height="800">
+    <span class="project-badge"><i class="bi" aria-hidden="true"><svg><use href="assets/icons.svg#rocket-takeoff-fill"/></svg></i> Proyecto propio</span>
+    <span class="project-open"><i class="bi" aria-hidden="true"><svg><use href="assets/icons.svg#arrow-up-right"/></svg></i></span>
+  </div>
+  <div class="project-body">
+    <div class="project-kicker">Sistema web · Restaurante</div>
+    <h3>Sistema de Comandas</h3>
+    <p>Pedidos en tiempo real entre garzones, cocina y administración, con reportes, stock y personal.</p>
+    <div class="tags"><span>PHP</span><span>MySQL</span><span>JavaScript</span></div>
+    <a href="proyectos/sistema-de-comandas/" class="stretched-link" aria-label="Ver proyecto Sistema de Comandas"></a>
+  </div>
+</article>
+<article class="project-card position-relative" data-aos="fade-up" data-aos-delay="140">
+  <div class="project-image">
+    <img src="assets/uploads/2026/06/ale.ink_.jpg" alt="Portada del proyecto Ale.ink Estudio de tatuajes" loading="lazy" decoding="async" width="1200" height="800">
+    <span class="project-badge"><i class="bi" aria-hidden="true"><svg><use href="assets/icons.svg#cpu-fill"/></svg></i> Experimento</span>
+    <span class="project-open"><i class="bi" aria-hidden="true"><svg><use href="assets/icons.svg#arrow-up-right"/></svg></i></span>
+  </div>
+  <div class="project-body">
+    <div class="project-kicker">Sitio web · Estudio de tatuajes</div>
+    <h3>Ale.ink Estudio de tatuajes</h3>
+    <p>Landing, cotizador en 5 pasos y panel privado para un estudio de tatuajes en Viña del Mar.</p>
+    <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+    <a href="proyectos/ale-ink/" class="stretched-link" aria-label="Ver proyecto Ale.ink Estudio de tatuajes"></a>
+  </div>
+</article>
+<article class="project-card position-relative" data-aos="fade-up" data-aos-delay="200">
+  <div class="project-image">
+    <img src="assets/uploads/2026/06/portada-todopsnchile.png" alt="Portada del proyecto TodoPSN Chile" loading="lazy" decoding="async" width="1200" height="800">
+    <span class="project-badge"><i class="bi" aria-hidden="true"><svg><use href="assets/icons.svg#rocket-takeoff-fill"/></svg></i> Proyecto propio</span>
+    <span class="project-open"><i class="bi" aria-hidden="true"><svg><use href="assets/icons.svg#arrow-up-right"/></svg></i></span>
+  </div>
+  <div class="project-body">
+    <div class="project-kicker">Ecommerce · Streaming</div>
+    <h3>TodoPSN Chile</h3>
+    <p>Tienda de suscripciones de streaming en uso real, con checkout que termina en WhatsApp.</p>
+    <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+    <a href="proyectos/todopsn-chile/" class="stretched-link" aria-label="Ver proyecto TodoPSN Chile"></a>
+  </div>
+</article>
+    </div>
+    <div class="projects-cta" data-aos="fade-up"><a href="proyectos/" class="magnetic-btn">Ver todos los proyectos <i class="bi" aria-hidden="true"><svg><use href="assets/icons.svg#grid-1x2-fill"/></svg></i></a></div>
+  </div>
+</section>
+
+<section id="servicios" class="section">
+  <div class="container-custom">
+    <span class="eyebrow">Capacidades</span>
+    <h2 class="section-title" data-aos="fade-up">Qué puedo construir.</h2>
+    <div class="process-list">
+      <article class="process-item" data-aos="fade-up"><span>01</span><h3>Websites con identidad</h3><p>Sitios modernos y de carga fluida, diseñados para destacar marcas o negocios digitales en cualquier dispositivo.</p></article>
+      <article class="process-item" data-aos="fade-up"><span>02</span><h3>Landing pages de conversión</h3><p>Páginas pensadas para campañas de Meta Ads y Google Ads, con estructuras directas y llamados a la acción claros.</p></article>
+      <article class="process-item" data-aos="fade-up"><span>03</span><h3>E-commerce a medida</h3><p>Tiendas en WordPress + WooCommerce o Shopify, con plantillas intervenidas y experiencias de compra intuitivas.</p></article>
+      <article class="process-item" data-aos="fade-up"><span>04</span><h3>Sistemas y paneles funcionales</h3><p>Interfaces para centralizar datos, optimizar tareas manuales y agilizar flujos operativos internos.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="contacto" class="section">
+  <div class="container-custom">
+    <div class="contact-panel" data-aos="zoom-in">
+      <span class="eyebrow">Contacto</span>
+      <h2 class="section-title">¿Creamos una experiencia digital con identidad?</h2>
+      <p class="section-copy">Disponible para trabajar en un equipo de desarrollo, colaborar en nuevas interfaces y proyectos a medida.</p>
+      <div class="contact-actions">
+        <a href="mailto:yojhancaro0@gmail.com" class="magnetic-btn">Escribirme <i class="bi" aria-hidden="true"><svg><use href="assets/icons.svg#send-fill"/></svg></i></a>
+        
+      </div>
+      <div class="social-row">
+        <a href="https://www.linkedin.com/in/yojhanfuruya" target="_blank" rel="noopener" aria-label="LinkedIn de Yojhan Furuya"><i class="bi" aria-hidden="true"><svg><use href="assets/icons.svg#linkedin"/></svg></i></a>
+        <a href="https://github.com/yojhanfuruya" target="_blank" rel="noopener" aria-label="GitHub de Yojhan Furuya"><i class="bi" aria-hidden="true"><svg><use href="assets/icons.svg#github"/></svg></i></a>
+        <a href="https://www.instagram.com/__yojhansin" target="_blank" rel="noopener" aria-label="Instagram de Yojhan Furuya"><i class="bi" aria-hidden="true"><svg><use href="assets/icons.svg#instagram"/></svg></i></a>
+        <a href="mailto:yojhancaro0@gmail.com" aria-label="Enviar un email a Yojhan Furuya"><i class="bi" aria-hidden="true"><svg><use href="assets/icons.svg#envelope"/></svg></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container-custom">
+    <div class="footer-top">
+      <div class="footer-col footer-col-brand">
+        <a href="" class="footer-logo"><span class="brand-mark">Y</span> Yojhan Furuya</a>
+        <p class="footer-tagline">Desarrollador Front-End enfocado en interfaces modernas, experiencias digitales cuidadas y detalles que marcan la diferencia.</p>
+        <span class="footer-badge"><span class="footer-badge-dot" aria-hidden="true"></span> Disponible para proyectos</span>
+      </div>
+      <nav class="footer-col" aria-label="Navegación del pie de página">
+        <h2 class="footer-heading">Navegación</h2>
+        <ul class="footer-nav">
+          <li><a href="">Inicio</a></li>
+          <li><a href="sobre-mi/">Sobre mí</a></li>
+          <li><a href="proyectos/">Proyectos</a></li>
+          <li><a href="experimentos/">Experimentos</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="footer-col">
+        <h2 class="footer-heading">Contacto</h2>
+        <ul class="footer-nav footer-contact">
+          <li><a href="mailto:yojhancaro0@gmail.com"><i class="bi" aria-hidden="true"><svg><use href="assets/icons.svg#envelope-fill"/></svg></i> yojhancaro0@gmail.com</a></li>
+          <li><a href="https://www.linkedin.com/in/yojhanfuruya" target="_blank" rel="noopener"><i class="bi" aria-hidden="true"><svg><use href="assets/icons.svg#linkedin"/></svg></i> LinkedIn</a></li>
+          <li><a href="https://github.com/yojhanfuruya" target="_blank" rel="noopener"><i class="bi" aria-hidden="true"><svg><use href="assets/icons.svg#github"/></svg></i> GitHub</a></li>
+          <li><a href="https://www.instagram.com/__yojhansin" target="_blank" rel="noopener"><i class="bi" aria-hidden="true"><svg><use href="assets/icons.svg#instagram"/></svg></i> Instagram</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-col-cta">
+        <h2 class="footer-heading">¿Tienes un proyecto?</h2>
+        <p>Hablemos de cómo puedo ayudarte a construirlo.</p>
+        <a href="mailto:yojhancaro0@gmail.com" class="footer-cta-btn">Escribirme <i class="bi" aria-hidden="true"><svg><use href="assets/icons.svg#arrow-up-right"/></svg></i></a>
+        
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">&copy; 2026 Yojhan Furuya &middot; Todos los derechos reservados.</span>
+      <span class="footer-made">Diseñado y desarrollado por mí <i class="bi" aria-hidden="true"><svg><use href="assets/icons.svg#heart-fill"/></svg></i></span>
+      <button class="footer-top-btn" type="button" aria-label="Volver arriba">Arriba <i class="bi" aria-hidden="true"><svg><use href="assets/icons.svg#arrow-up"/></svg></i></button>
+    </div>
+  </div>
+</footer>
+
+<input type="checkbox" id="contact-float-toggle" aria-hidden="true" tabindex="-1">
+<label for="contact-float-toggle" class="contact-float-trigger" role="button" tabindex="0" aria-label="Abrir panel de contacto" aria-expanded="false" aria-controls="contact-panel"><i class="bi" aria-hidden="true"><svg><use href="assets/icons.svg#send-fill"/></svg></i></label>
+<div class="contact-float-curva"></div>
+<aside class="contact-float-panel" id="contact-panel" aria-label="Panel de contacto" aria-hidden="true">
+  <div class="contact-float-content">
+    <label for="contact-float-toggle" class="contact-float-close" role="button" tabindex="0" aria-label="Cerrar panel"><i class="bi" aria-hidden="true"><svg><use href="assets/icons.svg#x-lg"/></svg></i></label>
+    <span class="contact-float-badge"><i class="bi" aria-hidden="true"><svg><use href="assets/icons.svg#stars"/></svg></i> Disponible para proyectos</span>
+    <h2 class="contact-float-title">Yojhan Furuya</h2>
+    <p class="contact-float-role">Desarrollador &amp; Diseñador Web</p>
+    <p class="contact-float-text">Disponible para trabajo, proyectos, colaboraciones y freelance.</p>
+    <div class="contact-float-links">
+      <a href="mailto:yojhancaro0@gmail.com"><i class="bi" aria-hidden="true"><svg><use href="assets/icons.svg#envelope-fill"/></svg></i> yojhancaro0@gmail.com</a>
+      <a href="https://www.linkedin.com/in/yojhanfuruya" target="_blank" rel="noopener"><i class="bi" aria-hidden="true"><svg><use href="assets/icons.svg#linkedin"/></svg></i> LinkedIn</a>
+      <a href="https://github.com/yojhanfuruya" target="_blank" rel="noopener"><i class="bi" aria-hidden="true"><svg><use href="assets/icons.svg#github"/></svg></i> GitHub</a>
+    </div>
+    <div class="contact-float-actions">
+      <a href="mailto:yojhancaro0@gmail.com" class="contact-float-btn-primary">Escribirme <i class="bi" aria-hidden="true"><svg><use href="assets/icons.svg#arrow-up-right"/></svg></i></a>
+      
+    </div>
+  </div>
+</aside>
+
+<script src="assets/js/main.js?v=mvy5h96l" defer></script>
+</body>
+</html>

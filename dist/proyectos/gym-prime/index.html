@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="es" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>GymPrime — Yojhan Furuya</title>
+<meta name="description" content="Landing y panel de administración para un gimnasio, con gestión de planes, alumnos y registro de ejercicios. Construido en HTML, CSS y JavaScript puro,…">
+<meta name="theme-color" content="#08090d">
+<meta name="author" content="Yojhan Furuya">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CL">
+<meta property="og:title" content="GymPrime — Yojhan Furuya">
+<meta property="og:description" content="Landing y panel de administración para un gimnasio, con gestión de planes, alumnos y registro de ejercicios. Construido en HTML, CSS y JavaScript puro,…">
+
+
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="../../assets/css/main.css?v=mvy5h96l">
+<script>
+/* Antes de pintar: activa animaciones, recuerda la posición del cursor
+   entre páginas y, si falta una imagen local, la toma del sitio antiguo. */
+(function(d,w){
+  d.documentElement.classList.add('js');
+  try{ w.__pmCursorInit = w.__pmCursorLast = JSON.parse(sessionStorage.getItem('pmCursorPos')||'null'); }catch(e){}
+  w.addEventListener('mousemove',function(e){ w.__pmCursorLast={x:e.clientX,y:e.clientY}; try{sessionStorage.setItem('pmCursorPos',JSON.stringify(w.__pmCursorLast));}catch(_){} },{passive:true});
+  var REMOTO="https://yofuruya.laboratoriodiseno.cl/wp-content/";
+  if(REMOTO) w.addEventListener('error',function(e){
+    var t=e.target; if(!t||!/^(IMG|SOURCE|VIDEO)$/.test(t.tagName)) return;
+    var s=t.getAttribute('src')||''; var m=s.match(/assets\/(uploads\/.*)$/);
+    if(m){ t.setAttribute('src', REMOTO+m[1]); if(t.tagName==='SOURCE'&&t.parentNode.load) t.parentNode.load(); }
+  },true);
+})(document,window);
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"CreativeWork","name":"GymPrime","description":"Landing y panel de administración para un gimnasio, con gestión de planes, alumnos y registro de ejercicios. Construido en HTML, CSS y JavaScript puro, usando localStorage como base de datos.","author":{"@type":"Person","name":"Yojhan Furuya"},"keywords":"HTML, CSS, JavaScript, localStorage","dateCreated":"2025"}</script>
+</head>
+<body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+<div id="cursor-blob" aria-hidden="true"><svg viewBox="0 0 100 100"><path class="blob-path" d="M50,20 C65,15 80,30 82,50 C84,70 70,85 50,83 C30,81 16,68 18,50 C20,32 35,25 50,20Z"/></svg></div>
+<script>(function(){var p=window.__pmCursorInit,el=document.getElementById('cursor-blob');if(p&&el){el.style.left=p.x+'px';el.style.top=p.y+'px';el.style.opacity='1';}})();</script>
+
+<input type="checkbox" id="menu-toggle" aria-hidden="true" tabindex="-1">
+<div class="mobile-topbar">
+  <a href="../../" class="mobile-topbar-brand"><span class="brand-mark">Y</span> Yojhan Furuya</a>
+  <label for="menu-toggle" class="toggle-hamburguesa" role="button" tabindex="0" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="menu-lateral"><span></span><span></span><span></span></label>
+</div>
+<label for="menu-toggle" class="menu-overlay" aria-hidden="true"></label>
+<nav class="menu-lateral" id="menu-lateral" aria-label="Menú móvil" aria-hidden="true">
+  <div class="menu-lateral-header">
+    <span class="menu-lateral-brand"><span class="brand-mark">Y</span> Yojhan Furuya</span>
+    <label for="menu-toggle" class="menu-lateral-close" role="button" tabindex="0" aria-label="Cerrar menú"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#x-lg"/></svg></i></label>
+  </div>
+  <div class="menu-lateral-links">
+    <a href="../../" class="menu-link-card"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#house-door-fill"/></svg></i> <span>Inicio</span></a>
+    <a href="../../sobre-mi/" class="menu-link-card"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#person-fill"/></svg></i> <span>Sobre mí</span></a>
+    <a href="../../proyectos/" class="menu-link-card active" aria-current="page"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#grid-1x2-fill"/></svg></i> <span>Proyectos</span></a>
+    <a href="../../#contacto" class="menu-link-card"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#chat-dots-fill"/></svg></i> <span>Contacto</span></a>
+  </div>
+  <div class="menu-lateral-footer"><a href="mailto:yojhancaro0@gmail.com" class="menu-lateral-mail"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#envelope-fill"/></svg></i> yojhancaro0@gmail.com</a></div>
+</nav>
+
+<header class="nav-container" id="nav">
+  <a href="../../" class="nav-brand"><span class="brand-mark">Y</span> <span class="nav-brand-name">Yojhan Furuya</span></a>
+  <nav class="nav-btns" aria-label="Navegación principal" data-page="proyectos">
+    <div class="blob" id="blob"></div>
+    <a href="../../" class="nav-btn">Inicio</a>
+    <a href="../../sobre-mi/" class="nav-btn">Sobre mí</a>
+    <a href="../../proyectos/" class="nav-btn active" aria-current="page">Proyectos</a>
+    <a href="../../#contacto" class="nav-btn">Contacto</a>
+  </nav>
+  <label for="contact-float-toggle" class="nav-disponible" role="button" tabindex="0" aria-expanded="false" aria-controls="contact-panel"><span class="nav-disponible-dot"></span> Hablemos</label>
+</header>
+
+<main id="contenido" class="single-proyecto single-experimento">
+
+<button id="back-top-proyecto" class="back-top-proyecto" type="button" aria-label="Volver arriba"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#arrow-up"/></svg></i></button>
+
+<section class="project-hero">
+  <div class="container-custom">
+    <div class="lab-tag" data-aos="fade-up"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#cpu-fill"/></svg></i> Laboratorio creativo — prueba o exploración, no necesariamente un proyecto terminado</div>
+    <div class="breadcrumb-holder" data-aos="fade-up"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio"},{"@type":"ListItem","position":2,"name":"Proyectos"},{"@type":"ListItem","position":3,"name":"Experimentos"},{"@type":"ListItem","position":4,"name":"GymPrime"}]}</script><nav class="breadcrumb-row" aria-label="Migas de pan"><a href="../../"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#house-door-fill"/></svg></i> Inicio</a><span class="breadcrumb-sep" aria-hidden="true">/</span><a href="../../proyectos/">Proyectos</a><span class="breadcrumb-sep" aria-hidden="true">/</span><a href="../../experimentos/">Experimentos</a><span class="breadcrumb-sep" aria-hidden="true">/</span><span class="breadcrumb-current" aria-current="page">GymPrime</span></nav></div>
+    <div class="hero-grid">
+      <div data-aos="fade-up"><div class="gallery-wrap">
+  <div class="gallery-main">
+    <img src="../../assets/uploads/2026/06/gymprime1.png" alt="GymPrime" width="1600" height="1000" decoding="async">
+    <span class="gallery-badge"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#cpu-fill"/></svg></i> Experimento</span>
+    <button class="gallery-expand" type="button" aria-label="Ver en pantalla completa"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#arrows-fullscreen"/></svg></i></button>
+    <span class="gallery-counter" aria-live="polite">1 / 4</span>
+    <button class="gallery-arrow prev" type="button" aria-label="Imagen anterior"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#chevron-left"/></svg></i></button>
+    <button class="gallery-arrow next" type="button" aria-label="Imagen siguiente"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#chevron-right"/></svg></i></button>
+  </div>
+  <div class="gallery-thumbs"><button type="button" class="active" data-src="../../assets/uploads/2026/06/gymprime1.png" aria-label="Ver imagen 1"><img src="../../assets/uploads/2026/06/gymprime1.png" alt="" loading="lazy" decoding="async"></button><button type="button" data-src="../../assets/uploads/2026/06/gymprime-screenshot-3.png" aria-label="Ver imagen 2"><img src="../../assets/uploads/2026/06/gymprime-screenshot-3.png" alt="" loading="lazy" decoding="async"></button><button type="button" data-src="../../assets/uploads/2026/06/gymprime-screenshot-1.png" aria-label="Ver imagen 3"><img src="../../assets/uploads/2026/06/gymprime-screenshot-1.png" alt="" loading="lazy" decoding="async"></button><button type="button" data-src="../../assets/uploads/2026/06/gymprime-screenshot-2.png" aria-label="Ver imagen 4"><img src="../../assets/uploads/2026/06/gymprime-screenshot-2.png" alt="" loading="lazy" decoding="async"></button></div>
+</div></div>
+      <aside class="info-panel" data-aos="fade-left" data-aos-delay="100">
+        <div class="info-card">
+          <div class="project-kicker">Sistema web · Gimnasio</div>
+          <h1 class="project-title">GymPrime</h1>
+          <p class="project-desc">Landing y panel de administración para un gimnasio, con gestión de planes, alumnos y registro de ejercicios. Construido en HTML, CSS y JavaScript puro, usando localStorage como base de datos.</p>
+          <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>localStorage</span></div>
+        </div>
+        <div class="meta-grid">
+          <div class="meta-item"><small>Categoría</small><span>Laboratorio creativo</span></div>
+          <div class="meta-item"><small>Año</small><span>2025</span></div>
+          <div class="meta-item"><small>Rol</small><span>Diseño &amp; Desarrollo</span></div>
+          <div class="meta-item"><small>Estado</small><span class="meta-status-dot">En uso</span></div>
+        </div>
+        <div class="btn-row">
+          
+          
+          <button class="btn-ghost" id="copy-link-btn" type="button"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#link-45deg"/></svg></i> Copiar enlace del proyecto</button>
+          <a href="../../proyectos/" class="btn-ghost"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#arrow-left"/></svg></i> Volver a proyectos</a>
+        </div>
+      </aside>
+    </div>
+    <div class="stats-strip" data-aos="fade-up" data-aos-delay="120"><div class="stat-card"><strong data-count="3" data-suffix="">3</strong><span>planes disponibles (Mensual, 3 Meses, Anual)</span></div><div class="stat-card"><strong data-count="2" data-suffix="">2</strong><span>paneles independientes: landing y dashboard</span></div><div class="stat-card"><strong data-count="100" data-suffix="%">100%</strong><span>en uso activo por el entrenador</span></div></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container-custom">
+    <span class="eyebrow" data-aos="fade-up">Contexto del proyecto</span>
+    <h2 class="section-title section-title--space-lg" data-aos="fade-up">Problema, solución y resultado.</h2>
+    <div class="detail-grid">
+      <div class="detail-block purple" data-aos="fade-up"><div class="block-icon"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#exclamation-circle-fill"/></svg></i></div><h3>El problema</h3><p>Un gimnasio necesitaba una forma simple de llevar el control de sus planes, alumnos inscritos y cupos disponibles, sin depender de planillas sueltas o anotaciones manuales.</p></div>
+      <div class="detail-block lime" data-aos="fade-up" data-aos-delay="60"><div class="block-icon"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#lightbulb-fill"/></svg></i></div><h3>La solución</h3><p>Un sitio con landing pública y un panel de administración aparte: la landing muestra los planes disponibles y permite inscribir alumnos directamente, mientras que el dashboard centraliza la gestión completa — planes, alumnos y un sistema de ejercicios con registro de peso por alumno. Los datos se guardan en el navegador con localStorage, sin necesidad de un servidor o base de datos externa.</p></div>
+      <div class="detail-block" data-aos="fade-up"><div class="block-icon"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#graph-up-arrow"/></svg></i></div><h3>El resultado</h3><ul><li>En uso activo por el entrenador del gimnasio desde su implementación</li><li>Reemplazo de planillas y anotaciones manuales por un sistema centralizado</li><li>Visibilidad inmediata de cupos disponibles por plan</li><li>Registro histórico de peso por alumno en cada ejercicio</li></ul></div>
+      <div class="detail-block teal" data-aos="fade-up" data-aos-delay="60"><div class="block-icon"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#trophy-fill"/></svg></i></div><h3>Qué demuestra</h3><ul><li>Manejo de localStorage como base de datos del lado del cliente</li><li>Cálculo dinámico de cupos restantes por plan</li><li>Construcción de modales y formularios propios sin librerías externas</li><li>Organización de una landing pública separada de un panel administrativo</li></ul></div>
+    </div>
+  </div>
+</section>
+<section class="section section--no-top">
+  <div class="container-custom">
+    <span class="eyebrow" data-aos="fade-up">Funcionalidades</span>
+    <h2 class="section-title section-title--space-lg" data-aos="fade-up">Qué hace cada módulo.</h2>
+    <div class="feature-list" data-aos="fade-up">
+      <div class="feature-item"><div class="feature-num">01</div><div class="feature-copy"><h4>Landing pública</h4><p>Muestra métricas generales y la lista de planes disponibles, con la opción de inscribir un alumno directamente desde ahí.</p></div><span class="feature-badge badge-lime">index.html</span></div>
+      <div class="feature-item"><div class="feature-num">02</div><div class="feature-copy"><h4>Gestión de planes</h4><p>Crear, editar y eliminar planes del gimnasio, cada uno con precio, cupos totales y descripción.</p></div><span class="feature-badge badge-lime">dashboard.html</span></div>
+      <div class="feature-item"><div class="feature-num">03</div><div class="feature-copy"><h4>Gestión de alumnos</h4><p>Listado de alumnos inscritos con ver detalle, editar datos (fecha de ingreso, fecha de pago, estado) y eliminar.</p></div><span class="feature-badge badge-lime">dashboard.html</span></div>
+      <div class="feature-item"><div class="feature-num">04</div><div class="feature-copy"><h4>Registro de ejercicios</h4><p>Creación de ejercicios y registro del peso levantado por cada alumno en cada uno, con historial editable.</p></div><span class="feature-badge badge-lime">dashboard.html</span></div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container-custom">
+    <div class="timeline-layout">
+      <div>
+        <span class="eyebrow" data-aos="fade-up">Metodología</span>
+        <h2 class="section-title section-title--space-lg" data-aos="fade-up">Cómo se construyó.</h2>
+        <div class="timeline timeline--blob" data-aos="fade-up">
+          <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-step">Fase 01</div><h4>Diseño de la landing pública</h4><p>Se construyó la página principal con las métricas generales y el listado de planes, pensada para que cualquier visitante vea la oferta del gimnasio de forma clara.</p></div>
+          <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-step">Fase 02</div><h4>Sistema de planes y alumnos</h4><p>Se implementó la lógica de inscripción: cada plan con cupos limitados, y el cálculo automático de cupos restantes según los alumnos ya inscritos.</p></div>
+          <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-step">Fase 03</div><h4>Panel de administración</h4><p>Se separó la gestión en un dashboard aparte, con vistas dedicadas para planes, alumnos inscritos y sus datos de ingreso y pago.</p></div>
+          <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-step">Fase 04</div><h4>Sistema de ejercicios</h4><p>Se agregó un módulo adicional para registrar ejercicios y llevar el historial de peso levantado por cada alumno, ampliando el sistema más allá de la gestión administrativa básica.</p></div>
+        </div>
+      </div>
+      <div data-aos="fade-left" data-aos-delay="100">
+        <span class="eyebrow">Stack técnico</span>
+        <h2 class="section-title section-title--space-md">Tecnologías usadas.</h2>
+        <div class="tech-grid"><div class="tech-card"><span>HTML5</span><small>estructura de landing y dashboard</small></div><div class="tech-card"><span>CSS3</span><small>estilos y diseño visual</small></div><div class="tech-card"><span>JavaScript</span><small>toda la lógica e interactividad</small></div><div class="tech-card"><span>localStorage</span><small>persistencia de datos en el navegador</small></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section section--no-top">
+  <div class="container-custom">
+    <span class="eyebrow" data-aos="fade-up">Próximos pasos</span>
+    <h2 class="section-title section-title--space-md" data-aos="fade-up">Mejoras futuras planeadas.</h2>
+    <div class="future-grid">
+      <div class="future-card" data-aos="fade-up"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#server"/></svg></i><h4>Backend real con base de datos</h4><p>Migrar de localStorage a una base de datos en servidor, para que los datos no dependan de un solo navegador y se puedan respaldar.</p></div>
+      <div class="future-card" data-aos="fade-up" data-aos-delay="60"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#shield-lock-fill"/></svg></i><h4>Login con roles</h4><p>Acceso diferenciado para el entrenador y posibles administradores adicionales.</p></div>
+      <div class="future-card" data-aos="fade-up" data-aos-delay="120"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#bell-fill"/></svg></i><h4>Notificaciones de vencimiento</h4><p>Aviso automático cuando se acerca la fecha de pago o vencimiento del plan de un alumno.</p></div>
+      <div class="future-card" data-aos="fade-up"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#bar-chart-fill"/></svg></i><h4>Reportes y estadísticas</h4><p>Gráficos de ingresos, alumnos activos por plan y evolución de peso por ejercicio.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--no-top">
+  <div class="container-custom">
+    <span class="eyebrow" data-aos="fade-up">Más proyectos</span>
+    <h2 class="section-title section-title--space-lg" data-aos="fade-up">También podría interesarte.</h2>
+    <div class="related-grid">
+      <a href="../../proyectos/sistema-de-comandas/" class="related-card" data-aos="fade-up">
+        <div class="related-img"><img src="../../assets/uploads/2026/07/5b9e926b-052e-4389-a838-56a008209eb7.jpeg" alt="" loading="lazy" decoding="async" width="800" height="500"><span class="related-open"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#arrow-up-right"/></svg></i></span></div>
+        <div class="related-body"><div class="related-kicker">Sistema web · Restaurante</div><h3>Sistema de Comandas</h3></div>
+      </a>
+      <a href="../../proyectos/todopsn-chile/" class="related-card" data-aos="fade-up" data-aos-delay="60">
+        <div class="related-img"><img src="../../assets/uploads/2026/06/portada-todopsnchile.png" alt="" loading="lazy" decoding="async" width="800" height="500"><span class="related-open"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#arrow-up-right"/></svg></i></span></div>
+        <div class="related-body"><div class="related-kicker">Ecommerce · Streaming</div><h3>TodoPSN Chile</h3></div>
+      </a>
+      <a href="../../proyectos/auditoria-de-accesibilidad-web/" class="related-card" data-aos="fade-up" data-aos-delay="120">
+        <div class="related-img"><img src="../../assets/uploads/2026/07/ce0954e4-6659-4d73-aed0-6896bca7d120-1024x683.png" alt="" loading="lazy" decoding="async" width="800" height="500"><span class="related-open"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#arrow-up-right"/></svg></i></span></div>
+        <div class="related-body"><div class="related-kicker">Auditoría UX · Accesibilidad Web</div><h3>Auditoría de accesibilidad web</h3></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contacto">
+  <div class="container-custom">
+    <div class="contact-panel" data-aos="zoom-in">
+      <span class="eyebrow">Contacto</span>
+      <h2 class="section-title">¿Quieres ver más detalles de este proyecto?</h2>
+      <p class="section-text">Puedo ampliar el caso con documentación, capturas adicionales, repositorio, decisiones técnicas y mejoras futuras.</p>
+      <div class="contact-actions">
+        <a href="mailto:yojhancaro0@gmail.com" class="btn-main">Escribirme <i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#send-fill"/></svg></i></a>
+        <a href="../../proyectos/" class="btn-ghost"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#arrow-left"/></svg></i> Ver todos los proyectos</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container-custom">
+    <div class="footer-top">
+      <div class="footer-col footer-col-brand">
+        <a href="../../" class="footer-logo"><span class="brand-mark">Y</span> Yojhan Furuya</a>
+        <p class="footer-tagline">Desarrollador Front-End enfocado en interfaces modernas, experiencias digitales cuidadas y detalles que marcan la diferencia.</p>
+        <span class="footer-badge"><span class="footer-badge-dot" aria-hidden="true"></span> Disponible para proyectos</span>
+      </div>
+      <nav class="footer-col" aria-label="Navegación del pie de página">
+        <h2 class="footer-heading">Navegación</h2>
+        <ul class="footer-nav">
+          <li><a href="../../">Inicio</a></li>
+          <li><a href="../../sobre-mi/">Sobre mí</a></li>
+          <li><a href="../../proyectos/">Proyectos</a></li>
+          <li><a href="../../experimentos/">Experimentos</a></li>
+          <li><a href="../../#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="footer-col">
+        <h2 class="footer-heading">Contacto</h2>
+        <ul class="footer-nav footer-contact">
+          <li><a href="mailto:yojhancaro0@gmail.com"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#envelope-fill"/></svg></i> yojhancaro0@gmail.com</a></li>
+          <li><a href="https://www.linkedin.com/in/yojhanfuruya" target="_blank" rel="noopener"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#linkedin"/></svg></i> LinkedIn</a></li>
+          <li><a href="https://github.com/yojhanfuruya" target="_blank" rel="noopener"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#github"/></svg></i> GitHub</a></li>
+          <li><a href="https://www.instagram.com/__yojhansin" target="_blank" rel="noopener"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#instagram"/></svg></i> Instagram</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-col-cta">
+        <h2 class="footer-heading">¿Tienes un proyecto?</h2>
+        <p>Hablemos de cómo puedo ayudarte a construirlo.</p>
+        <a href="mailto:yojhancaro0@gmail.com" class="footer-cta-btn">Escribirme <i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#arrow-up-right"/></svg></i></a>
+        
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">&copy; 2026 Yojhan Furuya &middot; Todos los derechos reservados.</span>
+      <span class="footer-made">Diseñado y desarrollado por mí <i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#heart-fill"/></svg></i></span>
+      <button class="footer-top-btn" type="button" aria-label="Volver arriba">Arriba <i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#arrow-up"/></svg></i></button>
+    </div>
+  </div>
+</footer>
+
+<input type="checkbox" id="contact-float-toggle" aria-hidden="true" tabindex="-1">
+<label for="contact-float-toggle" class="contact-float-trigger" role="button" tabindex="0" aria-label="Abrir panel de contacto" aria-expanded="false" aria-controls="contact-panel"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#send-fill"/></svg></i></label>
+<div class="contact-float-curva"></div>
+<aside class="contact-float-panel" id="contact-panel" aria-label="Panel de contacto" aria-hidden="true">
+  <div class="contact-float-content">
+    <label for="contact-float-toggle" class="contact-float-close" role="button" tabindex="0" aria-label="Cerrar panel"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#x-lg"/></svg></i></label>
+    <span class="contact-float-badge"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#stars"/></svg></i> Disponible para proyectos</span>
+    <h2 class="contact-float-title">Yojhan Furuya</h2>
+    <p class="contact-float-role">Desarrollador &amp; Diseñador Web</p>
+    <p class="contact-float-text">Disponible para trabajo, proyectos, colaboraciones y freelance.</p>
+    <div class="contact-float-links">
+      <a href="mailto:yojhancaro0@gmail.com"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#envelope-fill"/></svg></i> yojhancaro0@gmail.com</a>
+      <a href="https://www.linkedin.com/in/yojhanfuruya" target="_blank" rel="noopener"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#linkedin"/></svg></i> LinkedIn</a>
+      <a href="https://github.com/yojhanfuruya" target="_blank" rel="noopener"><i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#github"/></svg></i> GitHub</a>
+    </div>
+    <div class="contact-float-actions">
+      <a href="mailto:yojhancaro0@gmail.com" class="contact-float-btn-primary">Escribirme <i class="bi" aria-hidden="true"><svg><use href="../../assets/icons.svg#arrow-up-right"/></svg></i></a>
+      
+    </div>
+  </div>
+</aside>
+
+<script src="../../assets/js/main.js?v=mvy5h96l" defer></script>
+</body>
+</html>

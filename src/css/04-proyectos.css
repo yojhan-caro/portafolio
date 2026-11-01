@@ -1,0 +1,78 @@
+/* ════════════════════════════════════════
+   PÁGINA PROYECTOS
+   ════════════════════════════════════════ */
+.page-hero { padding: 116px 0 40px; }
+.hero-panel {
+  position: relative; overflow: hidden;
+  display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 24px; align-items: stretch;
+  padding: clamp(22px, 4vw, 32px);
+  border-radius: var(--radius-xl); border: 1px solid var(--line);
+  background: linear-gradient(135deg, rgba(139,92,246,0.14), transparent 46%), var(--card);
+}
+.hero-panel::after {
+  content: ""; position: absolute; right: -180px; bottom: -230px; width: 600px; height: 600px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(214,255,79,0.09), transparent 63%); pointer-events: none;
+}
+.hero-panel > * { min-width: 0; }
+.hero-copy {
+  position: relative; z-index: 2; display: flex; flex-direction: column; justify-content: space-between; gap: 40px;
+  padding: clamp(8px, 2.4vw, 24px);
+}
+.hero-copy .hero-title { font-size: clamp(2.3rem, 5vw, 4.6rem); max-width: 14ch; margin: 6px 0 0; }
+.hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.stat-card {
+  padding: 18px; border-radius: var(--radius-md);
+  background: rgba(8,9,13,0.4); border: 1px solid var(--line-soft);
+}
+.stat-card strong { display: block; font-family: var(--f-display); font-size: 1.35rem; letter-spacing: -0.04em; margin-bottom: 6px; }
+.stat-card span { color: var(--muted); font-size: 0.84rem; line-height: 1.55; }
+.hero-aside { position: relative; z-index: 2; display: grid; grid-template-rows: 1fr auto; gap: 14px; }
+.featured-card { overflow: hidden; border-radius: var(--radius-lg); border: 1px solid var(--line); background: var(--bg-2); min-height: 380px; position: relative; }
+.featured-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.9; }
+.featured-overlay { position: absolute; inset: 0; display: flex; align-items: flex-end; padding: 22px; background: linear-gradient(to top, rgba(7,8,12,0.92), transparent 64%); }
+.featured-overlay h2 { font-family: var(--f-display); font-size: 1.7rem; line-height: 1.05; letter-spacing: -0.045em; margin-bottom: 8px; }
+.featured-overlay p { color: rgba(242,244,248,0.72); line-height: 1.6; font-size: 0.92rem; }
+.category-pills { display: flex; flex-wrap: wrap; gap: 8px; padding: 14px; border-radius: var(--radius-lg); border: 1px solid var(--line-soft); background: var(--surface); }
+.category-pills a {
+  display: inline-flex; align-items: center; gap: 8px; min-height: 40px;
+  padding: 9px 14px; border-radius: 999px;
+  background: var(--surface-2); border: 1px solid var(--line-soft);
+  font-size: 0.84rem; font-weight: 600;
+  transition: transform 0.3s var(--ease), background 0.25s, border-color 0.25s;
+}
+.category-pills a:hover { transform: translateY(-2px); background: rgba(255,255,255,0.08); border-color: var(--line); }
+.category-pills .bi { color: var(--accent-3); }
+
+/* Banner "Explorar experimentos" */
+.lab-banner {
+  display: flex; align-items: center; gap: 24px;
+  padding: 26px 28px; border-radius: var(--radius-xl);
+  border: 1px solid rgba(34,211,238,0.16);
+  background: radial-gradient(circle at 85% 10%, rgba(34,211,238,0.08), transparent 42%), var(--surface);
+  transition: border-color 0.3s, transform 0.4s var(--ease);
+}
+.lab-banner:hover { border-color: rgba(34,211,238,0.32); transform: translateY(-4px); }
+.lab-banner-copy { display: flex; align-items: center; gap: 18px; flex: 1; min-width: 0; }
+.lab-banner-icon {
+  width: 50px; height: 50px; flex: 0 0 50px; display: grid; place-items: center;
+  border-radius: 14px; font-size: 1.25rem; color: var(--accent-2);
+  background: rgba(34,211,238,0.1); border: 1px solid rgba(34,211,238,0.2);
+}
+.lab-banner-copy h3 { font-family: var(--f-display); font-size: 1.15rem; letter-spacing: -0.03em; margin-bottom: 4px; }
+.lab-banner-copy p { color: var(--muted); font-size: 0.88rem; max-width: 60ch; line-height: 1.6; }
+.lab-banner-thumbs { display: flex; }
+.lab-banner-thumbs img { width: 46px; height: 46px; border-radius: 50%; object-fit: cover; border: 2px solid var(--bg); margin-left: -14px; background: var(--bg-2); }
+.lab-banner-thumbs img:first-child { margin-left: 0; }
+.lab-banner-arrow { width: 42px; height: 42px; flex: 0 0 42px; display: grid; place-items: center; border-radius: 50%; border: 1px solid var(--line); transition: transform 0.3s var(--ease), background 0.3s; }
+.lab-banner:hover .lab-banner-arrow { transform: translateX(4px); background: rgba(34,211,238,0.12); }
+
+@media (max-width: 1080px) {
+  .hero-panel { grid-template-columns: 1fr; }
+  .featured-card { min-height: 300px; }
+}
+@media (max-width: 768px) {
+  .page-hero { padding-top: 24px; }
+  .hero-stats { grid-template-columns: 1fr; }
+  .lab-banner { flex-direction: column; align-items: flex-start; }
+  .lab-banner-thumbs { display: none; }
+}
