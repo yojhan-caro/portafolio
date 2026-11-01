@@ -12,7 +12,7 @@ export const SITIO = {
 
   /* URL final del sitio cuando lo publiques (ej. 'https://yojhanfuruya.vercel.app').
      Se usa para las etiquetas de redes sociales y Google. Déjala vacía si aún no la tienes. */
-  url: '',
+  url: 'https://portafolio-kappa-bice-65.vercel.app',
 
   /* Mientras el cPanel del instituto siga en línea, las imágenes que todavía
      no copiaste a src/uploads/ se cargan desde ahí. Cuando cierre, deja ''. */
