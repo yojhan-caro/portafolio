@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap">
-<link rel="stylesheet" href="assets/css/main.css?v=mvy5h96l">
+<link rel="stylesheet" href="assets/css/main.css?v=mvy7l6fv">
 <script>
 /* Antes de pintar: activa animaciones, recuerda la posición del cursor
    entre páginas y, si falta una imagen local, la toma del sitio antiguo. */
@@ -26,7 +26,7 @@
   d.documentElement.classList.add('js');
   try{ w.__pmCursorInit = w.__pmCursorLast = JSON.parse(sessionStorage.getItem('pmCursorPos')||'null'); }catch(e){}
   w.addEventListener('mousemove',function(e){ w.__pmCursorLast={x:e.clientX,y:e.clientY}; try{sessionStorage.setItem('pmCursorPos',JSON.stringify(w.__pmCursorLast));}catch(_){} },{passive:true});
-  var REMOTO="https://yofuruya.laboratoriodiseno.cl/wp-content/";
+  var REMOTO="";
   if(REMOTO) w.addEventListener('error',function(e){
     var t=e.target; if(!t||!/^(IMG|SOURCE|VIDEO)$/.test(t.tagName)) return;
     var s=t.getAttribute('src')||''; var m=s.match(/assets\/(uploads\/.*)$/);
@@ -178,7 +178,7 @@
     <div class="projects-board">
       <article class="project-card position-relative" data-aos="fade-up" data-aos-delay="80">
   <div class="project-image">
-    <img src="assets/uploads/2026/07/5b9e926b-052e-4389-a838-56a008209eb7.jpeg" alt="Portada del proyecto Sistema de Comandas" loading="lazy" decoding="async" width="1200" height="800">
+    <img src="assets/uploads/2026/07/5b9e926b-052e-4389-a838-56a008209eb7.webp" alt="Portada del proyecto Sistema de Comandas" loading="lazy" decoding="async" width="1200" height="800">
     <span class="project-badge"><i class="bi" aria-hidden="true"><svg><use href="assets/icons.svg#rocket-takeoff-fill"/></svg></i> Proyecto propio</span>
     <span class="project-open"><i class="bi" aria-hidden="true"><svg><use href="assets/icons.svg#arrow-up-right"/></svg></i></span>
   </div>
@@ -192,7 +192,7 @@
 </article>
 <article class="project-card position-relative" data-aos="fade-up" data-aos-delay="140">
   <div class="project-image">
-    <img src="assets/uploads/2026/06/ale.ink_.jpg" alt="Portada del proyecto Ale.ink Estudio de tatuajes" loading="lazy" decoding="async" width="1200" height="800">
+    <img src="assets/uploads/2026/06/ale.ink_.webp" alt="Portada del proyecto Ale.ink Estudio de tatuajes" loading="lazy" decoding="async" width="1200" height="800">
     <span class="project-badge"><i class="bi" aria-hidden="true"><svg><use href="assets/icons.svg#cpu-fill"/></svg></i> Experimento</span>
     <span class="project-open"><i class="bi" aria-hidden="true"><svg><use href="assets/icons.svg#arrow-up-right"/></svg></i></span>
   </div>
@@ -206,7 +206,7 @@
 </article>
 <article class="project-card position-relative" data-aos="fade-up" data-aos-delay="200">
   <div class="project-image">
-    <img src="assets/uploads/2026/06/portada-todopsnchile.png" alt="Portada del proyecto TodoPSN Chile" loading="lazy" decoding="async" width="1200" height="800">
+    <img src="assets/uploads/2026/06/portada-todopsnchile.webp" alt="Portada del proyecto TodoPSN Chile" loading="lazy" decoding="async" width="1200" height="800">
     <span class="project-badge"><i class="bi" aria-hidden="true"><svg><use href="assets/icons.svg#rocket-takeoff-fill"/></svg></i> Proyecto propio</span>
     <span class="project-open"><i class="bi" aria-hidden="true"><svg><use href="assets/icons.svg#arrow-up-right"/></svg></i></span>
   </div>
@@ -321,6 +321,6 @@
   </div>
 </aside>
 
-<script src="assets/js/main.js?v=mvy5h96l" defer></script>
+<script src="assets/js/main.js?v=mvy7l6fv" defer></script>
 </body>
 </html>

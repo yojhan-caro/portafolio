@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap">
-<link rel="stylesheet" href="../assets/css/main.css?v=mvy5h96l">
+<link rel="stylesheet" href="../assets/css/main.css?v=mvy7l6fv">
 <script>
 /* Antes de pintar: activa animaciones, recuerda la posición del cursor
    entre páginas y, si falta una imagen local, la toma del sitio antiguo. */
@@ -26,7 +26,7 @@
   d.documentElement.classList.add('js');
   try{ w.__pmCursorInit = w.__pmCursorLast = JSON.parse(sessionStorage.getItem('pmCursorPos')||'null'); }catch(e){}
   w.addEventListener('mousemove',function(e){ w.__pmCursorLast={x:e.clientX,y:e.clientY}; try{sessionStorage.setItem('pmCursorPos',JSON.stringify(w.__pmCursorLast));}catch(_){} },{passive:true});
-  var REMOTO="https://yofuruya.laboratoriodiseno.cl/wp-content/";
+  var REMOTO="";
   if(REMOTO) w.addEventListener('error',function(e){
     var t=e.target; if(!t||!/^(IMG|SOURCE|VIDEO)$/.test(t.tagName)) return;
     var s=t.getAttribute('src')||''; var m=s.match(/assets\/(uploads\/.*)$/);
@@ -77,9 +77,9 @@
 
 <section class="exp-hero" id="exp-hero" aria-roledescription="carrusel" aria-label="Experimentos">
   <div class="exp-hero-bg-stack" aria-hidden="true">
-    <div class="exp-hero-bg is-active" data-index="0" style="background-image:url('../assets/uploads/2026/06/ale.ink_.jpg'), url('https://yofuruya.laboratoriodiseno.cl/wp-content/uploads/2026/06/ale.ink_.jpg')"></div>
-    <div class="exp-hero-bg" data-index="1" style="background-image:url('../assets/uploads/2026/07/portada.png'), url('https://yofuruya.laboratoriodiseno.cl/wp-content/uploads/2026/07/portada.png')"></div>
-    <div class="exp-hero-bg" data-index="2" style="background-image:url('../assets/uploads/2026/06/gymprime1.png'), url('https://yofuruya.laboratoriodiseno.cl/wp-content/uploads/2026/06/gymprime1.png')"></div>
+    <div class="exp-hero-bg is-active" data-index="0" style="background-image:url('../assets/uploads/2026/06/ale.ink_.webp')"></div>
+    <div class="exp-hero-bg" data-index="1" style="background-image:url('../assets/uploads/2026/07/portada.webp')"></div>
+    <div class="exp-hero-bg" data-index="2" style="background-image:url('../assets/uploads/2026/06/gymprime1.webp')"></div>
     <div class="exp-hero-overlay"></div>
   </div>
   <div class="exp-hero-content container-custom">
@@ -110,9 +110,9 @@
       </div>
       <div class="exp-carousel">
         <div class="exp-stack" id="exp-track">
-          <button class="exp-card is-active" type="button" data-index="0" style="background-image:url('../assets/uploads/2026/06/ale.ink_.jpg'), url('https://yofuruya.laboratoriodiseno.cl/wp-content/uploads/2026/06/ale.ink_.jpg')" aria-label="Ver Ale.ink Estudio de tatuajes"><span class="exp-card-overlay"></span><span class="exp-card-title">Ale.ink Estudio de tatuajes</span></button>
-          <button class="exp-card" type="button" data-index="1" style="background-image:url('../assets/uploads/2026/07/portada-1024x683.png'), url('https://yofuruya.laboratoriodiseno.cl/wp-content/uploads/2026/07/portada-1024x683.png')" aria-label="Ver Proyecto Fascia"><span class="exp-card-overlay"></span><span class="exp-card-title">Proyecto Fascia</span></button>
-          <button class="exp-card" type="button" data-index="2" style="background-image:url('../assets/uploads/2026/06/portada-gymprime.png'), url('https://yofuruya.laboratoriodiseno.cl/wp-content/uploads/2026/06/portada-gymprime.png')" aria-label="Ver GymPrime"><span class="exp-card-overlay"></span><span class="exp-card-title">GymPrime</span></button>
+          <button class="exp-card is-active" type="button" data-index="0" style="background-image:url('../assets/uploads/2026/06/ale.ink_.webp')" aria-label="Ver Ale.ink Estudio de tatuajes"><span class="exp-card-overlay"></span><span class="exp-card-title">Ale.ink Estudio de tatuajes</span></button>
+          <button class="exp-card" type="button" data-index="1" style="background-image:url('../assets/uploads/2026/07/portada-1024x683.webp')" aria-label="Ver Proyecto Fascia"><span class="exp-card-overlay"></span><span class="exp-card-title">Proyecto Fascia</span></button>
+          <button class="exp-card" type="button" data-index="2" style="background-image:url('../assets/uploads/2026/06/portada-gymprime.webp')" aria-label="Ver GymPrime"><span class="exp-card-overlay"></span><span class="exp-card-title">GymPrime</span></button>
         </div>
         <div class="exp-carousel-controls">
           <button class="exp-carousel-arrow prev" id="exp-prev" type="button" aria-label="Experimento anterior"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#chevron-left"/></svg></i></button>
@@ -142,14 +142,14 @@
         </div>
         <div data-aos="fade-up" data-aos-delay="100"><div class="gallery-wrap exp-detalle-gallery">
   <div class="gallery-main">
-    <img src="../assets/uploads/2026/07/bad6f209-ecb8-4f01-8a39-d47ddf60b1fc.png" alt="Ale.ink Estudio de tatuajes" width="1600" height="1000" decoding="async">
+    <img src="../assets/uploads/2026/07/bad6f209-ecb8-4f01-8a39-d47ddf60b1fc.webp" alt="Ale.ink Estudio de tatuajes" width="1600" height="1000" decoding="async">
     
     <button class="gallery-expand" type="button" aria-label="Ver en pantalla completa"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#arrows-fullscreen"/></svg></i></button>
     <span class="gallery-counter" aria-live="polite">1 / 4</span>
     <button class="gallery-arrow prev" type="button" aria-label="Imagen anterior"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#chevron-left"/></svg></i></button>
     <button class="gallery-arrow next" type="button" aria-label="Imagen siguiente"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#chevron-right"/></svg></i></button>
   </div>
-  <div class="gallery-thumbs"><button type="button" class="active" data-src="../assets/uploads/2026/07/bad6f209-ecb8-4f01-8a39-d47ddf60b1fc.png" aria-label="Ver imagen 1"><img src="../assets/uploads/2026/07/bad6f209-ecb8-4f01-8a39-d47ddf60b1fc.png" alt="" loading="lazy" decoding="async"></button><button type="button" data-src="../assets/uploads/2026/07/ad3c046a-e589-46a1-a8b3-0195fe2b6b81.png" aria-label="Ver imagen 2"><img src="../assets/uploads/2026/07/ad3c046a-e589-46a1-a8b3-0195fe2b6b81.png" alt="" loading="lazy" decoding="async"></button><button type="button" data-src="../assets/uploads/2026/07/14403bc5-7722-4bb1-a958-38ecfbe32819.png" aria-label="Ver imagen 3"><img src="../assets/uploads/2026/07/14403bc5-7722-4bb1-a958-38ecfbe32819.png" alt="" loading="lazy" decoding="async"></button><button type="button" data-src="../assets/uploads/2026/07/Gemini_Generated_Image_xxuacvxxuacvxxua.png" aria-label="Ver imagen 4"><img src="../assets/uploads/2026/07/Gemini_Generated_Image_xxuacvxxuacvxxua.png" alt="" loading="lazy" decoding="async"></button></div>
+  <div class="gallery-thumbs"><button type="button" class="active" data-src="../assets/uploads/2026/07/bad6f209-ecb8-4f01-8a39-d47ddf60b1fc.webp" aria-label="Ver imagen 1"><img src="../assets/uploads/2026/07/bad6f209-ecb8-4f01-8a39-d47ddf60b1fc.webp" alt="" loading="lazy" decoding="async"></button><button type="button" data-src="../assets/uploads/2026/07/ad3c046a-e589-46a1-a8b3-0195fe2b6b81.webp" aria-label="Ver imagen 2"><img src="../assets/uploads/2026/07/ad3c046a-e589-46a1-a8b3-0195fe2b6b81.webp" alt="" loading="lazy" decoding="async"></button><button type="button" data-src="../assets/uploads/2026/07/14403bc5-7722-4bb1-a958-38ecfbe32819.webp" aria-label="Ver imagen 3"><img src="../assets/uploads/2026/07/14403bc5-7722-4bb1-a958-38ecfbe32819.webp" alt="" loading="lazy" decoding="async"></button><button type="button" data-src="../assets/uploads/2026/07/Gemini_Generated_Image_xxuacvxxuacvxxua.webp" aria-label="Ver imagen 4"><img src="../assets/uploads/2026/07/Gemini_Generated_Image_xxuacvxxuacvxxua.webp" alt="" loading="lazy" decoding="async"></button></div>
 </div></div>
       </div>
       <div class="stats-strip" data-aos="fade-up"><div class="stat-card"><strong data-count="2" data-suffix="">2</strong><span>vistas completas en un único archivo HTML</span></div><div class="stat-card"><strong data-count="12" data-suffix="">12</strong><span>diseños flash organizados en 6 estilos</span></div><div class="stat-card"><strong data-count="5" data-suffix="">5</strong><span>pasos en el cotizador</span></div><div class="stat-card"><strong data-count="4" data-suffix="">4</strong><span>módulos en el panel de artista</span></div><div class="stat-card"><strong data-count="6" data-suffix="">6</strong><span>estilos de tatuaje con filtros interactivos</span></div><div class="stat-card"><strong data-count="0" data-suffix="">0</strong><span>dependencias externas de JavaScript</span></div></div>
@@ -232,14 +232,14 @@
         </div>
         <div data-aos="fade-up" data-aos-delay="100"><div class="gallery-wrap exp-detalle-gallery">
   <div class="gallery-main">
-    <img src="../assets/uploads/2026/07/a211faf33ee18a45dc103d99687b2bea_0.png" alt="Proyecto Fascia" width="1600" height="1000" decoding="async">
+    <img src="../assets/uploads/2026/07/a211faf33ee18a45dc103d99687b2bea_0.webp" alt="Proyecto Fascia" width="1600" height="1000" decoding="async">
     
     <button class="gallery-expand" type="button" aria-label="Ver en pantalla completa"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#arrows-fullscreen"/></svg></i></button>
     <span class="gallery-counter" aria-live="polite">1 / 7</span>
     <button class="gallery-arrow prev" type="button" aria-label="Imagen anterior"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#chevron-left"/></svg></i></button>
     <button class="gallery-arrow next" type="button" aria-label="Imagen siguiente"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#chevron-right"/></svg></i></button>
   </div>
-  <div class="gallery-thumbs"><button type="button" class="active" data-src="../assets/uploads/2026/07/a211faf33ee18a45dc103d99687b2bea_0.png" aria-label="Ver imagen 1"><img src="../assets/uploads/2026/07/a211faf33ee18a45dc103d99687b2bea_0.png" alt="" loading="lazy" decoding="async"></button><button type="button" data-src="../assets/uploads/2026/07/portada.png" aria-label="Ver imagen 2"><img src="../assets/uploads/2026/07/portada.png" alt="" loading="lazy" decoding="async"></button><button type="button" data-src="../assets/uploads/2026/07/741670184_1346529904278142_5608520243856905468_n.jpg" aria-label="Ver imagen 3"><img src="../assets/uploads/2026/07/741670184_1346529904278142_5608520243856905468_n.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-src="../assets/uploads/2026/07/742648840_994260030268062_9161383721408349158_n.jpg" aria-label="Ver imagen 4"><img src="../assets/uploads/2026/07/742648840_994260030268062_9161383721408349158_n.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-src="../assets/uploads/2026/07/742185726_2017860485513272_5079963401177222864_n.jpg" aria-label="Ver imagen 5"><img src="../assets/uploads/2026/07/742185726_2017860485513272_5079963401177222864_n.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-src="../assets/uploads/2026/07/744314930_1324933139619625_5071325203197227118_n.jpg" aria-label="Ver imagen 6"><img src="../assets/uploads/2026/07/744314930_1324933139619625_5071325203197227118_n.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-src="../assets/uploads/2026/07/740686125_1614920560634454_8432972194180963196_n.jpg" aria-label="Ver imagen 7"><img src="../assets/uploads/2026/07/740686125_1614920560634454_8432972194180963196_n.jpg" alt="" loading="lazy" decoding="async"></button></div>
+  <div class="gallery-thumbs"><button type="button" class="active" data-src="../assets/uploads/2026/07/a211faf33ee18a45dc103d99687b2bea_0.webp" aria-label="Ver imagen 1"><img src="../assets/uploads/2026/07/a211faf33ee18a45dc103d99687b2bea_0.webp" alt="" loading="lazy" decoding="async"></button><button type="button" data-src="../assets/uploads/2026/07/portada.webp" aria-label="Ver imagen 2"><img src="../assets/uploads/2026/07/portada.webp" alt="" loading="lazy" decoding="async"></button><button type="button" data-src="../assets/uploads/2026/07/741670184_1346529904278142_5608520243856905468_n.webp" aria-label="Ver imagen 3"><img src="../assets/uploads/2026/07/741670184_1346529904278142_5608520243856905468_n.webp" alt="" loading="lazy" decoding="async"></button><button type="button" data-src="../assets/uploads/2026/07/742648840_994260030268062_9161383721408349158_n.webp" aria-label="Ver imagen 4"><img src="../assets/uploads/2026/07/742648840_994260030268062_9161383721408349158_n.webp" alt="" loading="lazy" decoding="async"></button><button type="button" data-src="../assets/uploads/2026/07/742185726_2017860485513272_5079963401177222864_n.webp" aria-label="Ver imagen 5"><img src="../assets/uploads/2026/07/742185726_2017860485513272_5079963401177222864_n.webp" alt="" loading="lazy" decoding="async"></button><button type="button" data-src="../assets/uploads/2026/07/744314930_1324933139619625_5071325203197227118_n.webp" aria-label="Ver imagen 6"><img src="../assets/uploads/2026/07/744314930_1324933139619625_5071325203197227118_n.webp" alt="" loading="lazy" decoding="async"></button><button type="button" data-src="../assets/uploads/2026/07/740686125_1614920560634454_8432972194180963196_n.webp" aria-label="Ver imagen 7"><img src="../assets/uploads/2026/07/740686125_1614920560634454_8432972194180963196_n.webp" alt="" loading="lazy" decoding="async"></button></div>
 </div></div>
       </div>
       <div class="stats-strip" data-aos="fade-up"><div class="stat-card"><strong data-count="9" data-suffix="">9</strong><span>módulos funcionales</span></div><div class="stat-card"><strong data-count="2" data-suffix="">2</strong><span>vistas del modelo de cuerpo (frontal y posterior)</span></div><div class="stat-card"><strong data-count="1" data-suffix="">1</strong><span>cronómetro en tiempo real para sesiones en vivo</span></div></div>
@@ -323,14 +323,14 @@
         </div>
         <div data-aos="fade-up" data-aos-delay="100"><div class="gallery-wrap exp-detalle-gallery">
   <div class="gallery-main">
-    <img src="../assets/uploads/2026/06/gymprime1.png" alt="GymPrime" width="1600" height="1000" decoding="async">
+    <img src="../assets/uploads/2026/06/gymprime1.webp" alt="GymPrime" width="1600" height="1000" decoding="async">
     
     <button class="gallery-expand" type="button" aria-label="Ver en pantalla completa"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#arrows-fullscreen"/></svg></i></button>
     <span class="gallery-counter" aria-live="polite">1 / 4</span>
     <button class="gallery-arrow prev" type="button" aria-label="Imagen anterior"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#chevron-left"/></svg></i></button>
     <button class="gallery-arrow next" type="button" aria-label="Imagen siguiente"><i class="bi" aria-hidden="true"><svg><use href="../assets/icons.svg#chevron-right"/></svg></i></button>
   </div>
-  <div class="gallery-thumbs"><button type="button" class="active" data-src="../assets/uploads/2026/06/gymprime1.png" aria-label="Ver imagen 1"><img src="../assets/uploads/2026/06/gymprime1.png" alt="" loading="lazy" decoding="async"></button><button type="button" data-src="../assets/uploads/2026/06/gymprime-screenshot-3.png" aria-label="Ver imagen 2"><img src="../assets/uploads/2026/06/gymprime-screenshot-3.png" alt="" loading="lazy" decoding="async"></button><button type="button" data-src="../assets/uploads/2026/06/gymprime-screenshot-1.png" aria-label="Ver imagen 3"><img src="../assets/uploads/2026/06/gymprime-screenshot-1.png" alt="" loading="lazy" decoding="async"></button><button type="button" data-src="../assets/uploads/2026/06/gymprime-screenshot-2.png" aria-label="Ver imagen 4"><img src="../assets/uploads/2026/06/gymprime-screenshot-2.png" alt="" loading="lazy" decoding="async"></button></div>
+  <div class="gallery-thumbs"><button type="button" class="active" data-src="../assets/uploads/2026/06/gymprime1.webp" aria-label="Ver imagen 1"><img src="../assets/uploads/2026/06/gymprime1.webp" alt="" loading="lazy" decoding="async"></button><button type="button" data-src="../assets/uploads/2026/06/gymprime-screenshot-3.webp" aria-label="Ver imagen 2"><img src="../assets/uploads/2026/06/gymprime-screenshot-3.webp" alt="" loading="lazy" decoding="async"></button><button type="button" data-src="../assets/uploads/2026/06/gymprime-screenshot-1.webp" aria-label="Ver imagen 3"><img src="../assets/uploads/2026/06/gymprime-screenshot-1.webp" alt="" loading="lazy" decoding="async"></button><button type="button" data-src="../assets/uploads/2026/06/gymprime-screenshot-2.webp" aria-label="Ver imagen 4"><img src="../assets/uploads/2026/06/gymprime-screenshot-2.webp" alt="" loading="lazy" decoding="async"></button></div>
 </div></div>
       </div>
       <div class="stats-strip" data-aos="fade-up"><div class="stat-card"><strong data-count="3" data-suffix="">3</strong><span>planes disponibles (Mensual, 3 Meses, Anual)</span></div><div class="stat-card"><strong data-count="2" data-suffix="">2</strong><span>paneles independientes: landing y dashboard</span></div><div class="stat-card"><strong data-count="100" data-suffix="%">100%</strong><span>en uso activo por el entrenador</span></div></div>
@@ -475,6 +475,6 @@
   </div>
 </aside>
 
-<script src="../assets/js/main.js?v=mvy5h96l" defer></script>
+<script src="../assets/js/main.js?v=mvy7l6fv" defer></script>
 </body>
 </html>

@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap">
-<link rel="stylesheet" href="/assets/css/main.css?v=mvy5h96l">
+<link rel="stylesheet" href="/assets/css/main.css?v=mvy7l6fv">
 <script>
 /* Antes de pintar: activa animaciones, recuerda la posición del cursor
    entre páginas y, si falta una imagen local, la toma del sitio antiguo. */
@@ -26,7 +26,7 @@
   d.documentElement.classList.add('js');
   try{ w.__pmCursorInit = w.__pmCursorLast = JSON.parse(sessionStorage.getItem('pmCursorPos')||'null'); }catch(e){}
   w.addEventListener('mousemove',function(e){ w.__pmCursorLast={x:e.clientX,y:e.clientY}; try{sessionStorage.setItem('pmCursorPos',JSON.stringify(w.__pmCursorLast));}catch(_){} },{passive:true});
-  var REMOTO="https://yofuruya.laboratoriodiseno.cl/wp-content/";
+  var REMOTO="";
   if(REMOTO) w.addEventListener('error',function(e){
     var t=e.target; if(!t||!/^(IMG|SOURCE|VIDEO)$/.test(t.tagName)) return;
     var s=t.getAttribute('src')||''; var m=s.match(/assets\/(uploads\/.*)$/);
@@ -146,6 +146,6 @@
   </div>
 </aside>
 
-<script src="/assets/js/main.js?v=mvy5h96l" defer></script>
+<script src="/assets/js/main.js?v=mvy7l6fv" defer></script>
 </body>
 </html>

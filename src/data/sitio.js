@@ -16,5 +16,5 @@ export const SITIO = {
 
   /* Mientras el cPanel del instituto siga en línea, las imágenes que todavía
      no copiaste a src/uploads/ se cargan desde ahí. Cuando cierre, deja ''. */
-  respaldoImagenes: 'https://yofuruya.laboratoriodiseno.cl/wp-content/'
+  respaldoImagenes: ''
 };
